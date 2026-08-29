@@ -54,11 +54,13 @@ final readonly class TerminalPreview
     {
         $chafa = $this->findExecutable('chafa');
         if ($chafa !== null) {
+            $format = $this->chafaFormat();
             $output = [];
             $exitCode = 0;
             exec(
                 escapeshellarg($chafa)
-                . ' --format symbols --colors full --animate off --probe off --size '
+                . ' --format ' . escapeshellarg($format)
+                . ' --colors full --animate off --probe off --size '
                 . escapeshellarg("{$columns}x{$rows}")
                 . ' ' . escapeshellarg($path) . ' 2>/dev/null',
                 $output,
@@ -96,6 +98,16 @@ final readonly class TerminalPreview
         }
 
         return null;
+    }
+
+    private function chafaFormat(): string
+    {
+        $override = getenv('SSG_PREVIEW_FORMAT');
+        if (in_array($override, ['symbols', 'sixels'], true)) {
+            return $override;
+        }
+
+        return getenv('TERM_PROGRAM') === 'vscode' ? 'sixels' : 'symbols';
     }
 
     private function supportsAnsiImages(): bool
