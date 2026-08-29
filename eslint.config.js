@@ -15,7 +15,10 @@ export default [
   {
     files: ["tests/js/**/*.js"],
     languageOptions: {
-      globals: globals.node,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
   },
 ];
