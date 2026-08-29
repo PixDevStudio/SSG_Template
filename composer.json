@@ -2,7 +2,7 @@
   "name": "local/pix-ssg",
   "description": "Generateur de site statique en PHP",
   "type": "project",
-  "license": "proprietary",
+  "license": "MIT",
   "require": {
     "php": ">=8.3"
   },

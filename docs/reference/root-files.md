@@ -4,30 +4,31 @@ Cette page explique les fichiers placés directement à la racine du projet. Ils
 
 ## Vue d’ensemble
 
-| Fichier             | Rôle                                            | Modification manuelle    |
-| ------------------- | ----------------------------------------------- | ------------------------ |
-| `.gitignore`        | exclure les fichiers générés de Git             | Oui                      |
-| `.prettierignore`   | exclure certains fichiers de Prettier           | Oui                      |
-| `CHANGELOG.md`      | documenter les changements de chaque version    | Oui                      |
-| `VERSION`           | déclarer la version publique courante           | Oui, lors d’une release  |
-| `pix-bootstrap`     | télécharger et installer une nouvelle copie     | Oui, avec prudence       |
-| `pix-build`         | générer le site dans `dist/`                    | Oui, avec tests          |
-| `pix-check`         | exécuter tous les contrôles                     | Oui, avec tests          |
-| `pix-clean`         | vider uniquement `dist/`                        | Oui, avec tests          |
-| `pix-dev`           | lancer le serveur et surveiller les sources     | Oui, avec prudence       |
-| `pix-help`          | afficher toutes les commandes publiques         | Oui                      |
-| `pix-install`       | vérifier l’environnement et installer le projet | Oui, avec prudence       |
-| `pix-ssg`           | exposer la CLI du générateur                    | Oui, avec tests          |
-| `pix-upgrade`       | mettre à jour le SSG depuis Git                 | Oui, avec prudence       |
-| `composer.json`     | déclarer PHP, Pest et l’autoload                | Oui                      |
-| `composer.lock`     | verrouiller les versions PHP                    | Non, généré par Composer |
-| `package.json`      | déclarer les outils JavaScript et leurs scripts | Oui                      |
-| `package-lock.json` | verrouiller les versions npm                    | Non, généré par npm      |
-| `phpunit.xml`       | configurer Pest et PHPUnit                      | Oui                      |
-| `eslint.config.js`  | configurer l’analyse JavaScript                 | Oui                      |
-| `vitest.config.js`  | configurer Vitest et jsdom                      | Oui                      |
-| `README.md`         | présenter le projet et son usage rapide         | Oui                      |
-| `SPEC.md`           | définir le contrat technique du SSG             | Oui                      |
+| Fichier             | Rôle                                            | Modification manuelle      |
+| ------------------- | ----------------------------------------------- | -------------------------- |
+| `.gitignore`        | exclure les fichiers générés de Git             | Oui                        |
+| `.prettierignore`   | exclure certains fichiers de Prettier           | Oui                        |
+| `CHANGELOG.md`      | documenter les changements de chaque version    | Oui                        |
+| `LICENSE`           | définir les droits accordés sous licence MIT    | Non, sauf changement légal |
+| `VERSION`           | déclarer la version publique courante           | Oui, lors d’une release    |
+| `pix-bootstrap`     | télécharger et installer une nouvelle copie     | Oui, avec prudence         |
+| `pix-build`         | générer le site dans `dist/`                    | Oui, avec tests            |
+| `pix-check`         | exécuter tous les contrôles                     | Oui, avec tests            |
+| `pix-clean`         | vider uniquement `dist/`                        | Oui, avec tests            |
+| `pix-dev`           | lancer le serveur et surveiller les sources     | Oui, avec prudence         |
+| `pix-help`          | afficher toutes les commandes publiques         | Oui                        |
+| `pix-install`       | vérifier l’environnement et installer le projet | Oui, avec prudence         |
+| `pix-ssg`           | exposer la CLI du générateur                    | Oui, avec tests            |
+| `pix-upgrade`       | mettre à jour le SSG depuis Git                 | Oui, avec prudence         |
+| `composer.json`     | déclarer PHP, Pest et l’autoload                | Oui                        |
+| `composer.lock`     | verrouiller les versions PHP                    | Non, généré par Composer   |
+| `package.json`      | déclarer les outils JavaScript et leurs scripts | Oui                        |
+| `package-lock.json` | verrouiller les versions npm                    | Non, généré par npm        |
+| `phpunit.xml`       | configurer Pest et PHPUnit                      | Oui                        |
+| `eslint.config.js`  | configurer l’analyse JavaScript                 | Oui                        |
+| `vitest.config.js`  | configurer Vitest et jsdom                      | Oui                        |
+| `README.md`         | présenter le projet et son usage rapide         | Oui                        |
+| `SPEC.md`           | définir le contrat technique du SSG             | Oui                        |
 
 ## Fichiers d’exclusion
 
@@ -207,6 +208,10 @@ export default defineConfig({
 Les tests disposent ainsi de `window`, `document`, `querySelector()` et des autres API DOM simulées par jsdom.
 
 ## Documentation racine
+
+### `LICENSE`
+
+`LICENSE` distribue pix-ssg sous licence MIT. Toute copie ou portion substantielle redistribuée doit conserver l’avis de copyright et le texte de licence.
 
 ### `VERSION`
 

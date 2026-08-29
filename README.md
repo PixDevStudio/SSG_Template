@@ -4,6 +4,8 @@ Générateur de site statique léger construit en PHP 8.3+. Les sources restent 
 
 La documentation complète se trouve dans [`docs/README.md`](docs/README.md) : démarrage, architecture, dossiers, commandes, outils, API interne et dépannage.
 
+pix-ssg est distribué sous [licence MIT](LICENSE). Il peut être utilisé, modifié et redistribué, y compris dans des projets commerciaux, à condition de conserver l’avis de licence.
+
 ## Installation
 
 Installation directe depuis un terminal Bash ou WSL :

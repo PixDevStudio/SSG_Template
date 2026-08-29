@@ -33,6 +33,9 @@ jobs:
         run: |
           test "${GITHUB_REF_NAME}" = "v$(cat VERSION)"
           test "$(node -p 'require("./package.json").version')" = "$(cat VERSION)"
+          test "$(node -p 'require("./package.json").license')" = "MIT"
+          test "$(php -r '$data=json_decode(file_get_contents("composer.json"), true); echo $data["license"];')" = "MIT"
+          test -f LICENSE
 
       - name: Installer les dépendances
         run: |
