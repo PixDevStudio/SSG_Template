@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 $project = dirname(__DIR__);
-$library = dirname($project);
+$library = $project . '/template-sources';
 $force = in_array('--force', $argv, true);
 
 $templates = [

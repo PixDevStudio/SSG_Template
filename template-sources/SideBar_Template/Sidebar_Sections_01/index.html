@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"><title>Sidebar à sections</title></head>
+<body class="site">
+    <header class="site-header"><div class="container"><a class="logo" href="/">Orbit<span>.</span></a><a href="/aide">Centre d’aide</a></div></header>
+    <main class="site-main">
+        <div class="container app-layout">
+            <aside class="sidebar" aria-label="Barre latérale">
+                <div class="workspace"><span aria-hidden="true">OP</span><div><strong>Orbit Produit</strong><small>Forfait équipe</small></div></div>
+                <nav aria-label="Navigation de l’espace">
+                    <a class="direct-link" href="#overview" aria-current="page"><span aria-hidden="true">⌂</span>Vue d’ensemble</a>
+                    <details open><summary><span>Travail</span><b aria-hidden="true">›</b></summary><div><a href="#tasks">Tâches <small>14</small></a><a href="#projects">Projets</a><a href="#calendar">Calendrier</a></div></details>
+                    <details><summary><span>Équipe</span><b aria-hidden="true">›</b></summary><div><a href="#members">Membres</a><a href="#permissions">Permissions</a></div></details>
+                    <details><summary><span>Analyse</span><b aria-hidden="true">›</b></summary><div><a href="#reports">Rapports</a><a href="#exports">Exports</a></div></details>
+                </nav>
+                <a class="account" href="#account"><span aria-hidden="true">SL</span><span><strong>Sam Lee</strong><small>Compte</small></span></a>
+            </aside>
+            <section class="content" aria-labelledby="title"><p>Espace de travail</p><h1 id="title">Vue d’ensemble</h1><div class="placeholder" aria-hidden="true"></div></section>
+        </div>
+    </main>
+    <footer class="site-footer"><div class="container"><small>&copy; 2026 Orbit</small></div></footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"><title>Tableau responsive en fiches</title></head>
+<body>
+    <main class="page">
+        <section aria-labelledby="team-title">
+            <header>
+                <div><p>Répertoire</p><h1 id="team-title">Notre équipe</h1></div>
+                <button type="button">Ajouter un membre <span aria-hidden="true">+</span></button>
+            </header>
+            <table>
+                <caption>Liste des membres de l’équipe</caption>
+                <thead><tr><th scope="col">Membre</th><th scope="col">Rôle</th><th scope="col">Équipe</th><th scope="col">Disponibilité</th><th scope="col"><span class="sr-only">Profil</span></th></tr></thead>
+                <tbody>
+                    <tr><th scope="row" data-label="Membre"><span class="member"><i aria-hidden="true">AL</i><span><strong>Alex Leblanc</strong><small>alex@exemple.ca</small></span></span></th><td data-label="Rôle">Designer principal</td><td data-label="Équipe">Produit</td><td data-label="Disponibilité"><span class="availability">Disponible</span></td><td data-label="Profil"><a href="#alex">Voir le profil</a></td></tr>
+                    <tr><th scope="row" data-label="Membre"><span class="member"><i aria-hidden="true">MC</i><span><strong>Marie Côté</strong><small>marie@exemple.ca</small></span></span></th><td data-label="Rôle">Développeuse</td><td data-label="Équipe">Technologie</td><td data-label="Disponibilité"><span class="availability availability--busy">Occupée</span></td><td data-label="Profil"><a href="#marie">Voir le profil</a></td></tr>
+                    <tr><th scope="row" data-label="Membre"><span class="member"><i aria-hidden="true">SL</i><span><strong>Sam Lee</strong><small>sam@exemple.ca</small></span></span></th><td data-label="Rôle">Stratège</td><td data-label="Équipe">Conseil</td><td data-label="Disponibilité"><span class="availability">Disponible</span></td><td data-label="Profil"><a href="#sam">Voir le profil</a></td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

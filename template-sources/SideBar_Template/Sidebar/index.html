@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Template de sidebar</title>
+</head>
+<body class="site">
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+    <header class="site-header">
+        <div class="container site-header__inner">
+            <a class="site-logo" href="/" aria-label="Pixel & Craft, accueil">Pixel <span>&</span> Craft</a>
+            <span class="header-label">Espace de travail</span>
+        </div>
+    </header>
+
+    <main id="main-content" class="site-main">
+        <div class="container app-layout">
+            <aside class="sidebar" aria-label="Barre latérale">
+                <div class="sidebar__heading">
+                    <span class="sidebar__eyebrow">Navigation</span>
+                    <strong>Mon espace</strong>
+                </div>
+
+                <nav class="sidebar__nav" aria-label="Navigation secondaire">
+                    <p class="sidebar__section">Principal</p>
+                    <a class="sidebar__link" href="#dashboard" aria-current="page">
+                        <span class="sidebar__icon" aria-hidden="true">⌂</span>
+                        Vue d’ensemble
+                    </a>
+                    <a class="sidebar__link" href="#projects">
+                        <span class="sidebar__icon" aria-hidden="true">◇</span>
+                        Projets
+                        <span class="sidebar__badge">8</span>
+                    </a>
+                    <a class="sidebar__link" href="#tasks">
+                        <span class="sidebar__icon" aria-hidden="true">✓</span>
+                        Tâches
+                    </a>
+                    <a class="sidebar__link" href="#calendar">
+                        <span class="sidebar__icon" aria-hidden="true">□</span>
+                        Calendrier
+                    </a>
+
+                    <p class="sidebar__section">Compte</p>
+                    <a class="sidebar__link" href="#profile">
+                        <span class="sidebar__icon" aria-hidden="true">○</span>
+                        Profil
+                    </a>
+                    <a class="sidebar__link" href="#settings">
+                        <span class="sidebar__icon" aria-hidden="true">⚙</span>
+                        Réglages
+                    </a>
+                </nav>
+
+                <div class="sidebar__footer">
+                    <span class="sidebar__avatar" aria-hidden="true">JD</span>
+                    <span>
+                        <strong>Jean Dupont</strong>
+                        <small>Administrateur</small>
+                    </span>
+                </div>
+            </aside>
+
+            <section class="content" aria-labelledby="page-title">
+                <p class="content__eyebrow">Tableau de bord</p>
+                <h1 id="page-title">Vue d’ensemble</h1>
+                <p>Le contenu principal reste indépendant de la barre latérale et conserve toute la largeur disponible.</p>
+                <div class="demo-content" aria-hidden="true"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <small>&copy; 2026 Pixel & Craft. Tous droits réservés.</small>
+        </div>
+    </footer>
+</body>
+</html>

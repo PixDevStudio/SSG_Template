@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css?v=2">
+    <title>Tableau de statuts</title>
+</head>
+<body>
+    <main class="page">
+        <section class="table-section" aria-labelledby="projects-title">
+            <header class="table-header">
+                <div><p>Projets</p><h1 id="projects-title">Travail en cours</h1></div>
+                <a href="/projets/nouveau">Nouveau projet <span aria-hidden="true">+</span></a>
+            </header>
+
+            <div class="table-scroll" tabindex="0" aria-label="Tableau défilable horizontalement">
+                <table>
+                    <caption>Liste des projets actifs</caption>
+                    <thead><tr><th scope="col">Projet</th><th scope="col">Responsable</th><th scope="col">Échéance</th><th scope="col">Statut</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row"><strong>Refonte Boréal</strong><small>Site transactionnel</small></th><td><span class="person"><i aria-hidden="true">AL</i>Alex Leblanc</span></td><td><time datetime="2026-09-14">14 sept. 2026</time></td><td><span class="status status--progress">En cours</span></td><td><a class="action" href="#boreal" aria-label="Voir le projet Refonte Boréal">→</a></td></tr>
+                        <tr><th scope="row"><strong>Campagne Halo</strong><small>Identité visuelle</small></th><td><span class="person"><i aria-hidden="true">MC</i>Marie Côté</span></td><td><time datetime="2026-09-28">28 sept. 2026</time></td><td><span class="status status--review">En révision</span></td><td><a class="action" href="#halo" aria-label="Voir le projet Campagne Halo">→</a></td></tr>
+                        <tr><th scope="row"><strong>Portail Atlas</strong><small>Application web</small></th><td><span class="person"><i aria-hidden="true">SL</i>Sam Lee</span></td><td><time datetime="2026-10-08">8 oct. 2026</time></td><td><span class="status status--planned">Planifié</span></td><td><a class="action" href="#atlas" aria-label="Voir le projet Portail Atlas">→</a></td></tr>
+                        <tr><th scope="row"><strong>Rapport Nord</strong><small>Publication</small></th><td><span class="person"><i aria-hidden="true">JD</i>Jo Dumas</span></td><td><time datetime="2026-08-30">30 août 2026</time></td><td><span class="status status--urgent">À valider</span></td><td><a class="action" href="#nord" aria-label="Voir le projet Rapport Nord">→</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tableau comparatif</title>
+</head>
+<body>
+    <main class="page">
+        <header>
+            <p>Forfaits</p>
+            <h1>Choisissez l’espace qui vous ressemble.</h1>
+        </header>
+
+        <div class="table-scroll" tabindex="0" aria-label="Comparaison défilable horizontalement">
+            <table>
+                <caption>Comparaison des forfaits mensuels</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Fonctionnalité</th>
+                        <th scope="col"><span>Essentiel</span><strong>19 $</strong><small>par mois</small></th>
+                        <th class="featured" scope="col"><em>Populaire</em><span>Équipe</span><strong>49 $</strong><small>par mois</small></th>
+                        <th scope="col"><span>Studio</span><strong>99 $</strong><small>par mois</small></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><th scope="row">Projets actifs</th><td>3</td><td class="featured">Illimités</td><td>Illimités</td></tr>
+                    <tr><th scope="row">Collaborateurs</th><td>1</td><td class="featured">10</td><td>Illimités</td></tr>
+                    <tr><th scope="row">Stockage</th><td>10 Go</td><td class="featured">100 Go</td><td>1 To</td></tr>
+                    <tr><th scope="row">Historique avancé</th><td><span class="no" aria-label="Non inclus">—</span></td><td class="featured"><span class="yes" aria-label="Inclus">✓</span></td><td><span class="yes" aria-label="Inclus">✓</span></td></tr>
+                    <tr><th scope="row">Soutien prioritaire</th><td><span class="no" aria-label="Non inclus">—</span></td><td class="featured"><span class="yes" aria-label="Inclus">✓</span></td><td><span class="yes" aria-label="Inclus">✓</span></td></tr>
+                </tbody>
+                <tfoot><tr><th scope="row">Sélectionner</th><td><a href="#essentiel">Choisir</a></td><td class="featured"><a href="#equipe">Choisir Équipe</a></td><td><a href="#studio">Choisir</a></td></tr></tfoot>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

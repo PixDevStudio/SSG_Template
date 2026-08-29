@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --ink: #172126;
+    --muted: #68757b;
+    --surface: #ffffff;
+    --page: #f5f7f7;
+    --accent: #087f68;
+    --line: #d9e2e4;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: var(--page);
+}
+
+.site {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: min(100% - 2rem, 76rem);
+    margin-inline: auto;
+}
+
+.site-main {
+    flex: 1;
+    padding-block: 4rem;
+}
+
+.site-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.footer-inner {
+    min-height: 5.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.footer-logo {
+    color: var(--ink);
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.footer-logo span {
+    color: var(--accent);
+}
+
+.site-footer small {
+    color: var(--muted);
+}
+
+.site-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.site-footer nav a {
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: var(--accent);
+}
+
+.site-footer a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 0.25rem;
+}
+
+@media (max-width: 40rem) {
+    .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-block: 1.5rem;
+    }
+
+    .site-footer small {
+        order: 3;
+    }
+}

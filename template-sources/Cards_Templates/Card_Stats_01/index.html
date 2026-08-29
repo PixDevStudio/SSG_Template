@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"><title>Cartes statistiques</title></head>
+<body>
+    <main class="dashboard">
+        <header class="dashboard-header">
+            <div><p>Performance</p><h1>Vue d’ensemble</h1></div>
+            <label>Période<select name="period"><option>7 derniers jours</option><option selected>30 derniers jours</option><option>Cette année</option></select></label>
+        </header>
+
+        <section class="stats-grid" aria-label="Statistiques principales">
+            <article class="stat-card">
+                <header><span>Revenus</span><b aria-label="Hausse de 12,4 pour cent">↗ 12,4 %</b></header>
+                <strong>42 840 $</strong><small>contre 38 114 $ précédemment</small>
+                <div class="bars" aria-hidden="true"><i style="--value:42%"></i><i style="--value:55%"></i><i style="--value:48%"></i><i style="--value:67%"></i><i style="--value:62%"></i><i style="--value:78%"></i><i style="--value:88%"></i></div>
+            </article>
+            <article class="stat-card">
+                <header><span>Nouveaux clients</span><b aria-label="Hausse de 8,1 pour cent">↗ 8,1 %</b></header>
+                <strong>184</strong><small>14 clients de plus</small>
+                <div class="bars bars--blue" aria-hidden="true"><i style="--value:35%"></i><i style="--value:48%"></i><i style="--value:58%"></i><i style="--value:52%"></i><i style="--value:71%"></i><i style="--value:68%"></i><i style="--value:82%"></i></div>
+            </article>
+            <article class="stat-card">
+                <header><span>Taux de conversion</span><b class="down" aria-label="Baisse de 1,7 pour cent">↘ 1,7 %</b></header>
+                <strong>4,82 %</strong><small>contre 4,90 % précédemment</small>
+                <div class="bars bars--red" aria-hidden="true"><i style="--value:75%"></i><i style="--value:69%"></i><i style="--value:72%"></i><i style="--value:58%"></i><i style="--value:62%"></i><i style="--value:54%"></i><i style="--value:49%"></i></div>
+            </article>
+            <article class="stat-card">
+                <header><span>Temps moyen</span><b aria-label="Hausse de 5,3 pour cent">↗ 5,3 %</b></header>
+                <strong>3 min 42 s</strong><small>11 secondes de plus</small>
+                <div class="bars bars--gold" aria-hidden="true"><i style="--value:50%"></i><i style="--value:46%"></i><i style="--value:63%"></i><i style="--value:57%"></i><i style="--value:73%"></i><i style="--value:70%"></i><i style="--value:79%"></i></div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

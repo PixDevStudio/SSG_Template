@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template de header</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="site">
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a class="site-logo" href="/" aria-label="Pixel & Craft, accueil">
+                Pixel <span>&</span> Craft
+            </a>
+
+            <nav class="site-nav" aria-label="Navigation principale">
+                <ul class="site-nav__list site-nav__list--desktop">
+                    <li><a href="/" aria-current="page">Accueil</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/projets">Projets</a></li>
+                    <li><a href="/a-propos">À propos</a></li>
+                    <li><a class="nav-cta" href="/contact">Nous joindre</a></li>
+                </ul>
+
+                <details class="site-nav__menu">
+                    <summary>
+                        <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+                        Menu
+                    </summary>
+
+                    <ul class="site-nav__list site-nav__list--mobile">
+                        <li><a href="/" aria-current="page">Accueil</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/projets">Projets</a></li>
+                        <li><a href="/a-propos">À propos</a></li>
+                        <li><a class="nav-cta" href="/contact">Nous joindre</a></li>
+                    </ul>
+                </details>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="site-main">
+        <div class="container">
+            <p class="eyebrow">Template réutilisable</p>
+            <h1>Contenu de la page</h1>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <small>&copy; 2026 Pixel & Craft</small>
+        </div>
+    </footer>
+</body>
+</html>

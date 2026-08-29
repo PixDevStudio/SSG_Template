@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Template de demande de devis</title>
+</head>
+<body>
+    <main class="quote-page">
+        <header class="quote-intro">
+            <a class="brand" href="/">Studio Ligne</a>
+            <p>Demande de devis</p>
+            <h1 id="quote-title">Donnez-nous les contours de votre projet.</h1>
+            <span>Réponse détaillée sous deux jours ouvrables.</span>
+        </header>
+
+        <form class="quote-form" action="/devis" method="post" aria-labelledby="quote-title">
+            <fieldset>
+                <legend><span>01</span> Vos coordonnées</legend>
+                <div class="fields-grid">
+                    <div class="field">
+                        <label for="name">Nom complet</label>
+                        <input id="name" name="name" type="text" autocomplete="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Adresse courriel</label>
+                        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend><span>02</span> Services recherchés</legend>
+                <div class="choice-grid">
+                    <label><input type="checkbox" name="services[]" value="strategy"><span>Stratégie</span></label>
+                    <label><input type="checkbox" name="services[]" value="design"><span>Design web</span></label>
+                    <label><input type="checkbox" name="services[]" value="development"><span>Développement</span></label>
+                    <label><input type="checkbox" name="services[]" value="branding"><span>Identité visuelle</span></label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend><span>03</span> Cadre du projet</legend>
+                <div class="fields-grid">
+                    <div class="field">
+                        <label for="budget">Budget estimé</label>
+                        <select id="budget" name="budget" required>
+                            <option value="" selected disabled>Choisir une fourchette</option>
+                            <option value="5-10">5 000 $ – 10 000 $</option>
+                            <option value="10-25">10 000 $ – 25 000 $</option>
+                            <option value="25-plus">25 000 $ et plus</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="deadline">Échéance souhaitée</label>
+                        <input id="deadline" name="deadline" type="date">
+                    </div>
+                    <div class="field field--full">
+                        <label for="details">En quelques mots</label>
+                        <textarea id="details" name="details" rows="6" minlength="20" placeholder="Objectifs, public cible, contraintes particulières…" required></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-footer">
+                <small>Vos renseignements demeurent confidentiels.</small>
+                <button type="submit">Envoyer ma demande <span aria-hidden="true">↗</span></button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

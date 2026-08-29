@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"><title>Sidebar compacte</title></head>
+<body class="site">
+    <header class="site-header"><div class="container"><a href="/">Console</a><span>Espace administrateur</span></div></header>
+    <main class="site-main">
+        <div class="container app-layout">
+            <aside class="sidebar" aria-label="Barre latérale">
+                <a class="sidebar__brand" href="/" aria-label="Console, accueil">C</a>
+                <nav aria-label="Navigation principale">
+                    <a href="#dashboard" aria-current="page" aria-label="Tableau de bord" data-label="Tableau de bord"><span aria-hidden="true">⌂</span></a>
+                    <a href="#projects" aria-label="Projets" data-label="Projets"><span aria-hidden="true">◇</span></a>
+                    <a href="#team" aria-label="Équipe" data-label="Équipe"><span aria-hidden="true">◎</span></a>
+                    <a href="#reports" aria-label="Rapports" data-label="Rapports"><span aria-hidden="true">▦</span></a>
+                </nav>
+                <a class="sidebar__settings" href="#settings" aria-label="Réglages" data-label="Réglages"><span aria-hidden="true">⚙</span></a>
+            </aside>
+            <section class="content" aria-labelledby="page-title"><p>Tableau de bord</p><h1 id="page-title">Activité récente</h1><div class="placeholder" aria-hidden="true"></div></section>
+        </div>
+    </main>
+    <footer class="site-footer"><div class="container"><small>&copy; 2026 Console</small></div></footer>
+</body>
+</html>

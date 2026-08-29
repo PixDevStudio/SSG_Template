@@ -1,0 +1,24 @@
+*, *::before, *::after { box-sizing:border-box; }
+:root { --paper:#f4f0e8; --surface:#fffdf8; --ink:#24221e; --muted:#716c64; --accent:#a13d2d; --line:#d8d0c4; }
+body { margin:0; font-family:"Trebuchet MS","Segoe UI",sans-serif; color:var(--ink); background:var(--paper); }
+.page { width:min(100% - 2rem,76rem); min-height:100vh; margin-inline:auto; padding-block:clamp(3rem,8vw,7rem); }
+.page-header { display:flex; align-items:end; justify-content:space-between; gap:2rem; margin-bottom:2.5rem; }
+.page-header p { margin:0 0 .6rem; color:var(--accent); font-size:.72rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.page-header h1 { margin:0; font:500 clamp(2.3rem,5vw,4.5rem)/1 Georgia,serif; letter-spacing:0; }
+.page-header > a { flex-shrink:0; color:var(--ink); font-size:.82rem; font-weight:800; text-underline-offset:.25rem; }
+.product-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr)); gap:1.5rem; }
+.product-card { min-width:0; display:flex; flex-direction:column; border:1px solid var(--line); border-radius:.4rem; background:var(--surface); overflow:hidden; }
+.product-card__image { position:relative; aspect-ratio:4 / 5; display:block; overflow:hidden; }
+.product-card__image img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .35s ease; }
+.product-card:hover .product-card__image img { transform:scale(1.025); }
+.product-card__image > span { position:absolute; top:.75rem; left:.75rem; padding:.35rem .55rem; color:var(--ink); background:var(--surface); font-size:.65rem; font-weight:900; text-transform:uppercase; }
+.product-card__body { display:flex; align-items:start; justify-content:space-between; gap:1rem; padding:1.15rem; }
+.product-card__body p { margin:0 0 .3rem; color:var(--muted); font-size:.7rem; text-transform:uppercase; }
+.product-card h2 { margin:0; font:500 1.25rem Georgia,serif; }
+.product-card h2 a { color:var(--ink); text-decoration:none; }
+.product-card__body > strong { flex-shrink:0; font-size:.9rem; }
+.product-card button { min-height:3rem; margin:auto 1rem 1rem; border:1px solid var(--ink); border-radius:.25rem; color:var(--ink); background:transparent; font:800 .8rem inherit; cursor:pointer; }
+.product-card button:hover { color:#fff; background:var(--ink); }
+.product-card a:focus-visible, .product-card button:focus-visible, .page-header a:focus-visible { outline:3px solid rgba(161,61,45,.22); outline-offset:3px; }
+@media (max-width:34rem) { .page-header { align-items:flex-start; flex-direction:column; } }
+@media (prefers-reduced-motion:reduce) { .product-card__image img { transition:none; } }

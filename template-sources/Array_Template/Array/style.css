@@ -1,0 +1,35 @@
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #dbe3ea;
+    border-radius: 1rem;
+    background: #ffffff;
+}
+
+.data-table {
+    width: 100%;
+    min-width: 42rem;
+    border-collapse: collapse;
+}
+
+.data-table caption {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 800;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.9rem 1rem;
+    border-top: 1px solid #e6edf2;
+    text-align: left;
+}
+
+.data-table th {
+    background: #f3f7f9;
+    font-size: 0.9rem;
+}
+
+.data-table tbody tr:hover {
+    background: #f8fbfc;
+}

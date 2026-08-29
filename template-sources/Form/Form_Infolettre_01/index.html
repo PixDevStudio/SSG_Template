@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Template d’infolettre</title>
+</head>
+<body>
+    <main class="newsletter-page">
+        <section class="newsletter" aria-labelledby="newsletter-title">
+            <div class="issue" aria-hidden="true">
+                <span>Édition</span>
+                <strong>012</strong>
+            </div>
+
+            <div class="newsletter__content">
+                <p class="eyebrow">Notes du vendredi</p>
+                <h1 id="newsletter-title">Une idée utile.<br>Une fois par semaine.</h1>
+                <p>Design, développement et méthodes de travail expliqués sans détour.</p>
+
+                <form class="newsletter-form" action="/infolettre" method="post">
+                    <div class="email-field">
+                        <label for="newsletter-email">Votre adresse courriel</label>
+                        <input id="newsletter-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="nom@exemple.com" required>
+                    </div>
+                    <button type="submit">Je m’inscris <span aria-hidden="true">→</span></button>
+                    <small>En vous inscrivant, vous acceptez notre politique de confidentialité. Désabonnement en un clic.</small>
+                </form>
+            </div>
+
+            <aside class="newsletter__topics" aria-label="Sujets abordés">
+                <span>Au programme</span>
+                <ul>
+                    <li>Interfaces claires</li>
+                    <li>Code maintenable</li>
+                    <li>Outils pratiques</li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+</body>
+</html>

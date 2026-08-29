@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Template de footer à colonnes</title>
+</head>
+<body class="site">
+    <main class="site-main"><div class="container"><h1>Contenu de la page</h1></div></main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-lead">
+                <div>
+                    <a class="footer-logo" href="/">Maison Commune</a>
+                    <p>Des outils numériques pensés pour les équipes qui bâtissent demain.</p>
+                </div>
+                <form class="newsletter" action="/infolettre" method="post">
+                    <label for="footer-email">Recevoir nos nouvelles</label>
+                    <div><input id="footer-email" name="email" type="email" autocomplete="email" placeholder="nom@exemple.com" required><button type="submit" aria-label="S’inscrire à l’infolettre">→</button></div>
+                </form>
+            </div>
+
+            <nav class="footer-nav" aria-label="Navigation du pied de page">
+                <div><h2>Découvrir</h2><ul><li><a href="/services">Services</a></li><li><a href="/projets">Projets</a></li><li><a href="/studio">Le studio</a></li></ul></div>
+                <div><h2>Ressources</h2><ul><li><a href="/journal">Journal</a></li><li><a href="/guides">Guides</a></li><li><a href="/faq">FAQ</a></li></ul></div>
+                <div><h2>Nous joindre</h2><ul><li><a href="mailto:allo@maisoncommune.ca">Courriel</a></li><li><a href="/contact">Démarrer un projet</a></li><li><a href="/emplois">Carrières</a></li></ul></div>
+            </nav>
+
+            <div class="footer-bottom"><small>&copy; 2026 Maison Commune</small><div><a href="/confidentialite">Confidentialité</a><a href="/accessibilite">Accessibilité</a></div></div>
+        </div>
+    </footer>
+</body>
+</html>

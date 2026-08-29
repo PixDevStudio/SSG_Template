@@ -1,0 +1,209 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --paper: #f7f7f4;
+    --ink: #171918;
+    --muted: #69706c;
+    --signal: #e34b2f;
+    --line: #ccd2ce;
+    --surface: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+.quote-page {
+    width: min(100% - 2rem, 76rem);
+    min-height: 100vh;
+    margin-inline: auto;
+    padding-block: clamp(2rem, 6vw, 5rem);
+}
+
+.quote-intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding-bottom: clamp(2.5rem, 6vw, 5rem);
+    border-bottom: 1px solid var(--ink);
+}
+
+.brand {
+    width: fit-content;
+    margin-bottom: 2rem;
+    color: var(--ink);
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.quote-intro p {
+    margin: 0;
+    color: var(--signal);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.quote-intro h1 {
+    max-width: 17ch;
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(2.4rem, 6vw, 5.5rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.quote-intro > span {
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.quote-form {
+    display: grid;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: clamp(2rem, 5vw, 3.5rem) 0;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+}
+
+legend {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+legend span {
+    margin-right: 0.75rem;
+    color: var(--signal);
+    font: 800 0.72rem "Trebuchet MS", sans-serif;
+}
+
+.fields-grid,
+.choice-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.field {
+    min-width: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.field label {
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    min-height: 3.1rem;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    color: var(--ink);
+    background: var(--surface);
+    font: inherit;
+}
+
+.field textarea {
+    min-height: 10rem;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+.choice-grid label {
+    position: relative;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.choice-grid input {
+    position: absolute;
+    opacity: 0;
+}
+
+.choice-grid label:has(input:checked) {
+    border-color: var(--signal);
+    box-shadow: inset 4px 0 var(--signal);
+}
+
+.choice-grid label:has(input:focus-visible),
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(227, 75, 47, 0.2);
+    outline-offset: 2px;
+    border-color: var(--signal);
+}
+
+.form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-top: 2rem;
+}
+
+.form-footer small {
+    color: var(--muted);
+}
+
+.form-footer button {
+    min-height: 3.2rem;
+    padding-inline: 1.25rem;
+    border: 0;
+    color: #ffffff;
+    background: var(--ink);
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.form-footer button:hover {
+    background: var(--signal);
+}
+
+@media (min-width: 42rem) {
+    .fields-grid,
+    .choice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .field--full {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 34rem) {
+    .form-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}

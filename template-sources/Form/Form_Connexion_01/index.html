@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Template de connexion</title>
+</head>
+<body>
+    <main class="auth-layout">
+        <section class="auth-intro" aria-labelledby="intro-title">
+            <a class="brand" href="/" aria-label="Atelier Nord, accueil">Atelier <span>Nord</span></a>
+            <div>
+                <p class="eyebrow">Espace membre</p>
+                <h1 id="intro-title">Retrouvez vos projets là où vous les avez laissés.</h1>
+                <p>Un accès simple et sécurisé à votre espace de travail.</p>
+            </div>
+            <small>Assistance disponible du lundi au vendredi.</small>
+        </section>
+
+        <section class="auth-panel" aria-labelledby="login-title">
+            <form class="login-form" action="/connexion" method="post">
+                <div class="form-heading">
+                    <p class="eyebrow">Bon retour</p>
+                    <h2 id="login-title">Se connecter</h2>
+                    <p>Entrez les renseignements associés à votre compte.</p>
+                </div>
+
+                <div class="field">
+                    <label for="email">Adresse courriel</label>
+                    <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+                </div>
+
+                <div class="field">
+                    <div class="label-row">
+                        <label for="password">Mot de passe</label>
+                        <a href="/mot-de-passe-oublie">Mot de passe oublié?</a>
+                    </div>
+                    <input id="password" name="password" type="password" autocomplete="current-password" minlength="8" required>
+                </div>
+
+                <label class="remember">
+                    <input name="remember" type="checkbox">
+                    <span>Garder ma session ouverte</span>
+                </label>
+
+                <button class="button" type="submit">Continuer <span aria-hidden="true">→</span></button>
+
+                <p class="signup">Pas encore de compte? <a href="/inscription">Créer un compte</a></p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

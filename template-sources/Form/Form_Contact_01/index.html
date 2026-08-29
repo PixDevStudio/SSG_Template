@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Template de formulaire de contact</title>
+</head>
+<body class="site">
+    <main class="site-main">
+        <section class="contact" aria-labelledby="contact-title">
+            <div class="contact__intro">
+                <p class="eyebrow">Contact</p>
+                <h1 id="contact-title">Parlons de votre projet</h1>
+                <p class="contact__lead">Décrivez brièvement votre besoin. Nous vous répondrons dans un délai d’un à deux jours ouvrables.</p>
+
+                <div class="contact__details">
+                    <div>
+                        <span>Courriel</span>
+                        <a href="mailto:bonjour@pixelcraft.ca">bonjour@pixelcraft.ca</a>
+                    </div>
+                    <div>
+                        <span>Téléphone</span>
+                        <a href="tel:+15145550123">+1 514 555-0123</a>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" action="/contact" method="post">
+                <div class="form-heading">
+                    <h2>Votre demande</h2>
+                    <p id="required-note">Les champs marqués d’un <span aria-hidden="true">*</span> sont obligatoires.</p>
+                </div>
+
+                <div class="field">
+                    <label for="name">Nom <span aria-hidden="true">*</span></label>
+                    <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="required-note">
+                </div>
+
+                <div class="field">
+                    <label for="email">Courriel <span aria-hidden="true">*</span></label>
+                    <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="required-note">
+                </div>
+
+                <div class="field">
+                    <label for="company">Entreprise <span class="optional">Optionnel</span></label>
+                    <input id="company" name="company" type="text" autocomplete="organization">
+                </div>
+
+                <div class="field">
+                    <label for="subject">Sujet <span aria-hidden="true">*</span></label>
+                    <select id="subject" name="subject" required aria-describedby="required-note">
+                        <option value="" selected disabled>Sélectionner un sujet</option>
+                        <option value="website">Création d’un site</option>
+                        <option value="redesign">Refonte d’un site</option>
+                        <option value="support">Soutien technique</option>
+                        <option value="other">Autre demande</option>
+                    </select>
+                </div>
+
+                <div class="field field--full">
+                    <label for="message">Message <span aria-hidden="true">*</span></label>
+                    <textarea id="message" name="message" rows="7" minlength="20" placeholder="Parlez-nous de vos objectifs, de votre échéancier et de vos besoins." required aria-describedby="message-hint required-note"></textarea>
+                    <small id="message-hint">Minimum de 20 caractères.</small>
+                </div>
+
+                <label class="consent field--full">
+                    <input name="consent" type="checkbox" required>
+                    <span>J’accepte que mes renseignements soient utilisés pour répondre à ma demande. <span aria-hidden="true">*</span></span>
+                </label>
+
+                <div class="form-actions field--full">
+                    <button class="button" type="submit">Envoyer la demande <span aria-hidden="true">→</span></button>
+                    <p class="form-status" aria-live="polite"></p>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

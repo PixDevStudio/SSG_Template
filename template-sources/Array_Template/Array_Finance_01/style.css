@@ -1,0 +1,28 @@
+*, *::before, *::after { box-sizing:border-box; }
+:root { --page:#f2f5f3; --surface:#fff; --ink:#17201c; --muted:#6c7771; --green:#176c50; --line:#d9e2dd; }
+body { margin:0; font-family:"Trebuchet MS","Segoe UI",sans-serif; color:var(--ink); background:var(--page); }
+.page { width:min(100% - 2rem,82rem); min-height:100vh; margin-inline:auto; padding-block:clamp(3rem,8vw,7rem); }
+.report-header { display:flex; align-items:end; justify-content:space-between; gap:2rem; margin-bottom:2rem; }
+.report-header p { margin:0 0 .5rem; color:var(--green); font-size:.72rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.report-header h1 { margin:0; font-size:clamp(2.4rem,5vw,4rem); letter-spacing:0; }
+.summary { display:grid; gap:.2rem; text-align:right; }
+.summary span, .summary small { color:var(--muted); font-size:.72rem; }
+.summary strong { font:500 1.7rem Georgia,serif; }
+.summary small { color:var(--green); }
+.table-scroll { max-width:100%; border:1px solid var(--line); border-radius:.35rem; background:var(--surface); overflow-x:auto; }
+.table-scroll:focus-visible { outline:3px solid rgba(23,108,80,.2); outline-offset:3px; }
+table { width:100%; min-width:68rem; border-collapse:collapse; }
+caption { padding:1rem 1.2rem; color:var(--muted); font-size:.75rem; text-align:left; }
+th, td { padding:.95rem 1.1rem; border-top:1px solid var(--line); text-align:left; white-space:nowrap; }
+thead th { color:var(--muted); background:#f8faf9; font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; }
+tbody th, tbody td { font-size:.8rem; }
+tbody td { color:var(--muted); }
+.number { text-align:right; font-variant-numeric:tabular-nums; }
+.strong { color:var(--ink); font-weight:900; }
+.paid, .pending, .late { display:inline-flex; padding:.25rem .5rem; border-radius:2rem; font-size:.67rem; font-weight:900; }
+.paid { color:#176c50; background:#e1f2eb; }
+.pending { color:#75510a; background:#faedc8; }
+.late { color:#9f3028; background:#f9e3e0; }
+tfoot { color:#fff; background:var(--ink); }
+tfoot th, tfoot td { font-size:.82rem; font-weight:900; }
+@media (max-width:38rem) { .report-header { align-items:flex-start; flex-direction:column; } .summary { text-align:left; } }

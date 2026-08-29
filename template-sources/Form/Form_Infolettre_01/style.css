@@ -1,0 +1,202 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --yellow: #f2d447;
+    --ink: #181816;
+    --paper: #fffdf5;
+    --blue: #2456d8;
+    --line: rgba(24, 24, 22, 0.28);
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: #dedfd9;
+}
+
+.newsletter-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.newsletter {
+    width: min(100%, 76rem);
+    display: grid;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    box-shadow: 0.75rem 0.75rem 0 var(--ink);
+}
+
+.issue {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border-bottom: 2px solid var(--ink);
+    background: var(--yellow);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.issue strong {
+    font-size: 1.4rem;
+}
+
+.newsletter__content {
+    min-width: 0;
+    padding: clamp(2rem, 6vw, 5rem);
+}
+
+.eyebrow {
+    margin: 0 0 0.8rem;
+    color: var(--blue);
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.newsletter h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: clamp(2.4rem, 7vw, 5.5rem);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: 0;
+}
+
+.newsletter__content > p:not(.eyebrow) {
+    max-width: 42rem;
+    margin: 1.5rem 0 2rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.email-field {
+    min-width: 0;
+    display: grid;
+    gap: 0.45rem;
+}
+
+.email-field label {
+    font-size: 0.8rem;
+    font-weight: 900;
+}
+
+.email-field input {
+    width: 100%;
+    min-height: 3.4rem;
+    padding-inline: 1rem;
+    border: 2px solid var(--ink);
+    border-radius: 0;
+    color: var(--ink);
+    background: #ffffff;
+    font: inherit;
+}
+
+.newsletter-form button {
+    min-height: 3.4rem;
+    padding-inline: 1.25rem;
+    border: 2px solid var(--ink);
+    color: #ffffff;
+    background: var(--blue);
+    font: inherit;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover {
+    color: var(--ink);
+    background: var(--yellow);
+}
+
+.email-field input:focus-visible,
+.newsletter-form button:focus-visible {
+    outline: 3px solid var(--yellow);
+    outline-offset: 3px;
+}
+
+.newsletter-form small {
+    color: #66665f;
+    font-size: 0.7rem;
+    line-height: 1.45;
+}
+
+.newsletter__topics {
+    padding: 2rem;
+    border-top: 2px solid var(--ink);
+    background: var(--yellow);
+}
+
+.newsletter__topics > span {
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.newsletter__topics ul {
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.newsletter__topics li {
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+}
+
+@media (min-width: 42rem) {
+    .newsletter-form {
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: end;
+    }
+
+    .newsletter-form small {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 62rem) {
+    .newsletter {
+        grid-template-columns: 6rem minmax(0, 1fr) 17rem;
+    }
+
+    .issue {
+        align-items: flex-start;
+        flex-direction: column;
+        border-right: 2px solid var(--ink);
+        border-bottom: 0;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+    }
+
+    .newsletter__topics {
+        border-top: 0;
+        border-left: 2px solid var(--ink);
+    }
+}
+
+@media (max-width: 28rem) {
+    .newsletter {
+        box-shadow: 0.4rem 0.4rem 0 var(--ink);
+    }
+}

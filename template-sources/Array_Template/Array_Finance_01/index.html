@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="style.css"><title>Tableau financier</title></head>
+<body>
+    <main class="page">
+        <section aria-labelledby="finance-title">
+            <header class="report-header">
+                <div><p>Rapport mensuel</p><h1 id="finance-title">Revenus</h1></div>
+                <div class="summary"><span>Août 2026</span><strong>42 828,29 $</strong><small>+12,4 % depuis juillet</small></div>
+            </header>
+            <div class="table-scroll" tabindex="0" aria-label="Rapport financier défilable horizontalement">
+                <table>
+                    <caption>Transactions du mois d’août 2026</caption>
+                    <thead><tr><th scope="col">Facture</th><th scope="col">Client</th><th scope="col">Date</th><th scope="col">État</th><th class="number" scope="col">Sous-total</th><th class="number" scope="col">Taxes</th><th class="number" scope="col">Total</th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row">FAC-2048</th><td>Groupe Boréal</td><td><time datetime="2026-08-04">4 août</time></td><td><span class="paid">Payée</span></td><td class="number">8 400,00 $</td><td class="number">1 258,00 $</td><td class="number strong">9 658,00 $</td></tr>
+                        <tr><th scope="row">FAC-2049</th><td>Atelier Halo</td><td><time datetime="2026-08-11">11 août</time></td><td><span class="paid">Payée</span></td><td class="number">12 750,00 $</td><td class="number">1 909,31 $</td><td class="number strong">14 659,31 $</td></tr>
+                        <tr><th scope="row">FAC-2050</th><td>Coopérative Atlas</td><td><time datetime="2026-08-18">18 août</time></td><td><span class="pending">En attente</span></td><td class="number">6 200,00 $</td><td class="number">928,45 $</td><td class="number strong">7 128,45 $</td></tr>
+                        <tr><th scope="row">FAC-2051</th><td>Maison Nord</td><td><time datetime="2026-08-25">25 août</time></td><td><span class="late">En retard</span></td><td class="number">9 900,00 $</td><td class="number">1 482,53 $</td><td class="number strong">11 382,53 $</td></tr>
+                    </tbody>
+                    <tfoot><tr><th scope="row" colspan="4">Total du mois</th><td class="number">37 250,00 $</td><td class="number">5 578,29 $</td><td class="number">42 828,29 $</td></tr></tfoot>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
