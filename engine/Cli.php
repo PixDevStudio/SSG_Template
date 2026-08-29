@@ -7,12 +7,12 @@ namespace MonSsg;
 final readonly class Cli
 {
     private TemplateCatalog $templates;
-    private TerminalPreview $previews;
+    private TemplateMarkdownCatalog $markdownCatalog;
 
     public function __construct(private Paths $paths, private FileSystem $files)
     {
         $this->templates = new TemplateCatalog($paths, $files);
-        $this->previews = new TerminalPreview($paths);
+        $this->markdownCatalog = new TemplateMarkdownCatalog($paths, $files);
     }
 
     /** @param list<string> $arguments */
@@ -67,18 +67,21 @@ HTML;
     {
         $action = $arguments[1] ?? 'list';
         if (in_array($action, ['list', 'liste'], true)) {
+            $templates = $this->templates->all();
             $currentCategory = null;
             echo "Catalogue des templates\n";
-            foreach ($this->templates->all() as $template) {
+            foreach ($templates as $template) {
                 if ($currentCategory !== $template['category']) {
                     $currentCategory = $template['category'];
                     echo "\n" . strtoupper((string) $currentCategory) . "\n";
                 }
                 $status = $template['installed'] ? 'installé' : 'disponible';
-                $this->previews->printThumbnail($template);
                 echo "  [{$status}] {$template['id']} — {$template['name']}\n";
             }
-            echo "\nUtilisez ./ssg templates info <catégorie/nom> pour les détails.\n";
+            $catalogue = $this->markdownCatalog->write($templates);
+            echo "\nCatalogue détaillé : {$catalogue}\n";
+            echo "Utilisez ./ssg templates info <catégorie/nom> pour les détails.\n";
+            $this->offerMarkdownCatalog($catalogue);
             return 0;
         }
 
@@ -88,8 +91,8 @@ HTML;
             $status = $template['installed'] ? 'installé' : 'disponible';
             echo "{$template['name']} ({$template['id']})\n\n{$template['description']}\n\nÉtat : {$status}\n";
             $this->printTemplateUsage($template);
-            $this->previews->printDetails($template);
             echo "Documentation : templates/{$id}/README.md\n";
+            echo "Aperçus : " . TemplateMarkdownCatalog::RELATIVE_PATH . "\n";
             return 0;
         }
         if (in_array($action, ['install', 'installer'], true)) {
@@ -107,6 +110,53 @@ HTML;
         }
 
         return $this->usage();
+    }
+
+    private function offerMarkdownCatalog(string $relative): void
+    {
+        if (!function_exists('stream_isatty') || !stream_isatty(STDIN) || !stream_isatty(STDOUT)) {
+            return;
+        }
+
+        $viewer = $this->findExecutable(['mdcat', 'glow']);
+        $viewerLabel = $viewer === null ? 'lecteur Markdown non détecté' : basename($viewer);
+        echo "\nOuvrir le catalogue ?\n";
+        echo "  [1] Dans ce terminal avec {$viewerLabel}\n";
+        echo "  [2] Dans un onglet VS Code (Ctrl+Shift+V pour l’aperçu)\n";
+        echo "  [Entrée] Ne pas ouvrir\n";
+        echo "Choix : ";
+        $choice = trim((string) fgets(STDIN));
+        $absolute = $this->paths->root . '/' . $relative;
+
+        if ($choice === '1') {
+            if ($viewer === null) {
+                echo "Installez mdcat ou glow, puis ouvrez {$relative}.\n";
+                return;
+            }
+            passthru(escapeshellarg($viewer) . ' ' . escapeshellarg($absolute));
+        } elseif ($choice === '2') {
+            $code = $this->findExecutable(['code']);
+            if ($code === null) {
+                echo "La commande code est indisponible. Ouvrez {$relative} dans votre éditeur.\n";
+                return;
+            }
+            passthru(escapeshellarg($code) . ' --reuse-window ' . escapeshellarg($absolute));
+        }
+    }
+
+    /** @param list<string> $names */
+    private function findExecutable(array $names): ?string
+    {
+        foreach ($names as $name) {
+            foreach (explode(PATH_SEPARATOR, getenv('PATH') ?: '') as $directory) {
+                $path = rtrim($directory, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $name;
+                if (is_file($path) && is_executable($path)) {
+                    return $path;
+                }
+            }
+        }
+
+        return null;
     }
 
     /** @param array<string, mixed> $template */
