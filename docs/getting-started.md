@@ -4,6 +4,8 @@
 
 Mon SSG nécessite Bash, PHP 8.3+, Node.js, npm et Composer. Pest requiert aussi DOM, XMLWriter et mbstring. Composer doit pouvoir extraire les archives avec PHP ZIP, `unzip` ou `7z`.
 
+Utilisez un terminal **Bash sous Linux/macOS ou WSL**. N’exécutez pas les scripts depuis PowerShell.
+
 ## Installation
 
 Depuis la racine du projet :
@@ -13,6 +15,14 @@ Depuis la racine du projet :
 ```
 
 Le script vérifie l’environnement, demande confirmation avant toute installation système, installe les dépendances et prépare les dossiers.
+
+Il propose également `chafa` pour améliorer les images affichées par le catalogue :
+
+```bash
+./install --with-previews
+```
+
+Cette application reste facultative, car un rendu ANSI PHP est inclus dans le SSG.
 
 ## Première page
 

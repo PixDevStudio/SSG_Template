@@ -17,6 +17,8 @@ Crée `src/pages/blog/article.html` avec un front matter et un titre humanisé. 
 
 Affiche les 23 modèles triés par catégorie et nom.
 
+Dans un terminal compatible, une miniature desktop accompagne chaque modèle. `chafa`, proposé par `./install`, améliore ce rendu; le SSG possède aussi un rendu ANSI intégré.
+
 ## Obtenir les instructions
 
 ```bash
@@ -24,6 +26,8 @@ Affiche les 23 modèles triés par catégorie et nom.
 ```
 
 Affiche la description, le statut, l’expression d’inclusion, le fichier cible, la position recommandée, le CSS, les données et le README.
+
+La commande affiche également les aperçus desktop, tablette et mobile. Exécutez-la dans Bash ou WSL, pas dans PowerShell. Lorsque la sortie est redirigée ou que les couleurs sont désactivées, les chemins des PNG restent affichés sans image ANSI.
 
 ## Installer
 

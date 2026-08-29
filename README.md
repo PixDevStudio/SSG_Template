@@ -12,6 +12,8 @@ La documentation complète se trouve dans [`docs/README.md`](docs/README.md) : d
 
 Le script vérifie Bash, PHP 8.3+, Node.js, npm et Composer, installe Pest, Vitest, ESLint et Prettier, puis prépare les dossiers.
 
+Lancez `./install` dans **Bash ou WSL, jamais dans PowerShell**. Le script propose aussi l’installation facultative de `chafa`, utilisé pour afficher les captures dans `./ssg templates` et `./ssg templates info <id>`. Utilisez `./install --with-previews` pour l’installer directement.
+
 Pest nécessite les extensions PHP DOM/XML et mbstring. Sous Ubuntu ou Debian, `./install` demande confirmation avant de proposer leur installation avec `php-xml` et `php-mbstring`.
 
 Composer nécessite également un extracteur d’archives. Si PHP ZIP, `unzip` et `7z` sont absents, `./install` demande confirmation avant d’installer `unzip`.

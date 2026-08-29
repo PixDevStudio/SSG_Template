@@ -4,6 +4,17 @@
 ./install
 ```
 
+Exécutez cette commande dans **Bash sous Linux/macOS ou dans WSL**. Ne lancez pas `install` depuis PowerShell : le script utilise la syntaxe et les outils système de Bash.
+
+Pendant une installation interactive, le script propose d’installer `chafa` afin d’afficher des miniatures plus fidèles dans `./ssg templates` et les trois captures dans `./ssg templates info <id>`.
+
+```bash
+./install --with-previews     # Installe chafa sans poser la question
+./install --without-previews  # Ignore chafa
+```
+
+Sous Ubuntu/Debian/WSL, l’installation de `chafa` utilise `apt` et peut demander le mot de passe `sudo` directement dans le terminal. Sans `chafa`, le SSG conserve son rendu ANSI PHP intégré.
+
 ## Vérifications
 
 Le script contrôle :
@@ -14,6 +25,7 @@ Le script contrôle :
 - PHP ZIP, `unzip` ou `7z`;
 - Node.js et npm;
 - Composer.
+- Chafa, facultatif pour améliorer les aperçus dans le terminal.
 
 Sous WSL, un Composer Windows non utilisable depuis un chemin UNC est remplacé par un PHAR local. Le téléchargement est vérifié avec la signature officielle.
 
