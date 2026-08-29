@@ -21,6 +21,7 @@ Chaque dossier important possède sa propre page dans [directories/](directories
 - [`public/`](directories/public.md)
 - [`engine/`](directories/engine.md)
 - [`plugins/`](directories/plugins.md)
+- [`template-sources/`](directories/template-sources.md)
 - [`templates/`](directories/templates.md)
 - [`tests/`](directories/tests.md)
 - [`tools/`](directories/tools.md)

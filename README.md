@@ -82,6 +82,8 @@ src/        Sources, pages, layouts, composants, CSS, JS et données
 public/     Fichiers statiques copiés tels quels
 engine/     Moteur PHP interne
 plugins/    Extensions du moteur
+template-sources/ Sources originales utilisées par l’importeur
+templates/  Catalogue de modèles installables
 tests/      Tests Pest et Vitest
 dist/       Résultat généré uniquement
 ```

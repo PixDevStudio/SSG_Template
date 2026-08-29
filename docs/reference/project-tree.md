@@ -15,6 +15,7 @@ SSG/
 │   ├── scripts/          JavaScript
 │   ├── styles/           CSS
 │   └── template-docs/    README des modèles installés
+├── template-sources/     sources HTML/CSS originales
 ├── templates/            catalogue de 23 modèles
 ├── tests/
 │   ├── js/               tests Vitest

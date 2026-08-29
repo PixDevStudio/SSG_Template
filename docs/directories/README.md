@@ -1,15 +1,16 @@
 # Dossiers du projet
 
-| Dossier                      | Rôle                                | Modifiable directement              |
-| ---------------------------- | ----------------------------------- | ----------------------------------- |
-| [`src/`](src.md)             | Sources du site                     | Oui                                 |
-| [`public/`](public.md)       | Fichiers copiés sans transformation | Oui                                 |
-| [`engine/`](engine.md)       | Moteur PHP du générateur            | Seulement pour faire évoluer le SSG |
-| [`plugins/`](plugins.md)     | Extensions du pipeline              | Oui                                 |
-| [`templates/`](templates.md) | Catalogue de modèles installables   | Oui, selon le format documenté      |
-| [`tests/`](tests.md)         | Tests PHP et JavaScript             | Oui                                 |
-| [`tools/`](tools.md)         | Utilitaires de maintenance          | Avec prudence                       |
-| [`dist/`](dist.md)           | Site généré                         | Non                                 |
+| Dossier                                    | Rôle                                | Modifiable directement              |
+| ------------------------------------------ | ----------------------------------- | ----------------------------------- |
+| [`src/`](src.md)                           | Sources du site                     | Oui                                 |
+| [`public/`](public.md)                     | Fichiers copiés sans transformation | Oui                                 |
+| [`engine/`](engine.md)                     | Moteur PHP du générateur            | Seulement pour faire évoluer le SSG |
+| [`plugins/`](plugins.md)                   | Extensions du pipeline              | Oui                                 |
+| [`template-sources/`](template-sources.md) | Sources originales du catalogue     | Oui, avec prudence                  |
+| [`templates/`](templates.md)               | Catalogue de modèles installables   | Oui, selon le format documenté      |
+| [`tests/`](tests.md)                       | Tests PHP et JavaScript             | Oui                                 |
+| [`tools/`](tools.md)                       | Utilitaires de maintenance          | Avec prudence                       |
+| [`dist/`](dist.md)                         | Site généré                         | Non                                 |
 
 À la racine, les fichiers `install`, `build`, `clean`, `dev` et `ssg` sont les commandes publiques. Les fichiers `composer.json`, `package.json`, `phpunit.xml` et `eslint.config.js` configurent les outils de développement.
 
