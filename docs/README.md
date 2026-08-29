@@ -37,17 +37,18 @@ Chaque dossier important possède sa propre page dans [directories/](directories
 ## Outils de développement
 
 - [Vue d’ensemble](tooling/README.md)
-- [PHP et Composer](tooling/php-composer.md)
-- [Pest](tooling/pest.md)
-- [Node.js et npm](tooling/node-npm.md)
-- [Vitest](tooling/vitest.md)
-- [ESLint](tooling/eslint.md)
-- [Prettier](tooling/prettier.md)
+- [PHP et Composer](tooling/php-composer/php-composer.md)
+- [Pest](tooling/pest/pest.md)
+- [Node.js et npm](tooling/node-npm/node-npm.md)
+- [Vitest et jsdom](tooling/vitess/vitest.md)
+- [ESLint](tooling/eslint/eslint.md)
+- [Prettier](tooling/prettier/prettier.md)
 
 ## Référence
 
 - [API interne](reference/api.md)
 - [Structure complète](reference/project-tree.md)
+- [Fichiers à la racine](reference/root-files.md)
 - [Limites connues](reference/limitations.md)
 
 La documentation des modèles individuels se trouve dans `templates/<catégorie>/<nom>/README.md`. Lorsqu’un modèle est installé, une copie est placée dans `src/template-docs/`.

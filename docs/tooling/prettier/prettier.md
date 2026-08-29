@@ -2,6 +2,12 @@
 
 Prettier 3 normalise notamment Markdown, JSON, JavaScript, CSS et HTML.
 
+## Dans ce dossier
+
+- [Workflow pas à pas](Step_By_Step_Workflow.md)
+- [Table des possibilités](Table_Possibilite.md)
+- [Configuration de Prettier](Configuration_File_Prettier.md)
+
 Vérifier sans modifier :
 
 ```bash

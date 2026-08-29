@@ -23,4 +23,4 @@ npm test
 
 Ajoutez un test PHP pour toute modification du moteur et un test JS pour tout comportement JavaScript non trivial. Les tests doivent utiliser des dossiers temporaires et ne pas modifier les sources réelles.
 
-Voir [Pest](../tooling/pest.md) et [Vitest](../tooling/vitest.md).
+Voir [Pest](../tooling/pest/pest.md) et [Vitest](../tooling/vitess/vitest.md).

@@ -2,6 +2,12 @@
 
 Pest 4.7 exécute la suite PHP située dans `tests/php/`.
 
+## Dans ce dossier
+
+- [Workflow pas à pas](Step_By_Step_Workflow.md)
+- [Possibilités et matchers](Table_Possibilite.md)
+- [Configuration PHPUnit](Configuration_PHPUnit.md)
+
 ```bash
 ./vendor/bin/pest
 ```

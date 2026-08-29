@@ -1,5 +1,11 @@
 # PHP et Composer
 
+## Dans ce dossier
+
+- [Workflow pas à pas](Step_By_Step_Workflow.md)
+- [Table des commandes](Table_Commandes.md)
+- [Configuration de Composer](Configuration_Composer.md)
+
 ## PHP
 
 PHP 8.3 ou plus récent exécute le moteur, les commandes `build`, `clean`, `ssg` et le serveur local. Les extensions DOM, XMLWriter et mbstring sont nécessaires à l’environnement de test; une capacité d’extraction ZIP est nécessaire à Composer.
