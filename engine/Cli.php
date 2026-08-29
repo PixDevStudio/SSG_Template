@@ -7,10 +7,12 @@ namespace MonSsg;
 final readonly class Cli
 {
     private TemplateCatalog $templates;
+    private TerminalPreview $previews;
 
     public function __construct(private Paths $paths, private FileSystem $files)
     {
         $this->templates = new TemplateCatalog($paths, $files);
+        $this->previews = new TerminalPreview($paths);
     }
 
     /** @param list<string> $arguments */
@@ -73,6 +75,7 @@ HTML;
                     echo "\n" . strtoupper((string) $currentCategory) . "\n";
                 }
                 $status = $template['installed'] ? 'installé' : 'disponible';
+                $this->previews->printThumbnail($template);
                 echo "  [{$status}] {$template['id']} — {$template['name']}\n";
             }
             echo "\nUtilisez ./ssg templates info <catégorie/nom> pour les détails.\n";
@@ -85,6 +88,7 @@ HTML;
             $status = $template['installed'] ? 'installé' : 'disponible';
             echo "{$template['name']} ({$template['id']})\n\n{$template['description']}\n\nÉtat : {$status}\n";
             $this->printTemplateUsage($template);
+            $this->previews->printDetails($template);
             echo "Documentation : templates/{$id}/README.md\n";
             return 0;
         }
