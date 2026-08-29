@@ -123,9 +123,15 @@ final readonly class TemplateCatalog
             throw new RuntimeException("Manifeste JSON invalide : {$path}", 0, $exception);
         }
 
-        foreach (['id', 'category', 'name', 'description', 'include', 'files'] as $key) {
-            if (!isset($manifest[$key]) || ($key === 'files' && !is_array($manifest[$key]))) {
+        foreach (['id', 'category', 'name', 'description', 'include', 'usage', 'files'] as $key) {
+            if (!isset($manifest[$key]) || (in_array($key, ['usage', 'files'], true) && !is_array($manifest[$key]))) {
                 throw new RuntimeException("Clé {$key} absente du manifeste : {$path}");
+            }
+        }
+
+        foreach (['target', 'position', 'stylesheet', 'data'] as $key) {
+            if (!isset($manifest['usage'][$key]) || !is_string($manifest['usage'][$key])) {
+                throw new RuntimeException("Instruction usage.{$key} absente du manifeste : {$path}");
             }
         }
 

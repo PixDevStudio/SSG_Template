@@ -83,13 +83,17 @@ HTML;
         if ($action === 'info') {
             $template = $this->templates->get($id);
             $status = $template['installed'] ? 'installé' : 'disponible';
-            echo "{$template['name']} ({$template['id']})\n\n{$template['description']}\n\nÉtat : {$status}\nInclusion : {$template['include']}\nDocumentation : templates/{$id}/README.md\n";
+            echo "{$template['name']} ({$template['id']})\n\n{$template['description']}\n\nÉtat : {$status}\n";
+            $this->printTemplateUsage($template);
+            echo "Documentation : templates/{$id}/README.md\n";
             return 0;
         }
         if (in_array($action, ['install', 'installer'], true)) {
             $this->templates->install($id);
             $template = $this->templates->get($id);
-            echo "✓ Template installé\n\n➜ {$template['include']}\n➜ src/template-docs/{$id}/README.md\n";
+            echo "✓ Template installé\n\n";
+            $this->printTemplateUsage($template);
+            echo "Documentation installée : src/template-docs/{$id}/README.md\n";
             return 0;
         }
         if (in_array($action, ['remove', 'uninstall', 'desinstaller'], true)) {
@@ -99,6 +103,20 @@ HTML;
         }
 
         return $this->usage();
+    }
+
+    /** @param array<string, mixed> $template */
+    private function printTemplateUsage(array $template): void
+    {
+        $usage = $template['usage'] ?? [];
+        echo "Inclusion : {$template['include']}\n";
+        if ($usage !== []) {
+            echo "Fichier cible : {$usage['target']}\n";
+            echo "Emplacement : {$usage['position']}\n";
+            echo "CSS à ajouter dans <head> : {$usage['stylesheet']}\n";
+            echo "Variables à modifier : {$usage['data']}\n";
+        }
+        echo "\n";
     }
 
     private function usage(): int

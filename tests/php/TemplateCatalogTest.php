@@ -18,6 +18,12 @@ beforeEach(function (): void {
         'name' => 'Exemple',
         'description' => 'Carte de test.',
         'include' => '{{ component:example }}',
+        'usage' => [
+            'target' => 'src/pages/index.html',
+            'position' => 'Dans main.',
+            'stylesheet' => '<link rel="stylesheet" href="/assets/css/example.css">',
+            'data' => 'src/data/example.json',
+        ],
         'files' => [
             'files/example.html' => 'src/components/example.html',
             'README.md' => 'src/template-docs/card/example/README.md',
@@ -56,4 +62,25 @@ it('refuse de supprimer un fichier installé puis modifié', function (): void {
     expect(fn () => $this->catalog->remove('card/example'))
         ->toThrow(RuntimeException::class, 'fichiers modifiés')
         ->and($this->root . '/src/components/example.html')->toBeFile();
+});
+
+it('livre les vingt-trois templates dans les six catégories', function (): void {
+    $projectRoot = dirname(__DIR__, 2);
+    $templates = (new TemplateCatalog(new Paths($projectRoot), new FileSystem()))->all();
+    $counts = array_count_values(array_column($templates, 'category'));
+
+    expect($templates)->toHaveCount(23)
+        ->and($counts)->toBe([
+            'card' => 4,
+            'footer' => 3,
+            'form' => 5,
+            'header' => 3,
+            'sidebar' => 3,
+            'table' => 5,
+        ]);
+
+    foreach ($templates as $template) {
+        expect($template['usage'])->toHaveKeys(['target', 'position', 'stylesheet', 'data'])
+            ->and($projectRoot . '/templates/' . $template['id'] . '/README.md')->toBeFile();
+    }
 });
