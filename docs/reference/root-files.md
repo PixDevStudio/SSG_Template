@@ -135,6 +135,7 @@ Le script exécute ensuite Composer et npm, contrôle Pest, Vitest, ESLint et Pr
 Ce manifeste déclare :
 
 - PHP `>=8.3` comme runtime;
+- PHP `8.3.0` comme plateforme de résolution Composer afin que le lockfile reste compatible avec le minimum supporté;
 - Pest `^4.7` comme dépendance de développement;
 - le namespace PSR-4 `MonSsg\` associé à `engine/`;
 - le script `composer test`, qui appelle Pest;
