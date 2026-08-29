@@ -12,6 +12,8 @@ Le catalogue fournit 23 modèles répartis en six catégories : 4 cartes, 3 pied
 
 Lisez toujours `info` avant l’installation. Il indique l’inclusion, le fichier où la placer, le lien CSS et le fichier JSON à personnaliser.
 
+`./ssg templates` régénère aussi `templates/CATALOGUE.md`. Ce guide contient les trois captures de chaque modèle, son inclusion, sa feuille de style, ses données et les commandes pour l’installer ou le désinstaller. La commande propose de l’afficher avec `mdcat` ou `glow` dans le terminal actuel, ou de l’ouvrir dans un onglet VS Code.
+
 ## Utiliser
 
 Après installation, suivez le README copié dans `src/template-docs/`. Un modèle installe généralement :

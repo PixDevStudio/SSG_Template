@@ -22,7 +22,7 @@ Puis lancez l’installation :
 
 Le script vérifie Bash, PHP 8.3+, Node.js, npm et Composer, installe Pest, Vitest, ESLint et Prettier, puis prépare les dossiers.
 
-Lancez `./install` dans **Bash ou WSL, jamais dans PowerShell**. Le script propose aussi l’installation facultative de `chafa`, utilisé pour afficher les captures dans `./ssg templates` et `./ssg templates info <id>`. Utilisez `./install --with-previews` pour l’installer directement.
+Lancez `./install` dans **Bash ou WSL, jamais dans PowerShell**.
 
 Pest nécessite les extensions PHP DOM/XML et mbstring. Sous Ubuntu ou Debian, `./install` demande confirmation avant de proposer leur installation avec `php-xml` et `php-mbstring`.
 
@@ -60,6 +60,8 @@ Le catalogue contient 23 modèles : 3 headers, 3 footers, 3 sidebars, 4 ensemble
 ./ssg templates info card/product-card
 ./ssg templates install card/product-card
 ```
+
+La commande génère `templates/CATALOGUE.md`, qui réunit les captures desktop, tablette et mobile ainsi que les commandes d’installation, d’intégration et de désinstallation. Elle propose ensuite de l’afficher avec `mdcat` ou `glow` dans le terminal actuel, ou de l’ouvrir dans un onglet VS Code.
 
 Après l’installation, suivez le README indiqué par la commande pour intégrer le partial ou le composant au layout ou à une page. La désinstallation ne supprime jamais un fichier modifié depuis son installation.
 

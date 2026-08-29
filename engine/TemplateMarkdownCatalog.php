@@ -37,7 +37,7 @@ final readonly class TemplateMarkdownCatalog
             $markdown .= $this->templateSection($template);
         }
 
-        $this->files->write($this->paths->root . '/' . self::RELATIVE_PATH, $markdown);
+        $this->files->write($this->paths->root . '/' . self::RELATIVE_PATH, rtrim($markdown) . "\n");
 
         return self::RELATIVE_PATH;
     }
@@ -52,7 +52,7 @@ final readonly class TemplateMarkdownCatalog
         $usage = $template['usage'];
         $target = (string) $usage['target'];
         $position = (string) $usage['position'];
-        $stylesheet = (string) $usage['stylesheet'];
+        $stylesheet = preg_replace('~\s*/?>$~', ' />', (string) $usage['stylesheet']) ?? (string) $usage['stylesheet'];
         $data = (string) $usage['data'];
 
         return <<<MARKDOWN
@@ -62,9 +62,17 @@ final readonly class TemplateMarkdownCatalog
 
 {$description}
 
-| Desktop | Tablette | Mobile |
-| --- | --- | --- |
-| [![{$name} sur desktop]({$id}/previews/desktop.png)]({$id}/previews/desktop.png) | [![{$name} sur tablette]({$id}/previews/tablette.png)]({$id}/previews/tablette.png) | [![{$name} sur mobile]({$id}/previews/mobile.png)]({$id}/previews/mobile.png) |
+**Desktop**
+
+![{$name} sur desktop]({$id}/previews/desktop.png)
+
+**Tablette**
+
+![{$name} sur tablette]({$id}/previews/tablette.png)
+
+**Mobile**
+
+![{$name} sur mobile]({$id}/previews/mobile.png)
 
 **Installer**
 
@@ -92,6 +100,7 @@ final readonly class TemplateMarkdownCatalog
 Documentation détaillée : [`{$id}/README.md`]({$id}/README.md)
 
 ---
+
 
 MARKDOWN;
     }

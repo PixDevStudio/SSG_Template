@@ -28,7 +28,6 @@ check_only=false
 for argument in "$@"; do
 	case "$argument" in
 		--check) check_only=true ;;
-		--with-previews|--without-previews) ;;
 		--help|-h)
 			printf 'Usage : ./upgrade [--check]\n\n'
 			printf 'À exécuter dans Bash ou WSL, jamais dans PowerShell.\n'

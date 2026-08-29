@@ -9,7 +9,6 @@ require_command() { command -v "$1" >/dev/null 2>&1 || fail "$2 n'est pas instal
 
 for argument in "$@"; do
 	case "$argument" in
-		--with-previews|--without-previews) ;;
 		--help|-h)
 			printf 'Usage : ./install\n\n'
 			printf 'À exécuter dans Bash ou WSL, jamais dans PowerShell.\n'

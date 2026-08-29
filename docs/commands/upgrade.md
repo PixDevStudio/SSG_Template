@@ -44,15 +44,6 @@ chmod +x upgrade
 
 Les mises à jour suivantes se feront simplement avec `./upgrade`.
 
-## Aperçus de templates
-
-Les options de l’installateur peuvent être transmises pendant l’upgrade :
-
-```bash
-./upgrade --with-previews
-./upgrade --without-previews
-```
-
 ## Modifications locales
 
 L’upgrade n’écrase jamais une modification non enregistrée. Avant de le relancer, choisissez explicitement une méthode :

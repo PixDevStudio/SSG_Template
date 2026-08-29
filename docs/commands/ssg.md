@@ -17,7 +17,11 @@ Crée `src/pages/blog/article.html` avec un front matter et un titre humanisé. 
 
 Affiche les 23 modèles triés par catégorie et nom.
 
-Dans un terminal compatible, une miniature desktop accompagne chaque modèle. `chafa`, proposé par `./install`, améliore ce rendu; le SSG possède aussi un rendu ANSI intégré.
+La commande régénère aussi `templates/CATALOGUE.md`. Ce fichier rassemble les captures desktop, tablette et mobile, les instructions d’intégration et les commandes d’installation et de désinstallation. Dans un terminal interactif, choisissez ensuite :
+
+- `1` pour l’afficher dans le terminal actuel avec `mdcat`, ou avec `glow` si `mdcat` est absent;
+- `2` pour l’ouvrir dans un onglet VS Code, puis `Ctrl+Shift+V` pour afficher son aperçu Markdown;
+- `Entrée` pour ne pas l’ouvrir.
 
 ## Obtenir les instructions
 
@@ -27,7 +31,7 @@ Dans un terminal compatible, une miniature desktop accompagne chaque modèle. `c
 
 Affiche la description, le statut, l’expression d’inclusion, le fichier cible, la position recommandée, le CSS, les données et le README.
 
-La commande affiche également les aperçus desktop, tablette et mobile. Exécutez-la dans Bash ou WSL, pas dans PowerShell. Lorsque la sortie est redirigée ou que les couleurs sont désactivées, les chemins des PNG restent affichés sans image ANSI.
+Les captures restent disponibles dans `templates/CATALOGUE.md`; aucune image n’est envoyée directement au terminal.
 
 ## Installer
 

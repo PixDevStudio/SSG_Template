@@ -16,14 +16,6 @@ Depuis la racine du projet :
 
 Le script vérifie l’environnement, demande confirmation avant toute installation système, installe les dépendances et prépare les dossiers.
 
-Il propose également `chafa` pour améliorer les images affichées par le catalogue :
-
-```bash
-./install --with-previews
-```
-
-Cette application reste facultative, car un rendu ANSI PHP est inclus dans le SSG.
-
 ## Mise à jour
 
 Dans une copie Git sans modification non enregistrée :
@@ -67,6 +59,8 @@ Le résultat final est dans `dist/`. Les sources de `src/` et `public/` ne sont 
 ./ssg templates info header/header-basic
 ./ssg templates installer header/header-basic
 ```
+
+La liste génère `templates/CATALOGUE.md` avec les captures et toutes les commandes utiles. À la fin, choisissez de le consulter dans le terminal avec `mdcat` ou `glow`, de l’ouvrir dans un onglet VS Code, ou de revenir directement à l’invite.
 
 La commande `info` indique le fichier cible, la position exacte, le CSS et le fichier de données à modifier.
 
