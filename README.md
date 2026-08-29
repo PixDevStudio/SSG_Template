@@ -6,6 +6,16 @@ La documentation complète se trouve dans [`docs/README.md`](docs/README.md) : d
 
 ## Installation
 
+Clonez d’abord le dépôt officiel avec Git ou GitHub CLI :
+
+```bash
+git clone https://github.com/PixDevStudio/SSG_Template.git
+# ou : gh repo clone PixDevStudio/SSG_Template
+cd SSG_Template
+```
+
+Puis lancez l’installation :
+
 ```bash
 ./install
 ```
@@ -18,12 +28,16 @@ Pest nécessite les extensions PHP DOM/XML et mbstring. Sous Ubuntu ou Debian, `
 
 Composer nécessite également un extracteur d’archives. Si PHP ZIP, `unzip` et `7z` sont absents, `./install` demande confirmation avant d’installer `unzip`.
 
+Les mises à jour suivantes viennent directement du même dépôt officiel avec `./upgrade`; aucun `git pull` manuel n’est nécessaire.
+
 ## Commandes
 
 ```bash
 ./build                 # Génère dist/
 ./clean                 # Vide dist/
 ./dev                   # Build, serveur local et surveillance
+./upgrade               # Met à jour le SSG et ses dépendances
+./upgrade --check       # Vérifie si une mise à jour existe
 ./ssg new page contact  # Crée src/pages/contact.html
 ./ssg templates         # Liste les templates par catégorie
 ./ssg templates info header/header-basic

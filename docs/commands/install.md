@@ -31,7 +31,9 @@ Sous WSL, un Composer Windows non utilisable depuis un chemin UNC est remplacé 
 
 ## Actions
 
-Le script demande confirmation avant d’installer des paquets système, puis exécute Composer et npm, crée les dossiers requis et rend les commandes exécutables.
+Le script demande confirmation avant d’installer des paquets système, puis exécute Composer et npm, lance les tests Vitest pour contrôler `esbuild`, crée les dossiers requis et rend les commandes exécutables.
+
+Le script npm d’`esbuild` est explicitement autorisé dans `package.json`. Cette autorisation évite l’avertissement `npm warn allow-scripts` et permet à Vite/Vitest de préparer correctement leur configuration.
 
 ## Après installation
 

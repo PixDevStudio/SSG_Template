@@ -31,6 +31,7 @@ Chaque dossier important possède sa propre page dans [directories/](directories
 
 - [Vue d’ensemble](commands/README.md)
 - [`./install`](commands/install.md)
+- [`./upgrade`](commands/upgrade.md)
 - [`./build` et `./clean`](commands/build-clean.md)
 - [`./dev`](commands/dev.md)
 - [`./ssg`](commands/ssg.md)

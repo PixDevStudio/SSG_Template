@@ -6,7 +6,7 @@
 - `src/` et `public/` ne sont jamais modifiés pendant un build.
 - `dist/` contient uniquement le résultat généré et peut être entièrement reconstruit.
 - Le CSS reste natif, sans Sass ni framework frontend.
-- Les commandes publiques sont `./install`, `./dev`, `./build`, `./clean` et `./ssg new page <nom>`.
+- Les commandes publiques sont `./install`, `./upgrade`, `./dev`, `./build`, `./clean` et `./ssg new page <nom>`.
 - Le catalogue est accessible avec `./ssg templates` et gère `info`, `install` et `remove`.
 - Le moteur interne est isolé dans `engine/` afin de réserver le nom `ssg` à la CLI exécutable sous Linux.
 

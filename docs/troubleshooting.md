@@ -36,6 +36,10 @@ Le modèle contient des fichiers modifiés. Sauvegardez-les, comparez-les au paq
 
 Relancez `./install`, vérifiez `php --version` et les extensions DOM, XMLWriter et mbstring, puis `composer install`.
 
+## Upgrade refusé
+
+`./upgrade` exige une copie Git placée sur une branche et aucun changement non enregistré. Il configure lui-même le dépôt officiel sous le nom `ssg-upstream`. Faites un commit ou utilisez `git stash push -u`, puis relancez la commande. Si les historiques ont divergé, fusionnez ou rebasez explicitement avec Git avant de recommencer.
+
 ## Formatage en échec
 
 Lancez `npm run format`, examinez les modifications puis répétez `npm run format:check`.

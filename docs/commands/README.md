@@ -5,6 +5,7 @@ Toutes les commandes se lancent depuis la racine du SSG.
 | Commande                    | Fonction                                            |
 | --------------------------- | --------------------------------------------------- |
 | [`./install`](install.md)   | vérifie l’environnement et installe les dépendances |
+| [`./upgrade`](upgrade.md)   | récupère et applique une nouvelle version du SSG    |
 | [`./build`](build-clean.md) | reconstruit le site dans `dist/`                    |
 | [`./clean`](build-clean.md) | vide uniquement `dist/`                             |
 | [`./dev`](dev.md)           | build, serveur local et surveillance                |

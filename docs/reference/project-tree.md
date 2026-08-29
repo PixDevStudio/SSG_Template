@@ -25,6 +25,7 @@ SSG/
 ├── vendor/               dépendances Composer générées
 ├── node_modules/         dépendances npm générées
 ├── install               installation
+├── upgrade               mise à jour depuis Git
 ├── build                 génération
 ├── clean                 nettoyage
 ├── dev                   serveur et watcher

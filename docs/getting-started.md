@@ -24,6 +24,17 @@ Il propose également `chafa` pour améliorer les images affichées par le catal
 
 Cette application reste facultative, car un rendu ANSI PHP est inclus dans le SSG.
 
+## Mise à jour
+
+Dans une copie Git sans modification non enregistrée :
+
+```bash
+./upgrade --check
+./upgrade
+```
+
+La commande récupère une nouvelle version en avance directe puis relance `./install`. Elle refuse les modifications locales et historiques divergents afin de ne rien écraser.
+
 ## Première page
 
 ```bash

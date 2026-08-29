@@ -12,6 +12,7 @@ Cette page explique les fichiers placés directement à la racine du projet. Ils
 | `clean`             | vider uniquement `dist/`                        | Oui, avec tests          |
 | `dev`               | lancer le serveur et surveiller les sources     | Oui, avec prudence       |
 | `install`           | vérifier l’environnement et installer le projet | Oui, avec prudence       |
+| `upgrade`           | mettre à jour le SSG depuis Git                 | Oui, avec prudence       |
 | `ssg`               | exposer la CLI du générateur                    | Oui, avec tests          |
 | `composer.json`     | déclarer PHP, Pest et l’autoload                | Oui                      |
 | `composer.lock`     | verrouiller les versions PHP                    | Non, généré par Composer |
@@ -111,6 +112,15 @@ Le script exécute ensuite Composer et npm, contrôle Pest, Vitest, ESLint et Pr
 
 ```bash
 ./install
+```
+
+### `upgrade`
+
+`upgrade` vérifie la copie Git et les modifications locales, configure `ssg-upstream` vers le dépôt officiel, applique uniquement une avance directe depuis `main` puis exécute la nouvelle version de `install`. Il refuse toute situation pouvant demander une fusion ou écraser un travail non enregistré.
+
+```bash
+./upgrade
+./upgrade --check
 ```
 
 ## Dépendances PHP
