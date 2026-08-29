@@ -25,18 +25,15 @@ fi
 cd "$project_root"
 
 check_only=false
-install_arguments=()
 for argument in "$@"; do
 	case "$argument" in
 		--check) check_only=true ;;
-		--with-previews|--without-previews) install_arguments+=("$argument") ;;
+		--with-previews|--without-previews) ;;
 		--help|-h)
-			printf 'Usage : ./upgrade [--check] [--with-previews|--without-previews]\n\n'
+			printf 'Usage : ./upgrade [--check]\n\n'
 			printf 'À exécuter dans Bash ou WSL, jamais dans PowerShell.\n'
 			printf 'Dépôt officiel : https://github.com/PixDevStudio/SSG_Template.git\n'
 			printf '  --check             vérifie les mises à jour sans les appliquer\n'
-			printf '  --with-previews     transmet cette option au nouveau ./install\n'
-			printf '  --without-previews  transmet cette option au nouveau ./install\n'
 			exit 0
 			;;
 		*) fail "Option inconnue : ${argument}" ;;
@@ -90,6 +87,6 @@ ok 'Fichiers du SSG mis à jour'
 
 [[ -x ./install ]] || chmod +x ./install
 printf '\nApplication des dépendances et vérifications de la nouvelle version...\n\n'
-./install "${install_arguments[@]}"
+./install
 
 ok 'Upgrade terminé'

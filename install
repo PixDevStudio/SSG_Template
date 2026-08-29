@@ -7,61 +7,17 @@ ok() { printf '✓ %s\n' "$1"; }
 fail() { printf '✗ %s\n' "$1" >&2; exit 1; }
 require_command() { command -v "$1" >/dev/null 2>&1 || fail "$2 n'est pas installé."; ok "$2 détecté"; }
 
-preview_install='ask'
 for argument in "$@"; do
 	case "$argument" in
-		--with-previews) preview_install='yes' ;;
-		--without-previews) preview_install='no' ;;
+		--with-previews|--without-previews) ;;
 		--help|-h)
-			printf 'Usage : ./install [--with-previews|--without-previews]\n\n'
+			printf 'Usage : ./install\n\n'
 			printf 'À exécuter dans Bash ou WSL, jamais dans PowerShell.\n'
-			printf '  --with-previews     installe chafa pour les aperçus de templates\n'
-			printf '  --without-previews  continue sans installer chafa\n'
 			exit 0
 			;;
 		*) fail "Option inconnue : ${argument}" ;;
 	esac
 done
-
-install_terminal_previews() {
-	if command -v chafa >/dev/null 2>&1; then
-		ok 'Chafa détecté pour les aperçus de templates'
-		return
-	fi
-
-	local answer='n'
-	if [[ "$preview_install" == 'yes' ]]; then
-		answer='o'
-	elif [[ "$preview_install" == 'ask' && -t 0 ]]; then
-		printf '\nChafa affiche les captures des templates directement dans un terminal compatible.\n'
-		read -r -p 'Installer chafa pour améliorer les aperçus ? [O/n] ' answer
-	fi
-
-	if [[ "$answer" =~ ^[Nn]$ ]]; then
-		printf '  Chafa ignoré; le rendu ANSI PHP intégré restera disponible.\n'
-		return
-	fi
-
-	if ! command -v apt >/dev/null 2>&1; then
-		if [[ "$preview_install" == 'yes' ]]; then
-			fail "Chafa doit être installé avec le gestionnaire de paquets de votre système."
-		fi
-		printf '  Installation automatique indisponible; installez chafa avec votre gestionnaire de paquets.\n'
-		return
-	fi
-
-	printf '  Installation de chafa...\n'
-	if [[ $(id -u) -eq 0 ]]; then
-		apt update
-		apt install -y chafa
-	else
-		command -v sudo >/dev/null 2>&1 || fail "sudo est requis pour installer chafa avec apt."
-		sudo apt update
-		sudo apt install -y chafa
-	fi
-	command -v chafa >/dev/null 2>&1 || fail "Chafa reste indisponible après l'installation."
-	ok 'Chafa installé pour les aperçus de templates'
-}
 
 prepare_composer() {
 	local composer_path
@@ -168,7 +124,6 @@ require_command node 'Node.js'
 require_command npm 'npm'
 require_command composer 'Composer'
 prepare_composer
-install_terminal_previews
 
 printf '\nInstallation des dépendances PHP...\n\n'
 "${composer_command[@]}" install --no-interaction --prefer-dist
