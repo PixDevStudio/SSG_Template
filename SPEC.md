@@ -18,6 +18,8 @@ Le build charge les données de `src/data/`, transforme récursivement les pages
 
 Les paquets du dossier `templates/` déclarent leurs fichiers dans un manifeste JSON. Une installation écrit uniquement sous `src/` et inscrit les empreintes SHA-256 dans `.ssg/templates.json`. Une désinstallation est refusée si un fichier installé a été modifié, afin de ne jamais supprimer une personnalisation utilisateur.
 
+La distribution comprend les 23 templates sources de la bibliothèque, chacun accompagné de données modifiables et d’un README d’intégration installé avec le composant.
+
 ## Qualité
 
 Pest teste le moteur PHP. Vitest teste le JavaScript. ESLint analyse les scripts et Prettier vérifie leur formatage. Toute dépendance de développement est déclarée dans `composer.json` ou `package.json`.

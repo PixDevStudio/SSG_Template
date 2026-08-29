@@ -35,7 +35,7 @@ Le serveur de développement est disponible sur `http://localhost:8000`. Il refu
 
 ## Catalogue de templates
 
-Le catalogue livré contient six modèles de référence : header, footer, sidebar, carte, formulaire et tableau. Chaque modèle installe son HTML, son CSS natif, ses données JSON et sa documentation dans `src/template-docs/`.
+Le catalogue contient 23 modèles : 3 headers, 3 footers, 3 sidebars, 4 ensembles de cartes, 5 formulaires et 5 tableaux. Chaque modèle installe son HTML, son CSS natif, ses données JSON et sa documentation dans `src/template-docs/`.
 
 ```bash
 ./ssg templates
