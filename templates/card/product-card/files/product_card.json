@@ -1,0 +1,10 @@
+{
+  "name": "Lampe Atelier",
+  "category": "Éclairage",
+  "price": "189 $",
+  "badge": "Nouveau",
+  "action": "Voir le produit",
+  "url": "/produits/lampe-atelier.html",
+  "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80",
+  "image_alt": "Lampe de table en métal blanc sur une table en bois"
+}

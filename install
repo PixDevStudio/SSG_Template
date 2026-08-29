@@ -1,0 +1,132 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+ok() { printf '✓ %s\n' "$1"; }
+fail() { printf '✗ %s\n' "$1" >&2; exit 1; }
+require_command() { command -v "$1" >/dev/null 2>&1 || fail "$2 n'est pas installé."; ok "$2 détecté"; }
+
+prepare_composer() {
+	local composer_path
+	composer_path=$(command -v composer)
+	composer_command=(composer)
+
+	if [[ "$composer_path" != /mnt/* ]]; then
+		return
+	fi
+
+	mkdir -p .tools
+	if [[ ! -f .tools/composer.phar ]]; then
+		printf '  Composer Windows détecté dans WSL; préparation d’une copie locale...\n'
+		local expected actual
+		expected=$(php -r "copy('https://composer.github.io/installer.sig', 'php://stdout');")
+		php -r "copy('https://getcomposer.org/installer', '.tools/composer-setup.php');"
+		actual=$(php -r "echo hash_file('sha384', '.tools/composer-setup.php');")
+		if [[ -z "$expected" || "$expected" != "$actual" ]]; then
+			rm -f .tools/composer-setup.php
+			fail "La signature de l'installateur Composer est invalide."
+		fi
+		php .tools/composer-setup.php --quiet --install-dir=.tools --filename=composer.phar
+		rm -f .tools/composer-setup.php
+	fi
+	composer_command=(php "$PWD/.tools/composer.phar")
+}
+
+require_php() {
+	if command -v php >/dev/null 2>&1 && php -r 'exit(version_compare(PHP_VERSION, "8.3.0", ">=") ? 0 : 1);'; then
+		ok "PHP $(php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;')+ détecté"
+		return
+	fi
+
+	printf "✗ PHP 8.3+ n'est pas installé.\n\nPHP 8.3+ est nécessaire pour utiliser le SSG.\n\n" >&2
+	read -r -p 'Afficher les instructions d’installation ? [O/n] ' answer
+	if [[ ! "$answer" =~ ^[Nn]$ ]]; then
+		printf '\nUbuntu/Debian : sudo apt install php-cli\nAutres systèmes : https://www.php.net/manual/fr/install.php\n'
+	fi
+	exit 1
+}
+
+require_php_extensions() {
+	local missing=()
+	for extension in dom xmlwriter mbstring; do
+		php -r "exit(extension_loaded('${extension}') ? 0 : 1);" || missing+=("$extension")
+	done
+
+	if [[ ${#missing[@]} -eq 0 ]]; then
+		ok 'Extensions PHP requises détectées'
+		return
+	fi
+
+	printf '✗ Extensions PHP manquantes : %s\n\n' "${missing[*]}" >&2
+	read -r -p 'Installer php-xml et php-mbstring maintenant ? [O/n] ' answer
+	if [[ "$answer" =~ ^[Nn]$ ]]; then
+		printf '\nInstallation annulée. Commande recommandée :\n\nsudo apt install php-xml php-mbstring\n'
+		exit 1
+	fi
+
+	if ! command -v apt >/dev/null 2>&1; then
+		fail 'Installez les extensions DOM, XMLWriter et mbstring avec le gestionnaire de paquets de votre système.'
+	fi
+
+	sudo apt update
+	sudo apt install -y php-xml php-mbstring
+
+	for extension in dom xmlwriter mbstring; do
+		php -r "exit(extension_loaded('${extension}') ? 0 : 1);" || fail "L'extension PHP ${extension} reste indisponible."
+	done
+	ok 'Extensions PHP requises installées'
+}
+
+require_archive_extractor() {
+	if php -r 'exit(extension_loaded("zip") ? 0 : 1);' || command -v unzip >/dev/null 2>&1 || command -v 7z >/dev/null 2>&1; then
+		ok 'Extracteur ZIP détecté'
+		return
+	fi
+
+	printf '✗ Aucun extracteur ZIP détecté. Composer nécessite PHP ZIP, unzip ou 7z.\n\n' >&2
+	read -r -p 'Installer unzip maintenant ? [O/n] ' answer
+	if [[ "$answer" =~ ^[Nn]$ ]]; then
+		printf '\nInstallation annulée. Commande recommandée :\n\nsudo apt install unzip\n'
+		exit 1
+	fi
+
+	if ! command -v apt >/dev/null 2>&1; then
+		fail "Installez unzip, 7z ou l'extension PHP ZIP avec le gestionnaire de paquets de votre système."
+	fi
+
+	sudo apt update
+	sudo apt install -y unzip
+	command -v unzip >/dev/null 2>&1 || fail "unzip reste indisponible après l'installation."
+	ok 'Extracteur ZIP installé'
+}
+
+printf 'Vérification de l’environnement...\n\n'
+[[ -n "${BASH_VERSION:-}" ]] || fail "Bash n'est pas disponible."
+ok 'Bash détecté'
+require_php
+require_php_extensions
+require_archive_extractor
+require_command node 'Node.js'
+require_command npm 'npm'
+require_command composer 'Composer'
+prepare_composer
+
+printf '\nInstallation des dépendances PHP...\n\n'
+"${composer_command[@]}" install --no-interaction --prefer-dist
+[[ -x vendor/bin/pest ]] || fail "Pest n'a pas été installé correctement."
+ok 'Dépendances Composer installées'
+ok 'Pest installé'
+
+printf '\nInstallation des dépendances JavaScript...\n\n'
+npm install
+[[ -x node_modules/.bin/vitest && -x node_modules/.bin/eslint && -x node_modules/.bin/prettier ]] || fail "Les outils JavaScript n'ont pas été installés correctement."
+ok 'Dépendances npm installées'
+ok 'Vitest, Prettier et ESLint installés'
+
+printf '\nPréparation du projet...\n\n'
+mkdir -p src/{pages,layouts,partials,components,styles,scripts,data} public/{images,icons,fonts,media} plugins tests/{php,js} dist
+chmod +x install dev build clean ssg
+ok 'Dossiers vérifiés'
+ok 'Installation terminée'
+printf '\nLe projet est prêt.\n\nLancez ./dev pour démarrer le serveur.\n'

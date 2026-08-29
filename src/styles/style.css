@@ -1,0 +1,26 @@
+:root {
+  color: #1b2430;
+  background: #f4f7f5;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+body {
+  margin: 0;
+}
+
+.site-header,
+.site-main,
+.site-footer {
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+}
+
+.site-header,
+.site-footer {
+  padding-block: 1.25rem;
+}
+
+.site-main {
+  min-height: 70vh;
+  padding-block: 4rem;
+}

@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")"
+port=8000
+server_pid=''
+
+cleanup() {
+    printf '\nArrêt du serveur...\n'
+    if [[ -n "$server_pid" ]]; then
+        kill "$server_pid" 2>/dev/null || true
+        wait "$server_pid" 2>/dev/null || true
+    fi
+}
+
+if php -r '$socket = @fsockopen("127.0.0.1", (int) $argv[1], $errorCode, $errorMessage, 0.2); if ($socket) { fclose($socket); exit(0); } exit(1);' "$port"; then
+    printf '⚠ Le port %s est déjà utilisé.\n\nLe serveur est peut-être déjà actif.\n' "$port"
+    exit 1
+fi
+
+./build >/dev/null
+php -S "127.0.0.1:${port}" -t dist >/dev/null 2>&1 &
+server_pid=$!
+trap cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
+
+fingerprint() {
+    find src public plugins -type f -printf '%T@ %p\n' 2>/dev/null | sort | sha256sum | cut -d' ' -f1
+}
+
+previous=$(fingerprint)
+printf '✓ Build terminé\n✓ Surveillance des fichiers active\n✓ Serveur démarré\n\n➜ http://localhost:%s\n\nCtrl+C pour arrêter\n' "$port"
+
+while true; do
+    read -r -t 1 _ || true
+    current=$(fingerprint)
+    if [[ "$current" != "$previous" ]]; then
+        changed=$(find src public plugins -type f -printf '%T@ %p\n' 2>/dev/null | sort -nr | head -n 1 | cut -d' ' -f2-)
+        printf '\nModification détectée : %s\n\n' "$changed"
+        if ./build >/dev/null; then
+            printf '✓ Build terminé\n✓ Site mis à jour\n'
+        else
+            printf '✗ Échec du build\n' >&2
+        fi
+        previous=$(fingerprint)
+    fi
+done

@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+require __DIR__ . '/engine/bootstrap.php';
+
+use MonSsg\FileSystem;
+
+try {
+    echo "Nettoyage...\n\n";
+    (new FileSystem())->clearDirectory(__DIR__ . '/dist');
+    echo "✓ dist/ nettoyé\n";
+} catch (Throwable $exception) {
+    fwrite(STDERR, "✗ Nettoyage interrompu\n\n{$exception->getMessage()}\n");
+    exit(1);
+}

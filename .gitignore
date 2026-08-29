@@ -1,0 +1,7 @@
+/dist/*
+!/dist/.gitkeep
+/node_modules/
+/vendor/
+/.tools/
+/.ssg/
+.phpunit.cache/

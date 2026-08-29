@@ -1,0 +1,99 @@
+.header-basic {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #dce5e8;
+  background: rgb(255 255 255 / 94%);
+  backdrop-filter: blur(14px);
+}
+
+.header-basic__inner {
+  width: min(100% - 2rem, 75rem);
+  min-height: 4.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-inline: auto;
+}
+
+.header-basic a {
+  color: #33454d;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.header-basic__brand {
+  color: #152229 !important;
+  font-size: 1.2rem;
+  font-weight: 800 !important;
+}
+
+.header-basic__desktop {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+.header-basic__cta {
+  min-height: 2.7rem;
+  display: inline-flex;
+  align-items: center;
+  padding-inline: 1.1rem;
+  border-radius: 0.25rem;
+  color: #fff !important;
+  background: #087f68;
+}
+
+.header-basic__menu {
+  display: none;
+}
+
+.header-basic__skip {
+  position: fixed;
+  top: 0.75rem;
+  left: 1rem;
+  z-index: 200;
+  padding: 0.7rem 1rem;
+  color: #fff;
+  background: #066653;
+  transform: translateY(-150%);
+}
+
+.header-basic__skip:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 40rem) {
+  .header-basic__desktop {
+    display: none;
+  }
+
+  .header-basic__menu {
+    position: relative;
+    display: block;
+  }
+
+  .header-basic__menu summary {
+    padding: 0.7rem 0.9rem;
+    border: 1px solid #dce5e8;
+    cursor: pointer;
+  }
+
+  .header-basic__mobile {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    width: min(19rem, calc(100vw - 2rem));
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    border: 1px solid #dce5e8;
+    background: #fff;
+    box-shadow: 0 1rem 2rem rgb(21 34 41 / 10%);
+  }
+
+  .header-basic__mobile a {
+    padding: 0.75rem;
+  }
+}

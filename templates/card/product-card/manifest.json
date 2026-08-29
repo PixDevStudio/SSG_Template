@@ -1,0 +1,13 @@
+{
+  "id": "card/product-card",
+  "category": "card",
+  "name": "Product Card",
+  "description": "Carte produit responsive configurable par données JSON.",
+  "include": "{{ component:product-card }}",
+  "files": {
+    "files/product-card.html": "src/components/product-card.html",
+    "files/product-card.css": "src/styles/templates/product-card.css",
+    "files/product_card.json": "src/data/product_card.json",
+    "README.md": "src/template-docs/card/product-card/README.md"
+  }
+}

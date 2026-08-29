@@ -1,0 +1,16 @@
+<article class="product-card">
+  <a class="product-card__image" href="{{ product_card.url }}">
+    <img src="{{ product_card.image }}" alt="{{ product_card.image_alt }}" />
+    <span>{{ product_card.badge }}</span>
+  </a>
+  <div class="product-card__body">
+    <div>
+      <p>{{ product_card.category }}</p>
+      <h2><a href="{{ product_card.url }}">{{ product_card.name }}</a></h2>
+    </div>
+    <strong>{{ product_card.price }}</strong>
+  </div>
+  <a class="product-card__action" href="{{ product_card.url }}"
+    >{{ product_card.action }}</a
+  >
+</article>

@@ -1,0 +1,43 @@
+.status-table {
+  width: min(100%, 64rem);
+  color: #1c2925;
+}
+
+.status-table h2 {
+  margin-block: 0 1rem;
+}
+
+.status-table__scroll {
+  overflow-x: auto;
+  border: 1px solid #d8e0dc;
+  border-radius: 0.4rem;
+}
+
+.status-table table {
+  width: 100%;
+  min-width: 40rem;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.status-table th,
+.status-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #e6ebe8;
+  text-align: left;
+}
+
+.status-table thead {
+  color: #50615a;
+  background: #f5f8f6;
+}
+
+.status-table__badge {
+  display: inline-block;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  color: #075b48;
+  background: #dff4ed;
+  font-size: 0.8rem;
+  font-weight: 800;
+}

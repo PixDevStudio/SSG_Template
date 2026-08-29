@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+require __DIR__ . '/engine/bootstrap.php';
+
+use MonSsg\Cli;
+use MonSsg\FileSystem;
+use MonSsg\Paths;
+
+try {
+    exit((new Cli(new Paths(__DIR__), new FileSystem()))->run(array_slice($argv, 1)));
+} catch (Throwable $exception) {
+    fwrite(STDERR, "✗ Commande interrompue\n\n{$exception->getMessage()}\n");
+    exit(1);
+}

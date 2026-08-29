@@ -1,0 +1,13 @@
+{
+  "id": "table/status-table",
+  "category": "table",
+  "name": "Status Table",
+  "description": "Tableau compact et responsive pour présenter le statut d’un élément.",
+  "include": "{{ component:status-table }}",
+  "files": {
+    "files/status-table.html": "src/components/status-table.html",
+    "files/status-table.css": "src/styles/templates/status-table.css",
+    "files/status_table.json": "src/data/status_table.json",
+    "README.md": "src/template-docs/table/status-table/README.md"
+  }
+}

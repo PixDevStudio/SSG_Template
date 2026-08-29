@@ -1,0 +1,10 @@
+{
+  "eyebrow": "Contact",
+  "title": "Parlons de votre projet",
+  "description": "Décrivez brièvement votre besoin. Nous vous répondrons rapidement.",
+  "action": "/api/contact",
+  "name_label": "Nom",
+  "email_label": "Courriel",
+  "message_label": "Message",
+  "submit_label": "Envoyer la demande"
+}

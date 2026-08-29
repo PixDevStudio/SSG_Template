@@ -1,0 +1,25 @@
+<section class="status-table" aria-labelledby="status-table-title">
+  <h2 id="status-table-title">{{ status_table.title }}</h2>
+  <div class="status-table__scroll" tabindex="0">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">{{ status_table.item_heading }}</th>
+          <th scope="col">{{ status_table.owner_heading }}</th>
+          <th scope="col">{{ status_table.status_heading }}</th>
+          <th scope="col">{{ status_table.date_heading }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{ status_table.item }}</th>
+          <td>{{ status_table.owner }}</td>
+          <td>
+            <span class="status-table__badge">{{ status_table.status }}</span>
+          </td>
+          <td>{{ status_table.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

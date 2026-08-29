@@ -1,0 +1,13 @@
+{
+  "id": "sidebar/sidebar-basic",
+  "category": "sidebar",
+  "name": "Sidebar Basic",
+  "description": "Navigation latérale compacte configurable par données JSON.",
+  "include": "{{ partial:sidebar-basic }}",
+  "files": {
+    "files/sidebar-basic.html": "src/partials/sidebar-basic.html",
+    "files/sidebar-basic.css": "src/styles/templates/sidebar-basic.css",
+    "files/sidebar_basic.json": "src/data/sidebar_basic.json",
+    "README.md": "src/template-docs/sidebar/sidebar-basic/README.md"
+  }
+}

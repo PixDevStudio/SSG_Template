@@ -1,0 +1,13 @@
+{
+  "id": "footer/footer-minimal",
+  "category": "footer",
+  "name": "Footer Minimal",
+  "description": "Pied de page compact avec marque, mentions légales et liens essentiels.",
+  "include": "{{ partial:footer-minimal }}",
+  "files": {
+    "files/footer-minimal.html": "src/partials/footer-minimal.html",
+    "files/footer-minimal.css": "src/styles/templates/footer-minimal.css",
+    "files/footer_minimal.json": "src/data/footer_minimal.json",
+    "README.md": "src/template-docs/footer/footer-minimal/README.md"
+  }
+}

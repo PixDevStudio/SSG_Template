@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+require __DIR__ . '/engine/bootstrap.php';
+
+use MonSsg\Builder;
+
+try {
+    echo "Génération du site...\n\n";
+    $count = Builder::create(__DIR__)->build();
+    echo "✓ {$count} page(s) générée(s)\n✓ Fichiers statiques copiés\n✓ Build terminé\n\n➜ dist/\n";
+} catch (Throwable $exception) {
+    fwrite(STDERR, "✗ Build interrompu\n\n{$exception->getMessage()}\n");
+    exit(1);
+}

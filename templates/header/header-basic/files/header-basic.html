@@ -1,0 +1,39 @@
+<a class="header-basic__skip" href="#main-content">Aller au contenu</a>
+<header class="header-basic">
+  <div class="header-basic__inner">
+    <a class="header-basic__brand" href="{{ header_basic.home_url }}"
+      >{{ header_basic.brand }}</a
+    >
+    <nav class="header-basic__nav" aria-label="Navigation principale">
+      <div class="header-basic__desktop">
+        <a href="{{ header_basic.home_url }}">{{ header_basic.home_label }}</a>
+        <a href="{{ header_basic.services_url }}"
+          >{{ header_basic.services_label }}</a
+        >
+        <a href="{{ header_basic.about_url }}"
+          >{{ header_basic.about_label }}</a
+        >
+        <a class="header-basic__cta" href="{{ header_basic.contact_url }}"
+          >{{ header_basic.contact_label }}</a
+        >
+      </div>
+      <details class="header-basic__menu">
+        <summary>Menu</summary>
+        <div class="header-basic__mobile">
+          <a href="{{ header_basic.home_url }}"
+            >{{ header_basic.home_label }}</a
+          >
+          <a href="{{ header_basic.services_url }}"
+            >{{ header_basic.services_label }}</a
+          >
+          <a href="{{ header_basic.about_url }}"
+            >{{ header_basic.about_label }}</a
+          >
+          <a href="{{ header_basic.contact_url }}"
+            >{{ header_basic.contact_label }}</a
+          >
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>

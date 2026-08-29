@@ -1,0 +1,26 @@
+{
+  "name": "local/mon-ssg",
+  "description": "Generateur de site statique en PHP",
+  "type": "project",
+  "license": "proprietary",
+  "require": {
+    "php": ">=8.3"
+  },
+  "require-dev": {
+    "pestphp/pest": "^4.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "MonSsg\\": "engine/"
+    }
+  },
+  "scripts": {
+    "test": "pest"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    },
+    "sort-packages": true
+  }
+}

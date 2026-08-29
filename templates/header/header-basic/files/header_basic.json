@@ -1,0 +1,11 @@
+{
+  "brand": "Pixel & Craft",
+  "home_label": "Accueil",
+  "home_url": "/",
+  "services_label": "Services",
+  "services_url": "/services.html",
+  "about_label": "À propos",
+  "about_url": "/a-propos.html",
+  "contact_label": "Nous joindre",
+  "contact_url": "/contact.html"
+}

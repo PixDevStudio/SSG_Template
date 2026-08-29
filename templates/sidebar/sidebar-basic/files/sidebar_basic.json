@@ -1,0 +1,9 @@
+{
+  "title": "Espace de travail",
+  "overview_label": "Vue d’ensemble",
+  "overview_url": "/tableau-de-bord.html",
+  "projects_label": "Projets",
+  "projects_url": "/projets.html",
+  "settings_label": "Réglages",
+  "settings_url": "/reglages.html"
+}

@@ -1,0 +1,58 @@
+.contact-form {
+  width: min(100% - 2rem, 62rem);
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  margin-inline: auto;
+  padding-block: 3rem;
+}
+
+.contact-form__intro > p:first-child {
+  color: #087f68;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.contact-form h2 {
+  margin-block: 0.5rem 1rem;
+  color: #17212b;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+}
+
+.contact-form form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-form label {
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #bac7cc;
+  border-radius: 0.25rem;
+  font: inherit;
+}
+
+.contact-form button {
+  min-height: 2.75rem;
+  margin-top: 0.75rem;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #fff;
+  background: #087f68;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+@media (max-width: 42rem) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+}

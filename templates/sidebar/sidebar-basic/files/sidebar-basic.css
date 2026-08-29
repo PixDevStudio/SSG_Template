@@ -1,0 +1,44 @@
+.sidebar-basic {
+  width: min(100%, 17rem);
+  padding: 1rem;
+  border-right: 1px solid #dce5e8;
+  color: #26363d;
+  background: #f8faf9;
+}
+
+.sidebar-basic__title {
+  display: block;
+  margin-bottom: 1rem;
+  color: #152229;
+}
+
+.sidebar-basic__nav {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.sidebar-basic__nav a {
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sidebar-basic__nav a:hover,
+.sidebar-basic__nav a:focus-visible {
+  color: #066653;
+  background: #e8f5f1;
+}
+
+@media (max-width: 48rem) {
+  .sidebar-basic {
+    width: 100%;
+    border-right: 0;
+    border-bottom: 1px solid #dce5e8;
+  }
+
+  .sidebar-basic__nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

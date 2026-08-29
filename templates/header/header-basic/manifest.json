@@ -1,0 +1,13 @@
+{
+  "id": "header/header-basic",
+  "category": "header",
+  "name": "Header Basic",
+  "description": "Header responsive avec navigation de bureau, menu mobile natif et lien d’évitement.",
+  "include": "{{ partial:header-basic }}",
+  "files": {
+    "files/header-basic.html": "src/partials/header-basic.html",
+    "files/header-basic.css": "src/styles/templates/header-basic.css",
+    "files/header_basic.json": "src/data/header_basic.json",
+    "README.md": "src/template-docs/header/header-basic/README.md"
+  }
+}

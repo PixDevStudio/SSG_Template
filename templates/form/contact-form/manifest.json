@@ -1,0 +1,13 @@
+{
+  "id": "form/contact-form",
+  "category": "form",
+  "name": "Contact Form",
+  "description": "Formulaire de contact accessible avec textes et destination configurables.",
+  "include": "{{ component:contact-form }}",
+  "files": {
+    "files/contact-form.html": "src/components/contact-form.html",
+    "files/contact-form.css": "src/styles/templates/contact-form.css",
+    "files/contact_form.json": "src/data/contact_form.json",
+    "README.md": "src/template-docs/form/contact-form/README.md"
+  }
+}
