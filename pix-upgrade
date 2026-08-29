@@ -23,13 +23,14 @@ if [[ -z "${SSG_UPGRADE_RUNNING:-}" ]]; then
 fi
 
 cd "$project_root"
+previous_version=$(cat VERSION 2>/dev/null || printf 'inconnue')
 
 check_only=false
 for argument in "$@"; do
 	case "$argument" in
 		--check) check_only=true ;;
 		--help|-h)
-			printf 'Usage : ./upgrade [--check]\n\n'
+			printf 'Usage : ./pix-upgrade [--check]\n\n'
 			printf 'À exécuter dans Bash ou WSL, jamais dans PowerShell.\n'
 			printf 'Dépôt officiel : https://github.com/PixDevStudio/SSG_Template.git\n'
 			printf '  --check             vérifie les mises à jour sans les appliquer\n'
@@ -46,7 +47,7 @@ git rev-parse --is-inside-work-tree >/dev/null 2>&1 || fail "Ce dossier ne provi
 branch=$(git symbolic-ref --quiet --short HEAD) || fail "La copie Git est en mode detached HEAD. Placez-vous sur une branche avant l'upgrade."
 
 if [[ -n $(git status --porcelain) ]]; then
-	fail "Des modifications locales ne sont pas enregistrées. Faites un commit ou utilisez git stash, puis relancez ./upgrade."
+	fail "Des modifications locales ne sont pas enregistrées. Faites un commit ou utilisez git stash, puis relancez ./pix-upgrade."
 fi
 
 if git remote get-url "$official_remote" >/dev/null 2>&1; then
@@ -72,20 +73,21 @@ if (( behind == 0 )); then
 fi
 
 if (( ahead > 0 )); then
-	fail "La branche locale ${branch} et la version officielle ont divergé. Intégrez les changements avec Git, puis relancez ./upgrade."
+	fail "La branche locale ${branch} et la version officielle ont divergé. Intégrez les changements avec Git, puis relancez ./pix-upgrade."
 fi
 
 printf '%s mise(s) à jour disponible(s).\n' "$behind"
 if [[ "$check_only" == true ]]; then
-	printf 'Lancez ./upgrade pour les appliquer.\n'
+	printf 'Lancez ./pix-upgrade pour les appliquer.\n'
 	exit 0
 fi
 
 git merge --ff-only "$upstream"
-ok 'Fichiers du SSG mis à jour'
+current_version=$(cat VERSION 2>/dev/null || printf 'inconnue')
+ok "Fichiers du SSG mis à jour (${previous_version} → ${current_version})"
 
-[[ -x ./install ]] || chmod +x ./install
+[[ -x ./pix-install ]] || chmod +x ./pix-install
 printf '\nApplication des dépendances et vérifications de la nouvelle version...\n\n'
-./install
+./pix-install --yes
 
 ok 'Upgrade terminé'

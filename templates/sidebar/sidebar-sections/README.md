@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer sidebar/sidebar-sections
+./pix-ssg templates installer sidebar/sidebar-sections
 ```
 
 ## Intégration
@@ -61,7 +61,7 @@ Variables générées depuis le template original :
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller sidebar/sidebar-sections
+./pix-ssg templates desinstaller sidebar/sidebar-sections
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

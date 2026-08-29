@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer sidebar/sidebar-compact
+./pix-ssg templates installer sidebar/sidebar-compact
 ```
 
 ## Intégration
@@ -48,7 +48,7 @@ Variables générées depuis le template original :
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller sidebar/sidebar-compact
+./pix-ssg templates desinstaller sidebar/sidebar-compact
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

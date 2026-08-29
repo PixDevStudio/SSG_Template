@@ -1,4 +1,4 @@
-# Documentation de Mon SSG
+# Documentation de pix-ssg
 
 Ce dossier est le portail documentaire du générateur. Commencez par [Bien démarrer](getting-started.md), puis utilisez les sections selon votre besoin.
 
@@ -10,6 +10,7 @@ Ce dossier est le portail documentaire du générateur. Commencez par [Bien dém
 - [Données](guides/data.md) : fichiers JSON/PHP et contexte disponible.
 - [Plugins](guides/plugins.md) : extension du rendu avec `afterRender`.
 - [Catalogue de templates](guides/template-catalog.md) : consulter, installer, personnaliser et désinstaller les 23 modèles.
+- [Publier une version](guides/releases.md) : versionnement sémantique, tags et archives GitHub.
 - [Déploiement](guides/deployment.md) : publier le contenu de `dist/`.
 - [Dépannage](troubleshooting.md) : erreurs fréquentes et solutions.
 
@@ -30,11 +31,13 @@ Chaque dossier important possède sa propre page dans [directories/](directories
 ## Commandes publiques
 
 - [Vue d’ensemble](commands/README.md)
-- [`./install`](commands/install.md)
-- [`./upgrade`](commands/upgrade.md)
-- [`./build` et `./clean`](commands/build-clean.md)
-- [`./dev`](commands/dev.md)
-- [`./ssg`](commands/ssg.md)
+- [`pix-install`](commands/pix-install.md)
+- [`./pix-help`](commands/pix-help.md)
+- [`./pix-install`](commands/pix-install.md)
+- [`./pix-upgrade`](commands/pix-upgrade.md)
+- [`./pix-build` et `./pix-clean`](commands/pix-build-clean.md)
+- [`./pix-dev`](commands/pix-dev.md)
+- [`./pix-ssg`](commands/pix-ssg.md)
 
 ## Outils de développement
 

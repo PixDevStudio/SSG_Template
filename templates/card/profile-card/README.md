@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer card/profile-card
+./pix-ssg templates installer card/profile-card
 ```
 
 ## Intégration
@@ -64,7 +64,7 @@ Variables générées depuis le template original :
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller card/profile-card
+./pix-ssg templates desinstaller card/profile-card
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

@@ -77,7 +77,7 @@ final readonly class TemplateMarkdownCatalog
 **Installer**
 
 ```bash
-./ssg templates installer {$id}
+./pix-ssg templates installer {$id}
 ```
 
 **Intégrer**
@@ -94,7 +94,7 @@ final readonly class TemplateMarkdownCatalog
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller {$id}
+./pix-ssg templates desinstaller {$id}
 ```
 
 Documentation détaillée : [`{$id}/README.md`]({$id}/README.md)

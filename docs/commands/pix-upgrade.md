@@ -1,7 +1,7 @@
 # Commande upgrade
 
 ```bash
-./upgrade
+./pix-upgrade
 ```
 
 Exécutez cette commande dans **Bash sous Linux/macOS ou dans WSL**, jamais dans PowerShell.
@@ -18,14 +18,14 @@ La commande :
 4. récupère les nouveautés de sa branche `main`;
 5. refuse les historiques divergents qui nécessitent une décision humaine;
 6. applique une mise à jour Git en avance directe;
-7. exécute le nouveau `./install` pour actualiser Composer, npm, les outils et les permissions.
+7. exécute le nouveau `./pix-install` pour actualiser Composer, npm, les outils et les permissions.
 
-Le script s’exécute depuis une copie temporaire afin qu’une nouvelle version puisse remplacer le fichier `upgrade` en cours d’utilisation.
+Le script s’exécute depuis une copie temporaire afin qu’une nouvelle version puisse remplacer le fichier `pix-upgrade` en cours d’utilisation.
 
 ## Vérifier sans appliquer
 
 ```bash
-./upgrade --check
+./pix-upgrade --check
 ```
 
 Cette option télécharge uniquement les informations Git et indique si une version plus récente existe.
@@ -39,10 +39,10 @@ curl -fsSL \
 	https://raw.githubusercontent.com/PixDevStudio/SSG_Template/main/upgrade \
 	-o upgrade
 chmod +x upgrade
-./upgrade
+./pix-upgrade
 ```
 
-Les mises à jour suivantes se feront simplement avec `./upgrade`.
+Les mises à jour suivantes se feront simplement avec `./pix-upgrade`.
 
 ## Modifications locales
 
@@ -56,10 +56,10 @@ ou temporairement :
 
 ```bash
 git stash push -u
-./upgrade
+./pix-upgrade
 git stash pop
 ```
 
 Si la branche locale et la branche officielle ont divergé, utilisez Git pour fusionner ou rebaser les changements. La commande ne choisit pas automatiquement à votre place.
 
-Une archive ZIP sans dossier `.git` ne peut pas utiliser `./upgrade`; téléchargez alors la nouvelle version manuellement.
+Une archive ZIP sans dossier `.git` ne peut pas utiliser `./pix-upgrade`; téléchargez alors la nouvelle version manuellement.

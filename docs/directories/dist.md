@@ -3,8 +3,8 @@
 `dist/` contient uniquement le site généré. Il peut être supprimé et reconstruit à tout moment.
 
 ```bash
-./clean
-./build
+./pix-clean
+./pix-build
 ```
 
 ## Contenu

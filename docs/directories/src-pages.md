@@ -7,7 +7,7 @@
 Créez une page avec :
 
 ```bash
-./ssg new page blog/article
+./pix-ssg new page blog/article
 ```
 
 Une page peut utiliser les données, partials et composants, avec ou sans layout. Elle ne doit pas contenir de secret. Voir [langage de templates](../template-language.md).

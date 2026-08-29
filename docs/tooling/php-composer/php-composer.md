@@ -8,7 +8,7 @@
 
 ## PHP
 
-PHP 8.3 ou plus récent exécute le moteur, les commandes `build`, `clean`, `ssg` et le serveur local. Les extensions DOM, XMLWriter et mbstring sont nécessaires à l’environnement de test; une capacité d’extraction ZIP est nécessaire à Composer.
+PHP 8.3 ou plus récent exécute le moteur, les commandes `pix-build`, `pix-clean`, `pix-ssg` et le serveur local. Les extensions DOM, XMLWriter et mbstring sont nécessaires à l’environnement de test; une capacité d’extraction ZIP est nécessaire à Composer.
 
 Vérification :
 

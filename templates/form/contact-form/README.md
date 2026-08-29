@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates install form/contact-form
+./pix-ssg templates install form/contact-form
 ```
 
 ## Intégration dans une page
@@ -28,5 +28,5 @@ Le SSG génère uniquement le HTML statique. La valeur `action` doit pointer ver
 ## Désinstallation
 
 ```bash
-./ssg templates remove form/contact-form
+./pix-ssg templates remove form/contact-form
 ```

@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates install card/product-card
+./pix-ssg templates install card/product-card
 ```
 
 ## Intégration dans une page
@@ -48,7 +48,7 @@ Pour plusieurs produits ayant chacun leurs propres données, dupliquez le compos
 ## Désinstallation
 
 ```bash
-./ssg templates remove card/product-card
+./pix-ssg templates remove card/product-card
 ```
 
 La commande protège les fichiers modifiés et refuse de les supprimer automatiquement.

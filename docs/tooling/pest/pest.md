@@ -24,7 +24,7 @@ Exécuter un fichier ou filtrer un test :
 Pest s’appuie sur `phpunit.xml` :
 
 - `engine/bootstrap.php` charge les classes;
-- `tests/php` est la suite `Mon SSG`;
+- `tests/php` est la suite `pix-ssg`;
 - `.phpunit.cache` reçoit le cache local;
 - les couleurs sont activées.
 

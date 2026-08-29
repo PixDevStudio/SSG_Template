@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")"
+version=$(cat VERSION)
+
+if [[ "${1:-}" == '--version' || "${1:-}" == '-V' ]]; then
+  printf 'pix-ssg %s\n' "$version"
+  exit 0
+fi
+
+cat <<'HELP'
+pix-ssg - Commandes disponibles
+
+Installation et mise à jour
+  ./pix-help                   affiche cette liste de commandes
+  ./pix-help --version         affiche la version installée
+  ./pix-bootstrap [dossier]    télécharge et installe une nouvelle copie
+  ./pix-install                vérifie l’environnement et installe les dépendances
+  ./pix-install --yes          accepte la confirmation initiale
+  ./pix-install --help         affiche l’aide de l’installateur
+  ./pix-upgrade --check        vérifie si une mise à jour existe
+  ./pix-upgrade                met à jour le SSG depuis le dépôt officiel
+  ./pix-upgrade --help         affiche l’aide de la mise à jour
+
+Développement
+  ./pix-dev                    construit le site, démarre le serveur et surveille les sources
+  ./pix-build                  génère le site dans dist/
+  ./pix-clean                  vide le dossier dist/
+
+Pages
+  ./pix-ssg new page <nom>     crée une page HTML sans écraser un fichier existant
+
+Catalogue de templates
+  ./pix-ssg templates              liste les templates et génère templates/CATALOGUE.md
+  ./pix-ssg templates list         alias anglais de la liste
+  ./pix-ssg templates liste        alias français de la liste
+  ./pix-ssg templates info <id>    affiche les instructions d’un template
+  ./pix-ssg templates install <id> installe un template
+  ./pix-ssg templates installer <id>
+  ./pix-ssg templates remove <id>  désinstalle un template inchangé
+  ./pix-ssg templates uninstall <id>
+  ./pix-ssg templates desinstaller <id>
+
+Qualité
+  ./pix-check                  exécute tous les tests et contrôles
+
+Aide détaillée : docs/README.md
+HELP

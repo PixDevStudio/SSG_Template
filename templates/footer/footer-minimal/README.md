@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates install footer/footer-minimal
+./pix-ssg templates install footer/footer-minimal
 ```
 
 ## Intégration au layout
@@ -31,7 +31,7 @@ Les styles se trouvent dans `src/styles/templates/footer-minimal.css`.
 ## Désinstallation
 
 ```bash
-./ssg templates remove footer/footer-minimal
+./pix-ssg templates remove footer/footer-minimal
 ```
 
 La désinstallation est bloquée si un fichier installé a été modifié, afin de protéger votre travail.

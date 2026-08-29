@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-printf 'La commande ./install est obsolète; utilisez ./pix-install.\n' >&2
-exec "$(dirname "$0")/pix-install" "$@"#!/usr/bin/env bash
-set -euo pipefail
-
 cd "$(dirname "$0")"
 
 ok() { printf '✓ %s\n' "$1"; }
@@ -167,7 +163,7 @@ ok 'Vitest et esbuild fonctionnent correctement'
 
 printf '\nPréparation du projet...\n\n'
 mkdir -p src/{pages,layouts,partials,components,styles,scripts,data} public/{images,icons,fonts,media} plugins tests/{php,js} dist
-chmod +x install pix-install pix-help upgrade dev build clean ssg
+chmod +x pix-bootstrap pix-build pix-check pix-clean pix-dev pix-help pix-install pix-ssg pix-upgrade
 ok 'Dossiers vérifiés'
 ok 'Installation terminée'
 printf '\nLe projet est prêt.\n\nLancez ./pix-dev pour démarrer le serveur.\n'

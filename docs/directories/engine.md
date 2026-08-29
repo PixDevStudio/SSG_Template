@@ -5,7 +5,7 @@
 ## Classes
 
 - `Builder.php` : orchestre le pipeline complet.
-- `Cli.php` : traite `./ssg new page` et le catalogue.
+- `Cli.php` : traite `./pix-ssg new page` et le catalogue.
 - `FrontMatter.php` : analyse les métadonnées simples.
 - `TemplateEngine.php` : rend variables, partials et composants.
 - `DataRepository.php` : charge JSON et PHP depuis `src/data/`.
@@ -21,6 +21,6 @@
 2. conservez le namespace `MonSsg`;
 3. ajoutez un test dans `tests/php/`;
 4. exécutez `./vendor/bin/pest`;
-5. vérifiez `./clean && ./build`.
+5. vérifiez `./pix-clean && ./pix-build`.
 
 Pour modifier uniquement le HTML final, préférez `src/` ou un plugin. Voir [API interne](../reference/api.md).

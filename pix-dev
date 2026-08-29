@@ -18,7 +18,7 @@ if php -r '$socket = @fsockopen("127.0.0.1", (int) $argv[1], $errorCode, $errorM
     exit 1
 fi
 
-./build >/dev/null
+./pix-build >/dev/null
 php -S "127.0.0.1:${port}" -t dist >/dev/null 2>&1 &
 server_pid=$!
 trap cleanup EXIT
@@ -38,7 +38,7 @@ while true; do
     if [[ "$current" != "$previous" ]]; then
         changed=$(find src public plugins -type f -printf '%T@ %p\n' 2>/dev/null | sort -nr | head -n 1 | cut -d' ' -f2-)
         printf '\nModification détectée : %s\n\n' "$changed"
-        if ./build >/dev/null; then
+        if ./pix-build >/dev/null; then
             printf '✓ Build terminé\n✓ Site mis à jour\n'
         else
             printf '✗ Échec du build\n' >&2

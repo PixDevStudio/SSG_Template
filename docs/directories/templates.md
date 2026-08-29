@@ -19,9 +19,9 @@ Le manifeste déclare l’identifiant, la description, l’inclusion, l’emplac
 Utilisez la CLI plutôt que de copier les fichiers manuellement :
 
 ```bash
-./ssg templates info header/header-basic
-./ssg templates installer header/header-basic
-./ssg templates desinstaller header/header-basic
+./pix-ssg templates info header/header-basic
+./pix-ssg templates installer header/header-basic
+./pix-ssg templates desinstaller header/header-basic
 ```
 
 Le registre `.ssg/templates.json` conserve les empreintes des fichiers installés. Une désinstallation est refusée si un fichier a changé.

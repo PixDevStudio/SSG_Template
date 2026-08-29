@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer footer/footer-columns
+./pix-ssg templates installer footer/footer-columns
 ```
 
 ## Intégration
@@ -63,7 +63,7 @@ Variables générées depuis le template original :
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller footer/footer-columns
+./pix-ssg templates desinstaller footer/footer-columns
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

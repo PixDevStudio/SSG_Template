@@ -1,4 +1,4 @@
-# Mon SSG
+# pix-ssg
 
 Générateur de site statique léger construit en PHP 8.3+. Les sources restent dans `src/` et `public/`; seul le contenu de `dist/` est reconstruit.
 
@@ -6,47 +6,59 @@ La documentation complète se trouve dans [`docs/README.md`](docs/README.md) : d
 
 ## Installation
 
+Installation directe depuis un terminal Bash ou WSL :
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/PixDevStudio/SSG_Template/main/pix-bootstrap)
+```
+
+La commande présente les dépendances et demande une confirmation `Y/N` avant de continuer. Elle télécharge le dépôt officiel dans `pix-ssg`, puis lance l’installation. Pour choisir un autre dossier, ajoutez son nom à la fin de la commande.
+
+Installation manuelle avec Git :
+
 Clonez d’abord le dépôt officiel avec Git ou GitHub CLI :
 
 ```bash
-git clone https://github.com/PixDevStudio/SSG_Template.git
-# ou : gh repo clone PixDevStudio/SSG_Template
-cd SSG_Template
+git clone https://github.com/PixDevStudio/SSG_Template.git pix-ssg
+# ou : gh repo clone PixDevStudio/SSG_Template pix-ssg
+cd pix-ssg
 ```
 
 Puis lancez l’installation :
 
 ```bash
-./install
+./pix-install
 ```
 
 Le script vérifie Bash, PHP 8.3+, Node.js, npm et Composer, installe Pest, Vitest, ESLint et Prettier, puis prépare les dossiers.
 
-Lancez `./install` dans **Bash ou WSL, jamais dans PowerShell**.
+Lancez `./pix-install` dans **Bash ou WSL, jamais dans PowerShell**.
 
-Pest nécessite les extensions PHP DOM/XML et mbstring. Sous Ubuntu ou Debian, `./install` demande confirmation avant de proposer leur installation avec `php-xml` et `php-mbstring`.
+Pest nécessite les extensions PHP DOM/XML et mbstring. Sous Ubuntu ou Debian, `./pix-install` demande confirmation avant de proposer leur installation avec `php-xml` et `php-mbstring`.
 
-Composer nécessite également un extracteur d’archives. Si PHP ZIP, `unzip` et `7z` sont absents, `./install` demande confirmation avant d’installer `unzip`.
+Composer nécessite également un extracteur d’archives. Si PHP ZIP, `unzip` et `7z` sont absents, `./pix-install` demande confirmation avant d’installer `unzip`.
 
-Les mises à jour suivantes viennent directement du même dépôt officiel avec `./upgrade`; aucun `git pull` manuel n’est nécessaire.
+Les mises à jour suivantes viennent directement du même dépôt officiel avec `./pix-upgrade`; aucun `git pull` manuel n’est nécessaire.
 
 ## Commandes
 
 ```bash
-./build                 # Génère dist/
-./clean                 # Vide dist/
-./dev                   # Build, serveur local et surveillance
-./upgrade               # Met à jour le SSG et ses dépendances
-./upgrade --check       # Vérifie si une mise à jour existe
-./ssg new page contact  # Crée src/pages/contact.html
-./ssg templates         # Liste les templates par catégorie
-./ssg templates info header/header-basic
-./ssg templates install header/header-basic
-./ssg templates remove header/header-basic
-./vendor/bin/pest       # Tests PHP avec Pest
-npm test                # Tests JavaScript avec Vitest
-npm run lint            # Analyse JavaScript
-npm run format:check    # Vérifie le formatage
+./pix-build                 # Génère dist/
+./pix-clean                 # Vide dist/
+./pix-dev                   # Build, serveur local et surveillance
+./pix-help                  # Affiche toutes les commandes disponibles
+./pix-check                 # Lance tous les contrôles
+./pix-upgrade               # Met à jour le SSG et ses dépendances
+./pix-upgrade --check       # Vérifie si une mise à jour existe
+./pix-ssg new page contact  # Crée src/pages/contact.html
+./pix-ssg templates         # Liste les templates par catégorie
+./pix-ssg templates info header/header-basic
+./pix-ssg templates install header/header-basic
+./pix-ssg templates remove header/header-basic
+./vendor/bin/pest           # Tests PHP avec Pest
+npm test                    # Tests JavaScript avec Vitest
+npm run lint                # Analyse JavaScript
+npm run format:check        # Vérifie le formatage
 ```
 
 Le serveur de développement est disponible sur `http://localhost:8000`. Il refuse de démarrer si le port est déjà occupé et s’arrête proprement avec `Ctrl+C`.
@@ -56,9 +68,9 @@ Le serveur de développement est disponible sur `http://localhost:8000`. Il refu
 Le catalogue contient 23 modèles : 3 headers, 3 footers, 3 sidebars, 4 ensembles de cartes, 5 formulaires et 5 tableaux. Chaque modèle installe son HTML, son CSS natif, ses données JSON et sa documentation dans `src/template-docs/`.
 
 ```bash
-./ssg templates
-./ssg templates info card/product-card
-./ssg templates install card/product-card
+./pix-ssg templates
+./pix-ssg templates info card/product-card
+./pix-ssg templates install card/product-card
 ```
 
 La commande génère `templates/CATALOGUE.md`, qui réunit les captures desktop, tablette et mobile ainsi que les commandes d’installation, d’intégration et de désinstallation. Elle propose ensuite de l’afficher avec `mdcat` ou `glow` dans le terminal actuel, ou de l’ouvrir dans un onglet VS Code.
@@ -106,4 +118,4 @@ tests/      Tests Pest et Vitest
 dist/       Résultat généré uniquement
 ```
 
-Le moteur utilise `engine/` plutôt que `ssg/`, car un système de fichiers Linux ne peut pas contenir à la fois un dossier `ssg/` et la commande publique `./ssg`.
+Le moteur utilise `engine/` plutôt que `ssg/`, car un système de fichiers Linux ne peut pas contenir à la fois un dossier `ssg/` et la commande publique `./pix-ssg`.

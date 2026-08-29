@@ -12,7 +12,7 @@
 | [`tools/`](tools.md)                       | Utilitaires de maintenance          | Avec prudence                       |
 | [`dist/`](dist.md)                         | Site généré                         | Non                                 |
 
-À la racine, les fichiers `install`, `build`, `clean`, `dev` et `ssg` sont les commandes publiques. Les fichiers `composer.json`, `package.json`, `phpunit.xml` et `eslint.config.js` configurent les outils de développement.
+À la racine, les fichiers `pix-install`, `pix-upgrade`, `pix-build`, `pix-clean`, `pix-dev`, `pix-help` et `pix-ssg` sont les commandes publiques. Les fichiers `composer.json`, `package.json`, `phpunit.xml` et `eslint.config.js` configurent les outils de développement.
 
 ## Sous-dossiers de src
 

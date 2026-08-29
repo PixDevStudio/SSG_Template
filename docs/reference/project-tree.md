@@ -1,7 +1,7 @@
 # Structure complète
 
 ```text
-SSG/
+pix-ssg/
 ├── docs/                 documentation
 ├── engine/               moteur PHP
 ├── plugins/              filtres afterRender
@@ -24,12 +24,15 @@ SSG/
 ├── dist/                 sortie générée
 ├── vendor/               dépendances Composer générées
 ├── node_modules/         dépendances npm générées
-├── install               installation
-├── upgrade               mise à jour depuis Git
-├── build                 génération
-├── clean                 nettoyage
-├── dev                   serveur et watcher
-└── ssg                   CLI pages et catalogue
+├── pix-bootstrap         téléchargement d’une nouvelle copie
+├── pix-help              aide des commandes publiques
+├── pix-install           installation des dépendances
+├── pix-upgrade           mise à jour depuis Git
+├── pix-build             génération
+├── pix-check             contrôles automatisés
+├── pix-clean             nettoyage
+├── pix-dev               serveur et watcher
+└── pix-ssg               CLI pages et catalogue
 ```
 
 `.ssg/templates.json` est un registre interne créé lors de la première installation d’un modèle. `.phpunit.cache/` est généré par la suite de tests.

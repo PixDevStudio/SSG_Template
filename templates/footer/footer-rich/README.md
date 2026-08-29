@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer footer/footer-rich
+./pix-ssg templates installer footer/footer-rich
 ```
 
 ## Intégration
@@ -60,7 +60,7 @@ Variables générées depuis le template original :
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller footer/footer-rich
+./pix-ssg templates desinstaller footer/footer-rich
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

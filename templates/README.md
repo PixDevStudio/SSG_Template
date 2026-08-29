@@ -64,9 +64,9 @@ Le README de chaque template doit expliquer :
 ## Vérification
 
 ```bash
-./ssg templates
-./ssg templates info <catégorie/nom>
-./ssg templates install <catégorie/nom>
-./build
-./ssg templates remove <catégorie/nom>
+./pix-ssg templates
+./pix-ssg templates info <catégorie/nom>
+./pix-ssg templates install <catégorie/nom>
+./pix-build
+./pix-ssg templates remove <catégorie/nom>
 ```

@@ -22,11 +22,11 @@ Validez la syntaxe du fichier signalé : guillemets doubles, aucune virgule fina
 
 ## Port 8000 occupé
 
-Arrêtez l’autre serveur utilisant le port, puis relancez `./dev`. Le port n’est pas configurable actuellement.
+Arrêtez l’autre serveur utilisant le port, puis relancez `./pix-dev`. Le port n’est pas configurable actuellement.
 
 ## Installation d’un modèle refusée
 
-Un fichier cible existe déjà ou le modèle est enregistré. Utilisez `./ssg templates info <id>` et examinez `.ssg/templates.json` avant toute action manuelle.
+Un fichier cible existe déjà ou le modèle est enregistré. Utilisez `./pix-ssg templates info <id>` et examinez `.ssg/templates.json` avant toute action manuelle.
 
 ## Désinstallation refusée
 
@@ -34,11 +34,11 @@ Le modèle contient des fichiers modifiés. Sauvegardez-les, comparez-les au paq
 
 ## Tests PHP indisponibles
 
-Relancez `./install`, vérifiez `php --version` et les extensions DOM, XMLWriter et mbstring, puis `composer install`.
+Relancez `./pix-install`, vérifiez `php --version` et les extensions DOM, XMLWriter et mbstring, puis `composer install`.
 
 ## Upgrade refusé
 
-`./upgrade` exige une copie Git placée sur une branche et aucun changement non enregistré. Il configure lui-même le dépôt officiel sous le nom `ssg-upstream`. Faites un commit ou utilisez `git stash push -u`, puis relancez la commande. Si les historiques ont divergé, fusionnez ou rebasez explicitement avec Git avant de recommencer.
+`./pix-upgrade` exige une copie Git placée sur une branche et aucun changement non enregistré. Il configure lui-même le dépôt officiel sous le nom `ssg-upstream`. Faites un commit ou utilisez `git stash push -u`, puis relancez la commande. Si les historiques ont divergé, fusionnez ou rebasez explicitement avec Git avant de recommencer.
 
 ## Formatage en échec
 

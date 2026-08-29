@@ -1,7 +1,7 @@
 # Commande dev
 
 ```bash
-./dev
+./pix-dev
 ```
 
 La commande :
@@ -19,6 +19,6 @@ Utilisez `Ctrl+C`. Le script arrête le serveur enfant, libère le port et quitt
 
 ## Port occupé
 
-Le port 8000 est fixe. Si le démarrage est refusé, arrêtez le processus qui l’utilise avant de relancer `./dev`.
+Le port 8000 est fixe. Si le démarrage est refusé, arrêtez le processus qui l’utilise avant de relancer `./pix-dev`.
 
 Le serveur PHP intégré convient au développement local seulement. Il n’apporte ni HTTPS, ni cache de production, ni compression.

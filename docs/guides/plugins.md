@@ -19,7 +19,7 @@ return static function (PluginManager $plugins): void {
         static function (string $html, array $context): string {
             return str_replace(
                 '</head>',
-                '<meta name="generator" content="Mon SSG">' . "\n</head>",
+                '<meta name="generator" content="pix-ssg">' . "\n</head>",
                 $html,
             );
         },
@@ -27,7 +27,7 @@ return static function (PluginManager $plugins): void {
 };
 ```
 
-Puis lancez `./build`.
+Puis lancez `./pix-build`.
 
 ## Contrat
 

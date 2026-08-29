@@ -7,7 +7,7 @@ use MonSsg\Paths;
 use MonSsg\TemplateMarkdownCatalog;
 
 it('génère un catalogue Markdown avec aperçus et commandes', function (): void {
-    $root = sys_get_temp_dir() . '/mon-ssg-markdown-' . bin2hex(random_bytes(6));
+    $root = sys_get_temp_dir() . '/pix-ssg-markdown-' . bin2hex(random_bytes(6));
     $files = new FileSystem();
     $catalog = new TemplateMarkdownCatalog(new Paths($root), $files);
     $templates = [[
@@ -30,9 +30,9 @@ it('génère un catalogue Markdown avec aperçus et commandes', function (): voi
 
         expect($relative)->toBe('templates/CATALOGUE.md')
             ->and($markdown)->toContain('card/example/previews/desktop.png')
-            ->and($markdown)->toContain('./ssg templates installer card/example')
+            ->and($markdown)->toContain('./pix-ssg templates installer card/example')
             ->and($markdown)->toContain('{{ component:example }}')
-            ->and($markdown)->toContain('./ssg templates desinstaller card/example');
+            ->and($markdown)->toContain('./pix-ssg templates desinstaller card/example');
     } finally {
         $files->clearDirectory($root);
         rmdir($root);

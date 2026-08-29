@@ -1,0 +1,81 @@
+name: Publier une version
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Configurer PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          extensions: dom, xmlwriter, mbstring
+          coverage: none
+
+      - name: Configurer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Vérifier la version du tag
+        run: |
+          test "${GITHUB_REF_NAME}" = "v$(cat VERSION)"
+          test "$(node -p 'require("./package.json").version')" = "$(cat VERSION)"
+
+      - name: Installer les dépendances
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes zip
+          composer install --no-interaction --prefer-dist
+          npm ci
+
+      - name: Exécuter les contrôles
+        run: |
+          ./vendor/bin/pest
+          npm test
+          npm run lint
+          npm run format:check
+          ./pix-build
+
+      - name: Créer les archives
+        run: |
+          version=$(cat VERSION)
+          package="pix-ssg-${version}"
+          mkdir -p "release/${package}"
+          rsync -a ./ "release/${package}/" \
+            --exclude .git \
+            --exclude .github \
+            --exclude .phpunit.cache \
+            --exclude dist \
+            --exclude node_modules \
+            --exclude release \
+            --exclude vendor
+          chmod +x "release/${package}"/{pix-bootstrap,pix-build,pix-check,pix-clean,pix-dev,pix-help,pix-install,pix-ssg,pix-upgrade}
+          cd release
+          zip -qr "${package}.zip" "${package}"
+          tar -czf "${package}.tar.gz" "${package}"
+          sha256sum "${package}.zip" "${package}.tar.gz" > SHA256SUMS.txt
+
+      - name: Publier la release GitHub
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version=$(cat VERSION)
+          gh release create "${GITHUB_REF_NAME}" \
+            "release/pix-ssg-${version}.zip" \
+            "release/pix-ssg-${version}.tar.gz" \
+            "release/SHA256SUMS.txt" \
+            --generate-notes \
+            --title "pix-ssg ${version}"

@@ -1,6 +1,6 @@
 # Déploiement
 
-Mon SSG produit des fichiers statiques. Seul le contenu de `dist/` doit être publié.
+pix-ssg produit des fichiers statiques. Seul le contenu de `dist/` doit être publié.
 
 ## Préparer une version
 
@@ -9,8 +9,8 @@ npm run format:check
 npm run lint
 npm test
 ./vendor/bin/pest
-./clean
-./build
+./pix-clean
+./pix-build
 ```
 
 Inspectez ensuite `dist/index.html`, les chemins d’assets et les pages à permalinks personnalisés.

@@ -25,7 +25,7 @@ Version installable du template Cartes article, configurable par données JSON.
 **Installer**
 
 ```bash
-./ssg templates installer card/article-card
+./pix-ssg templates installer card/article-card
 ```
 
 **Intégrer**
@@ -42,7 +42,7 @@ Version installable du template Cartes article, configurable par données JSON.
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller card/article-card
+./pix-ssg templates desinstaller card/article-card
 ```
 
 Documentation détaillée : [`card/article-card/README.md`](card/article-card/README.md)
@@ -70,7 +70,7 @@ Version installable du template Cartes profil, configurable par données JSON.
 **Installer**
 
 ```bash
-./ssg templates installer card/profile-card
+./pix-ssg templates installer card/profile-card
 ```
 
 **Intégrer**
@@ -87,7 +87,7 @@ Version installable du template Cartes profil, configurable par données JSON.
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller card/profile-card
+./pix-ssg templates desinstaller card/profile-card
 ```
 
 Documentation détaillée : [`card/profile-card/README.md`](card/profile-card/README.md)
@@ -115,7 +115,7 @@ Version installable du template Cartes statistiques, configurable par données J
 **Installer**
 
 ```bash
-./ssg templates installer card/stats-card
+./pix-ssg templates installer card/stats-card
 ```
 
 **Intégrer**
@@ -132,7 +132,7 @@ Version installable du template Cartes statistiques, configurable par données J
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller card/stats-card
+./pix-ssg templates desinstaller card/stats-card
 ```
 
 Documentation détaillée : [`card/stats-card/README.md`](card/stats-card/README.md)
@@ -160,7 +160,7 @@ Carte produit responsive configurable par données JSON.
 **Installer**
 
 ```bash
-./ssg templates installer card/product-card
+./pix-ssg templates installer card/product-card
 ```
 
 **Intégrer**
@@ -177,7 +177,7 @@ Carte produit responsive configurable par données JSON.
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller card/product-card
+./pix-ssg templates desinstaller card/product-card
 ```
 
 Documentation détaillée : [`card/product-card/README.md`](card/product-card/README.md)
@@ -207,7 +207,7 @@ Pied de page compact avec marque, mentions légales et liens essentiels.
 **Installer**
 
 ```bash
-./ssg templates installer footer/footer-minimal
+./pix-ssg templates installer footer/footer-minimal
 ```
 
 **Intégrer**
@@ -224,7 +224,7 @@ Pied de page compact avec marque, mentions légales et liens essentiels.
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller footer/footer-minimal
+./pix-ssg templates desinstaller footer/footer-minimal
 ```
 
 Documentation détaillée : [`footer/footer-minimal/README.md`](footer/footer-minimal/README.md)
@@ -252,7 +252,7 @@ Version installable du template Footer complet, configurable par données JSON.
 **Installer**
 
 ```bash
-./ssg templates installer footer/footer-rich
+./pix-ssg templates installer footer/footer-rich
 ```
 
 **Intégrer**
@@ -269,7 +269,7 @@ Version installable du template Footer complet, configurable par données JSON.
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller footer/footer-rich
+./pix-ssg templates desinstaller footer/footer-rich
 ```
 
 Documentation détaillée : [`footer/footer-rich/README.md`](footer/footer-rich/README.md)
@@ -297,7 +297,7 @@ Version installable du template Footer en colonnes, configurable par données JS
 **Installer**
 
 ```bash
-./ssg templates installer footer/footer-columns
+./pix-ssg templates installer footer/footer-columns
 ```
 
 **Intégrer**
@@ -314,7 +314,7 @@ Version installable du template Footer en colonnes, configurable par données JS
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller footer/footer-columns
+./pix-ssg templates desinstaller footer/footer-columns
 ```
 
 Documentation détaillée : [`footer/footer-columns/README.md`](footer/footer-columns/README.md)
@@ -344,7 +344,7 @@ Formulaire de contact accessible avec textes et destination configurables.
 **Installer**
 
 ```bash
-./ssg templates installer form/contact-form
+./pix-ssg templates installer form/contact-form
 ```
 
 **Intégrer**
@@ -361,7 +361,7 @@ Formulaire de contact accessible avec textes et destination configurables.
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller form/contact-form
+./pix-ssg templates desinstaller form/contact-form
 ```
 
 Documentation détaillée : [`form/contact-form/README.md`](form/contact-form/README.md)
@@ -389,7 +389,7 @@ Version installable du template Formulaire de connexion, configurable par donné
 **Installer**
 
 ```bash
-./ssg templates installer form/login-form
+./pix-ssg templates installer form/login-form
 ```
 
 **Intégrer**
@@ -406,7 +406,7 @@ Version installable du template Formulaire de connexion, configurable par donné
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller form/login-form
+./pix-ssg templates desinstaller form/login-form
 ```
 
 Documentation détaillée : [`form/login-form/README.md`](form/login-form/README.md)
@@ -434,7 +434,7 @@ Version installable du template Formulaire de devis, configurable par données J
 **Installer**
 
 ```bash
-./ssg templates installer form/quote-form
+./pix-ssg templates installer form/quote-form
 ```
 
 **Intégrer**
@@ -451,7 +451,7 @@ Version installable du template Formulaire de devis, configurable par données J
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller form/quote-form
+./pix-ssg templates desinstaller form/quote-form
 ```
 
 Documentation détaillée : [`form/quote-form/README.md`](form/quote-form/README.md)
@@ -479,7 +479,7 @@ Version installable du template Formulaire d’inscription, configurable par don
 **Installer**
 
 ```bash
-./ssg templates installer form/signup-form
+./pix-ssg templates installer form/signup-form
 ```
 
 **Intégrer**
@@ -496,7 +496,7 @@ Version installable du template Formulaire d’inscription, configurable par don
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller form/signup-form
+./pix-ssg templates desinstaller form/signup-form
 ```
 
 Documentation détaillée : [`form/signup-form/README.md`](form/signup-form/README.md)
@@ -524,7 +524,7 @@ Version installable du template Formulaire infolettre, configurable par données
 **Installer**
 
 ```bash
-./ssg templates installer form/newsletter-form
+./pix-ssg templates installer form/newsletter-form
 ```
 
 **Intégrer**
@@ -541,7 +541,7 @@ Version installable du template Formulaire infolettre, configurable par données
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller form/newsletter-form
+./pix-ssg templates desinstaller form/newsletter-form
 ```
 
 Documentation détaillée : [`form/newsletter-form/README.md`](form/newsletter-form/README.md)
@@ -571,7 +571,7 @@ Header responsive avec navigation de bureau, menu mobile natif et lien d’évit
 **Installer**
 
 ```bash
-./ssg templates installer header/header-basic
+./pix-ssg templates installer header/header-basic
 ```
 
 **Intégrer**
@@ -588,7 +588,7 @@ Header responsive avec navigation de bureau, menu mobile natif et lien d’évit
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller header/header-basic
+./pix-ssg templates desinstaller header/header-basic
 ```
 
 Documentation détaillée : [`header/header-basic/README.md`](header/header-basic/README.md)
@@ -616,7 +616,7 @@ Version installable du template Header centré, configurable par données JSON.
 **Installer**
 
 ```bash
-./ssg templates installer header/header-centre
+./pix-ssg templates installer header/header-centre
 ```
 
 **Intégrer**
@@ -633,7 +633,7 @@ Version installable du template Header centré, configurable par données JSON.
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller header/header-centre
+./pix-ssg templates desinstaller header/header-centre
 ```
 
 Documentation détaillée : [`header/header-centre/README.md`](header/header-centre/README.md)
@@ -661,7 +661,7 @@ Version installable du template Header dashboard, configurable par données JSON
 **Installer**
 
 ```bash
-./ssg templates installer header/header-dashboard
+./pix-ssg templates installer header/header-dashboard
 ```
 
 **Intégrer**
@@ -678,7 +678,7 @@ Version installable du template Header dashboard, configurable par données JSON
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller header/header-dashboard
+./pix-ssg templates desinstaller header/header-dashboard
 ```
 
 Documentation détaillée : [`header/header-dashboard/README.md`](header/header-dashboard/README.md)
@@ -708,7 +708,7 @@ Navigation latérale compacte configurable par données JSON.
 **Installer**
 
 ```bash
-./ssg templates installer sidebar/sidebar-basic
+./pix-ssg templates installer sidebar/sidebar-basic
 ```
 
 **Intégrer**
@@ -725,7 +725,7 @@ Navigation latérale compacte configurable par données JSON.
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller sidebar/sidebar-basic
+./pix-ssg templates desinstaller sidebar/sidebar-basic
 ```
 
 Documentation détaillée : [`sidebar/sidebar-basic/README.md`](sidebar/sidebar-basic/README.md)
@@ -753,7 +753,7 @@ Version installable du template Sidebar compacte, configurable par données JSON
 **Installer**
 
 ```bash
-./ssg templates installer sidebar/sidebar-compact
+./pix-ssg templates installer sidebar/sidebar-compact
 ```
 
 **Intégrer**
@@ -770,7 +770,7 @@ Version installable du template Sidebar compacte, configurable par données JSON
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller sidebar/sidebar-compact
+./pix-ssg templates desinstaller sidebar/sidebar-compact
 ```
 
 Documentation détaillée : [`sidebar/sidebar-compact/README.md`](sidebar/sidebar-compact/README.md)
@@ -798,7 +798,7 @@ Version installable du template Sidebar à sections, configurable par données J
 **Installer**
 
 ```bash
-./ssg templates installer sidebar/sidebar-sections
+./pix-ssg templates installer sidebar/sidebar-sections
 ```
 
 **Intégrer**
@@ -815,7 +815,7 @@ Version installable du template Sidebar à sections, configurable par données J
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller sidebar/sidebar-sections
+./pix-ssg templates desinstaller sidebar/sidebar-sections
 ```
 
 Documentation détaillée : [`sidebar/sidebar-sections/README.md`](sidebar/sidebar-sections/README.md)
@@ -845,7 +845,7 @@ Tableau compact et responsive pour présenter le statut d’un élément.
 **Installer**
 
 ```bash
-./ssg templates installer table/status-table
+./pix-ssg templates installer table/status-table
 ```
 
 **Intégrer**
@@ -862,7 +862,7 @@ Tableau compact et responsive pour présenter le statut d’un élément.
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller table/status-table
+./pix-ssg templates desinstaller table/status-table
 ```
 
 Documentation détaillée : [`table/status-table/README.md`](table/status-table/README.md)
@@ -890,7 +890,7 @@ Version installable du template Tableau comparatif, configurable par données JS
 **Installer**
 
 ```bash
-./ssg templates installer table/comparison-table
+./pix-ssg templates installer table/comparison-table
 ```
 
 **Intégrer**
@@ -907,7 +907,7 @@ Version installable du template Tableau comparatif, configurable par données JS
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller table/comparison-table
+./pix-ssg templates desinstaller table/comparison-table
 ```
 
 Documentation détaillée : [`table/comparison-table/README.md`](table/comparison-table/README.md)
@@ -935,7 +935,7 @@ Version installable du template Tableau de données, configurable par données J
 **Installer**
 
 ```bash
-./ssg templates installer table/data-table
+./pix-ssg templates installer table/data-table
 ```
 
 **Intégrer**
@@ -952,7 +952,7 @@ Version installable du template Tableau de données, configurable par données J
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller table/data-table
+./pix-ssg templates desinstaller table/data-table
 ```
 
 Documentation détaillée : [`table/data-table/README.md`](table/data-table/README.md)
@@ -980,7 +980,7 @@ Version installable du template Tableau financier, configurable par données JSO
 **Installer**
 
 ```bash
-./ssg templates installer table/finance-table
+./pix-ssg templates installer table/finance-table
 ```
 
 **Intégrer**
@@ -997,7 +997,7 @@ Version installable du template Tableau financier, configurable par données JSO
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller table/finance-table
+./pix-ssg templates desinstaller table/finance-table
 ```
 
 Documentation détaillée : [`table/finance-table/README.md`](table/finance-table/README.md)
@@ -1025,7 +1025,7 @@ Version installable du template Tableau responsive, configurable par données JS
 **Installer**
 
 ```bash
-./ssg templates installer table/responsive-table
+./pix-ssg templates installer table/responsive-table
 ```
 
 **Intégrer**
@@ -1042,7 +1042,7 @@ Version installable du template Tableau responsive, configurable par données JS
 **Désinstaller**
 
 ```bash
-./ssg templates desinstaller table/responsive-table
+./pix-ssg templates desinstaller table/responsive-table
 ```
 
 Documentation détaillée : [`table/responsive-table/README.md`](table/responsive-table/README.md)

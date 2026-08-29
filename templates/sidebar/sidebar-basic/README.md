@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates install sidebar/sidebar-basic
+./pix-ssg templates install sidebar/sidebar-basic
 ```
 
 ## Intégration au layout
@@ -40,5 +40,5 @@ Modifiez `src/data/sidebar_basic.json` pour le titre, les libellés et les URLs.
 ## Désinstallation
 
 ```bash
-./ssg templates remove sidebar/sidebar-basic
+./pix-ssg templates remove sidebar/sidebar-basic
 ```

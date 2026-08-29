@@ -6,7 +6,7 @@ use MonSsg\Builder;
 use MonSsg\FileSystem;
 
 beforeEach(function (): void {
-    $this->root = sys_get_temp_dir() . '/mon-ssg-' . bin2hex(random_bytes(6));
+    $this->root = sys_get_temp_dir() . '/pix-ssg-' . bin2hex(random_bytes(6));
     $files = new FileSystem();
 
     foreach (['src/pages', 'src/layouts', 'src/partials', 'src/components', 'src/styles', 'src/scripts', 'src/data', 'public/images', 'plugins', 'dist'] as $directory) {

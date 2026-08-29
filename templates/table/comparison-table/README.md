@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer table/comparison-table
+./pix-ssg templates installer table/comparison-table
 ```
 
 ## Intégration
@@ -76,7 +76,7 @@ Variables générées depuis le template original :
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller table/comparison-table
+./pix-ssg templates desinstaller table/comparison-table
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

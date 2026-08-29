@@ -9,7 +9,7 @@ Les classes utilisent le namespace `MonSsg` et sont chargées depuis `engine/`.
 
 ## Cli
 
-- `run(array $arguments): int` traite les arguments de `./ssg` et retourne un code de sortie.
+- `run(array $arguments): int` traite les arguments de `./pix-ssg` et retourne un code de sortie.
 
 ## FrontMatter
 

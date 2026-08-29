@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer table/finance-table
+./pix-ssg templates installer table/finance-table
 ```
 
 ## Intégration
@@ -74,7 +74,7 @@ Variables générées depuis le template original :
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller table/finance-table
+./pix-ssg templates desinstaller table/finance-table
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

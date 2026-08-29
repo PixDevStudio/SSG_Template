@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer header/header-dashboard
+./pix-ssg templates installer header/header-dashboard
 ```
 
 ## Intégration
@@ -48,7 +48,7 @@ Variables générées depuis le template original :
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller header/header-dashboard
+./pix-ssg templates desinstaller header/header-dashboard
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

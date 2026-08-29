@@ -10,7 +10,7 @@ Pest s’appuie sur `phpunit.xml` pour découvrir et préparer les tests.
          cacheDirectory=".phpunit.cache"
          colors="true">
     <testsuites>
-        <testsuite name="Mon SSG">
+        <testsuite name="pix-ssg">
             <directory>tests/php</directory>
         </testsuite>
     </testsuites>

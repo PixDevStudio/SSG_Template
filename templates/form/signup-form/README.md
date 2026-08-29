@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer form/signup-form
+./pix-ssg templates installer form/signup-form
 ```
 
 ## Intégration
@@ -55,7 +55,7 @@ Le SSG produit seulement le formulaire HTML. Configurez son attribut `action` ve
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller form/signup-form
+./pix-ssg templates desinstaller form/signup-form
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

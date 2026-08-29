@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repository='https://github.com/PixDevStudio/SSG_Template.git'
+target='pix-ssg'
+confirmed=false
+
+for argument in "$@"; do
+	case "$argument" in
+		--yes|-y) confirmed=true ;;
+		--help|-h)
+			printf 'Usage : pix-bootstrap [dossier] [--yes]\n\n'
+			printf 'Télécharge pix-ssg depuis %s puis lance son installation.\n' "$repository"
+			exit 0
+			;;
+		-*) printf 'Option inconnue : %s\n' "$argument" >&2; exit 1 ;;
+		*) target=$argument ;;
+	esac
+done
+
+command -v git >/dev/null 2>&1 || { printf 'Git doit être installé pour permettre les futures mises à jour.\n' >&2; exit 1; }
+[[ ! -e "$target" ]] || { printf 'Le chemin existe déjà : %s\n' "$target" >&2; exit 1; }
+
+if [[ "$confirmed" != true ]]; then
+	cat <<WARNING
+pix-ssg sera installé dans : $target
+
+Cette opération va :
+  - télécharger le dépôt officiel;
+  - installer les dépendances PHP dans vendor/;
+  - installer les dépendances JavaScript dans node_modules/;
+  - créer les dossiers de travail et rendre les commandes exécutables.
+
+Les paquets système manquants seront toujours signalés avant leur installation.
+WARNING
+	[[ -t 0 ]] || { printf '\nRelancez avec --yes dans un environnement non interactif.\n' >&2; exit 1; }
+	read -r -p $'\nContinuer ? [y/N] ' answer
+	[[ "$answer" =~ ^[Yy]$ ]] || { printf 'Installation annulée.\n'; exit 0; }
+fi
+
+git clone --branch main --single-branch "$repository" "$target"
+cd "$target"
+./pix-install --yes
+
+printf '\npix-ssg est prêt dans %s.\n' "$PWD"

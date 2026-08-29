@@ -8,12 +8,17 @@ Cette page explique les fichiers placés directement à la racine du projet. Ils
 | ------------------- | ----------------------------------------------- | ------------------------ |
 | `.gitignore`        | exclure les fichiers générés de Git             | Oui                      |
 | `.prettierignore`   | exclure certains fichiers de Prettier           | Oui                      |
-| `build`             | générer le site dans `dist/`                    | Oui, avec tests          |
-| `clean`             | vider uniquement `dist/`                        | Oui, avec tests          |
-| `dev`               | lancer le serveur et surveiller les sources     | Oui, avec prudence       |
-| `install`           | vérifier l’environnement et installer le projet | Oui, avec prudence       |
-| `upgrade`           | mettre à jour le SSG depuis Git                 | Oui, avec prudence       |
-| `ssg`               | exposer la CLI du générateur                    | Oui, avec tests          |
+| `CHANGELOG.md`      | documenter les changements de chaque version    | Oui                      |
+| `VERSION`           | déclarer la version publique courante           | Oui, lors d’une release  |
+| `pix-bootstrap`     | télécharger et installer une nouvelle copie     | Oui, avec prudence       |
+| `pix-build`         | générer le site dans `dist/`                    | Oui, avec tests          |
+| `pix-check`         | exécuter tous les contrôles                     | Oui, avec tests          |
+| `pix-clean`         | vider uniquement `dist/`                        | Oui, avec tests          |
+| `pix-dev`           | lancer le serveur et surveiller les sources     | Oui, avec prudence       |
+| `pix-help`          | afficher toutes les commandes publiques         | Oui                      |
+| `pix-install`       | vérifier l’environnement et installer le projet | Oui, avec prudence       |
+| `pix-ssg`           | exposer la CLI du générateur                    | Oui, avec tests          |
+| `pix-upgrade`       | mettre à jour le SSG depuis Git                 | Oui, avec prudence       |
 | `composer.json`     | déclarer PHP, Pest et l’autoload                | Oui                      |
 | `composer.lock`     | verrouiller les versions PHP                    | Non, généré par Composer |
 | `package.json`      | déclarer les outils JavaScript et leurs scripts | Oui                      |
@@ -49,40 +54,40 @@ Ces fichiers sont générés ou maintenus par d’autres outils. Les reformater 
 
 ## Commandes exécutables
 
-Les fichiers `build`, `clean` et `ssg` sont des scripts PHP exécutables. Leur première ligne, `#!/usr/bin/env php`, permet de les lancer directement avec `./commande`.
+Les fichiers `pix-build`, `pix-clean` et `pix-ssg` sont des scripts PHP exécutables. Leur première ligne, `#!/usr/bin/env php`, permet de les lancer directement avec `./commande`.
 
-### `build`
+### `pix-build`
 
-`build` charge `engine/bootstrap.php`, crée `MonSsg\Builder` et exécute `build()`. Il affiche le nombre de pages générées et la destination `dist/`.
+`pix-build` charge `engine/bootstrap.php`, crée `MonSsg\Builder` et exécute `build()`. Il affiche le nombre de pages générées et la destination `dist/`.
 
 En cas d’exception, il écrit le message sur la sortie d’erreur et termine avec le code `1`.
 
 ```bash
-./build
+./pix-build
 ```
 
-### `clean`
+### `pix-clean`
 
-`clean` charge `MonSsg\FileSystem` et vide uniquement `dist/`. Il ne touche pas à `src/`, `public/`, `templates/` ou `plugins/`.
+`pix-clean` charge `MonSsg\FileSystem` et vide uniquement `dist/`. Il ne touche pas à `src/`, `public/`, `templates/` ou `plugins/`.
 
 ```bash
-./clean
+./pix-clean
 ```
 
-### `ssg`
+### `pix-ssg`
 
-`ssg` construit `MonSsg\Cli` avec `Paths` et `FileSystem`, puis lui transmet les arguments du terminal sans le nom de la commande.
+`pix-ssg` construit `MonSsg\Cli` avec `Paths` et `FileSystem`, puis lui transmet les arguments du terminal sans le nom de la commande.
 
 ```bash
-./ssg new page contact
-./ssg templates
+./pix-ssg new page contact
+./pix-ssg templates
 ```
 
 La classe `engine/Cli.php` décide du comportement réel des sous-commandes.
 
-### `dev`
+### `pix-dev`
 
-`dev` est un script Bash qui :
+`pix-dev` est un script Bash qui :
 
 1. refuse de démarrer si le port 8000 est occupé;
 2. exécute un premier build;
@@ -92,14 +97,14 @@ La classe `engine/Cli.php` décide du comportement réel des sous-commandes.
 6. arrête proprement le serveur avec `Ctrl+C`.
 
 ```bash
-./dev
+./pix-dev
 ```
 
 Le script utilise `set -euo pipefail` afin d’arrêter l’exécution en cas d’erreur, de variable absente ou d’échec dans un pipeline.
 
-### `install`
+### `pix-install`
 
-`install` prépare une première installation. Il vérifie :
+`pix-install` prépare une première installation. Il vérifie :
 
 - Bash et PHP 8.3 ou plus récent;
 - les extensions PHP DOM, XMLWriter et mbstring;
@@ -111,16 +116,16 @@ Il peut proposer l’installation des paquets système manquants. Sous WSL, si C
 Le script exécute ensuite Composer et npm, contrôle Pest, Vitest, ESLint et Prettier, crée les dossiers requis puis rend les commandes exécutables.
 
 ```bash
-./install
+./pix-install
 ```
 
-### `upgrade`
+### `pix-upgrade`
 
-`upgrade` vérifie la copie Git et les modifications locales, configure `ssg-upstream` vers le dépôt officiel, applique uniquement une avance directe depuis `main` puis exécute la nouvelle version de `install`. Il refuse toute situation pouvant demander une fusion ou écraser un travail non enregistré.
+`pix-upgrade` vérifie la copie Git et les modifications locales, configure `ssg-upstream` vers le dépôt officiel, applique uniquement une avance directe depuis `main` puis exécute la nouvelle version de `pix-install`. Il refuse toute situation pouvant demander une fusion ou écraser un travail non enregistré.
 
 ```bash
-./upgrade
-./upgrade --check
+./pix-upgrade
+./pix-upgrade --check
 ```
 
 ## Dépendances PHP
@@ -173,7 +178,7 @@ Pest utilise cette configuration PHPUnit. Elle :
 - charge `engine/bootstrap.php` avant les tests;
 - utilise `.phpunit.cache/` pour le cache;
 - active les couleurs;
-- définit la suite `Mon SSG` à partir de `tests/php/`.
+- définit la suite `pix-ssg` à partir de `tests/php/`.
 
 ### `eslint.config.js`
 
@@ -201,6 +206,14 @@ export default defineConfig({
 Les tests disposent ainsi de `window`, `document`, `querySelector()` et des autres API DOM simulées par jsdom.
 
 ## Documentation racine
+
+### `VERSION`
+
+`VERSION` contient la version sémantique courante, par exemple `1.0.0`. Elle doit correspondre à `package.json` et au tag Git `v1.0.0` lors d’une publication.
+
+### `CHANGELOG.md`
+
+`CHANGELOG.md` résume les fonctionnalités, changements et corrections livrés dans chaque version.
 
 ### `README.md`
 
@@ -231,5 +244,5 @@ Avant une livraison complète :
 npm test
 npm run lint
 npm run format:check
-./build
+./pix-build
 ```

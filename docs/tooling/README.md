@@ -15,7 +15,7 @@ Le site généré n’a besoin d’aucun runtime côté serveur. Les outils suiv
 Installation globale :
 
 ```bash
-./install
+./pix-install
 ```
 
 Validation complète :

@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates install header/header-basic
+./pix-ssg templates install header/header-basic
 ```
 
 ## Intégration au layout
@@ -37,7 +37,7 @@ Modifiez l’apparence dans `src/styles/templates/header-basic.css`. Les classes
 ## Désinstallation
 
 ```bash
-./ssg templates remove header/header-basic
+./pix-ssg templates remove header/header-basic
 ```
 
 La commande refuse de supprimer les fichiers qui ont été modifiés depuis leur installation. Conservez vos changements ailleurs ou restaurez les fichiers avant la désinstallation.

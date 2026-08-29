@@ -1,6 +1,6 @@
 # Architecture
 
-Mon SSG est un générateur PHP sans framework de production. Il transforme les sources de `src/` et `public/` en site statique dans `dist/`.
+pix-ssg est un générateur PHP sans framework de production. Il transforme les sources de `src/` et `public/` en site statique dans `dist/`.
 
 ## Pipeline d’un build
 

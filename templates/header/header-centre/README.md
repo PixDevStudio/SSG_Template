@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer header/header-centre
+./pix-ssg templates installer header/header-centre
 ```
 
 ## Intégration
@@ -53,7 +53,7 @@ Variables générées depuis le template original :
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller header/header-centre
+./pix-ssg templates desinstaller header/header-centre
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

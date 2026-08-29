@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer card/article-card
+./pix-ssg templates installer card/article-card
 ```
 
 ## Intégration
@@ -64,7 +64,7 @@ Variables générées depuis le template original :
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller card/article-card
+./pix-ssg templates desinstaller card/article-card
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

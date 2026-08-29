@@ -19,10 +19,19 @@ final readonly class Cli
     public function run(array $arguments): int
     {
         return match ($arguments[0] ?? null) {
+            '--version', '-V', 'version' => $this->version(),
             'new' => $this->newPage($arguments),
             'templates' => $this->templates($arguments),
             default => $this->usage(),
         };
+    }
+
+    private function version(): int
+    {
+        $version = trim((string) file_get_contents($this->paths->root . '/VERSION'));
+        echo "pix-ssg {$version}\n";
+
+        return 0;
     }
 
     /** @param list<string> $arguments */
@@ -80,7 +89,7 @@ HTML;
             }
             $catalogue = $this->markdownCatalog->write($templates);
             echo "\nCatalogue détaillé : {$catalogue}\n";
-            echo "Utilisez ./ssg templates info <catégorie/nom> pour les détails.\n";
+            echo "Utilisez ./pix-ssg templates info <catégorie/nom> pour les détails.\n";
             $this->offerMarkdownCatalog($catalogue);
             return 0;
         }
@@ -175,7 +184,7 @@ HTML;
 
     private function usage(): int
     {
-        fwrite(STDERR, "Usage :\n  ./ssg new page <nom>\n  ./ssg templates\n  ./ssg templates info <catégorie/nom>\n  ./ssg templates install <catégorie/nom>\n  ./ssg templates remove <catégorie/nom>\n");
+        fwrite(STDERR, "Usage :\n  ./pix-ssg --version\n  ./pix-ssg new page <nom>\n  ./pix-ssg templates\n  ./pix-ssg templates info <catégorie/nom>\n  ./pix-ssg templates install <catégorie/nom>\n  ./pix-ssg templates remove <catégorie/nom>\n");
         return 1;
     }
 }

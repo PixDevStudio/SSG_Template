@@ -7,7 +7,7 @@ use MonSsg\Paths;
 use MonSsg\TemplateCatalog;
 
 beforeEach(function (): void {
-    $this->root = sys_get_temp_dir() . '/mon-ssg-catalog-' . bin2hex(random_bytes(6));
+    $this->root = sys_get_temp_dir() . '/pix-ssg-catalog-' . bin2hex(random_bytes(6));
     $this->files = new FileSystem();
     $this->files->ensureDirectory($this->root . '/templates/card/example/files');
     $this->files->write($this->root . '/templates/card/example/files/example.html', '<article>Exemple</article>');

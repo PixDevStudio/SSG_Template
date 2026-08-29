@@ -177,7 +177,7 @@ function readme(string $category, string $slug, string $name, string $include, s
 ## Installation
 
 ```bash
-./ssg templates installer {$category}/{$slug}
+./pix-ssg templates installer {$category}/{$slug}
 ```
 
 ## Intégration
@@ -202,7 +202,7 @@ Variables générées depuis le template original :
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller {$category}/{$slug}
+./pix-ssg templates desinstaller {$category}/{$slug}
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.

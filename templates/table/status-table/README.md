@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates install table/status-table
+./pix-ssg templates install table/status-table
 ```
 
 ## Intégration dans une page
@@ -23,5 +23,5 @@ Le composant livré représente une ligne configurable. Pour plusieurs lignes dy
 ## Désinstallation
 
 ```bash
-./ssg templates remove table/status-table
+./pix-ssg templates remove table/status-table
 ```

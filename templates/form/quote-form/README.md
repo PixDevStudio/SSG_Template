@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-./ssg templates installer form/quote-form
+./pix-ssg templates installer form/quote-form
 ```
 
 ## Intégration
@@ -59,7 +59,7 @@ Le SSG produit seulement le formulaire HTML. Configurez son attribut `action` ve
 ## Désinstallation
 
 ```bash
-./ssg templates desinstaller form/quote-form
+./pix-ssg templates desinstaller form/quote-form
 ```
 
 La désinstallation est refusée si un fichier installé a été personnalisé.
