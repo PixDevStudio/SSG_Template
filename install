@@ -182,9 +182,13 @@ npm install
 ok 'Dépendances npm installées'
 ok 'Vitest, Prettier et ESLint installés'
 
+printf '\nVérification de la chaîne JavaScript...\n\n'
+npm test
+ok 'Vitest et esbuild fonctionnent correctement'
+
 printf '\nPréparation du projet...\n\n'
 mkdir -p src/{pages,layouts,partials,components,styles,scripts,data} public/{images,icons,fonts,media} plugins tests/{php,js} dist
-chmod +x install dev build clean ssg
+chmod +x install upgrade dev build clean ssg
 ok 'Dossiers vérifiés'
 ok 'Installation terminée'
 printf '\nLe projet est prêt.\n\nLancez ./dev pour démarrer le serveur.\n'
