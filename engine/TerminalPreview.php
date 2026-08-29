@@ -53,7 +53,7 @@ final readonly class TerminalPreview
             $exitCode = 0;
             exec(
                 escapeshellarg($chafa)
-                . ' --format symbols --colors full --animate off --size '
+                . ' --format symbols --colors full --animate off --probe off --size '
                 . escapeshellarg("{$columns}x{$rows}")
                 . ' ' . escapeshellarg($path) . ' 2>/dev/null',
                 $output,
