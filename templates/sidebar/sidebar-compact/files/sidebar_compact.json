@@ -1,0 +1,22 @@
+{
+  "label_01": "Barre latérale",
+  "url_01": "/",
+  "label_02": "Console, accueil",
+  "text_01": "C",
+  "label_03": "Navigation principale",
+  "url_02": "#dashboard",
+  "label_04": "Tableau de bord",
+  "text_02": "⌂",
+  "url_03": "#projects",
+  "label_05": "Projets",
+  "text_03": "◇",
+  "url_04": "#team",
+  "label_06": "Équipe",
+  "text_04": "◎",
+  "url_05": "#reports",
+  "label_07": "Rapports",
+  "text_05": "▦",
+  "url_06": "#settings",
+  "label_08": "Réglages",
+  "text_06": "⚙"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "footer/footer-rich",
+  "category": "footer",
+  "name": "Footer complet",
+  "description": "Version installable du template Footer complet, configurable par données JSON.",
+  "include": "{{ partial:footer-rich }}",
+  "usage": {
+    "target": "src/layouts/default.html",
+    "position": "Dans <body>, juste après {{{ content }}} et avant </body> : {{ partial:footer-rich }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/footer-rich.css\">",
+    "data": "src/data/footer_rich.json"
+  },
+  "files": {
+    "files/footer-rich.html": "src/partials/footer-rich.html",
+    "files/footer-rich.css": "src/styles/templates/footer-rich.css",
+    "files/footer_rich.json": "src/data/footer_rich.json",
+    "README.md": "src/template-docs/footer/footer-rich/README.md"
+  }
+}

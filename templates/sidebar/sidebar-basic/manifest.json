@@ -4,6 +4,12 @@
   "name": "Sidebar Basic",
   "description": "Navigation latérale compacte configurable par données JSON.",
   "include": "{{ partial:sidebar-basic }}",
+  "usage": {
+    "target": "src/layouts/default.html",
+    "position": "Dans .app-shell, avant le conteneur qui contient {{{ content }}}.",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/sidebar-basic.css\">",
+    "data": "src/data/sidebar_basic.json"
+  },
   "files": {
     "files/sidebar-basic.html": "src/partials/sidebar-basic.html",
     "files/sidebar-basic.css": "src/styles/templates/sidebar-basic.css",

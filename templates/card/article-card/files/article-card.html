@@ -1,0 +1,66 @@
+<section class="page">
+  <header>
+    <div>
+      <p>{{ article_card.text_01 }}</p>
+      <h1>{{ article_card.text_02 }}</h1>
+    </div>
+    <a href="{{article_card.url_01}}">{{ article_card.text_03 }}</a>
+  </header>
+  <section class="article-grid" aria-label="{{article_card.label_01}}">
+    <article class="article-card article-card--featured">
+      <a class="article-card__image" href="{{article_card.url_02}}"
+        ><img src="{{article_card.image_01}}" alt="{{article_card.alt_01}}"
+      /></a>
+      <div class="article-card__body">
+        <div class="meta">
+          <span>{{ article_card.text_04 }}</span
+          ><time datetime="2026-08-24">{{ article_card.text_05 }}</time>
+        </div>
+        <h2>
+          <a href="{{article_card.url_03}}">{{ article_card.text_06 }}</a>
+        </h2>
+        <p>{{ article_card.text_07 }}</p>
+        <a class="read-more" href="{{article_card.url_04}}"
+          >{{ article_card.text_08 }}
+          <span aria-hidden="true">{{ article_card.text_09 }}</span></a
+        >
+      </div>
+    </article>
+    <article class="article-card">
+      <a class="article-card__image" href="{{article_card.url_05}}"
+        ><img src="{{article_card.image_02}}" alt="{{article_card.alt_02}}"
+      /></a>
+      <div class="article-card__body">
+        <div class="meta">
+          <span>{{ article_card.text_10 }}</span
+          ><time datetime="2026-08-18">{{ article_card.text_11 }}</time>
+        </div>
+        <h2>
+          <a href="{{article_card.url_06}}">{{ article_card.text_12 }}</a>
+        </h2>
+        <a class="read-more" href="{{article_card.url_07}}"
+          >{{ article_card.text_13 }}
+          <span aria-hidden="true">{{ article_card.text_14 }}</span></a
+        >
+      </div>
+    </article>
+    <article class="article-card">
+      <a class="article-card__image" href="{{article_card.url_08}}"
+        ><img src="{{article_card.image_03}}" alt="{{article_card.alt_03}}"
+      /></a>
+      <div class="article-card__body">
+        <div class="meta">
+          <span>{{ article_card.text_15 }}</span
+          ><time datetime="2026-08-11">{{ article_card.text_16 }}</time>
+        </div>
+        <h2>
+          <a href="{{article_card.url_09}}">{{ article_card.text_17 }}</a>
+        </h2>
+        <a class="read-more" href="{{article_card.url_10}}"
+          >{{ article_card.text_18 }}
+          <span aria-hidden="true">{{ article_card.text_19 }}</span></a
+        >
+      </div>
+    </article>
+  </section>
+</section>

@@ -1,0 +1,19 @@
+{
+  "id": "form/login-form",
+  "category": "form",
+  "name": "Formulaire de connexion",
+  "description": "Version installable du template Formulaire de connexion, configurable par données JSON.",
+  "include": "{{ component:login-form }}",
+  "usage": {
+    "target": "src/pages/<nom-de-page>.html",
+    "position": "Dans <main>, à l’endroit où le composant doit apparaître : {{ component:login-form }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/login-form.css\">",
+    "data": "src/data/login_form.json"
+  },
+  "files": {
+    "files/login-form.html": "src/components/login-form.html",
+    "files/login-form.css": "src/styles/templates/login-form.css",
+    "files/login_form.json": "src/data/login_form.json",
+    "README.md": "src/template-docs/form/login-form/README.md"
+  }
+}

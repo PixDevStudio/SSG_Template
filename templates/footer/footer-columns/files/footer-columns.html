@@ -1,0 +1,84 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-lead">
+      <div>
+        <a class="footer-logo" href="{{footer_columns.url_01}}"
+          >{{ footer_columns.text_01 }}</a
+        >
+        <p>{{ footer_columns.text_02 }}</p>
+      </div>
+      <form
+        class="newsletter"
+        action="{{footer_columns.action_01}}"
+        method="post"
+      >
+        <label for="footer-email">{{ footer_columns.text_03 }}</label>
+        <div>
+          <input
+            id="footer-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="{{footer_columns.placeholder_01}}"
+            required
+          /><button type="submit" aria-label="{{footer_columns.label_01}}">
+            {{ footer_columns.text_04 }}
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <nav class="footer-nav" aria-label="{{footer_columns.label_02}}">
+      <div>
+        <h2>{{ footer_columns.text_05 }}</h2>
+        <ul>
+          <li>
+            <a href="{{footer_columns.url_02}}">{{ footer_columns.text_06 }}</a>
+          </li>
+          <li>
+            <a href="{{footer_columns.url_03}}">{{ footer_columns.text_07 }}</a>
+          </li>
+          <li>
+            <a href="{{footer_columns.url_04}}">{{ footer_columns.text_08 }}</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2>{{ footer_columns.text_09 }}</h2>
+        <ul>
+          <li>
+            <a href="{{footer_columns.url_05}}">{{ footer_columns.text_10 }}</a>
+          </li>
+          <li>
+            <a href="{{footer_columns.url_06}}">{{ footer_columns.text_11 }}</a>
+          </li>
+          <li>
+            <a href="{{footer_columns.url_07}}">{{ footer_columns.text_12 }}</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2>{{ footer_columns.text_13 }}</h2>
+        <ul>
+          <li>
+            <a href="{{footer_columns.url_08}}">{{ footer_columns.text_14 }}</a>
+          </li>
+          <li>
+            <a href="{{footer_columns.url_09}}">{{ footer_columns.text_15 }}</a>
+          </li>
+          <li>
+            <a href="{{footer_columns.url_10}}">{{ footer_columns.text_16 }}</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="footer-bottom">
+      <small>{{ footer_columns.text_17 }}</small>
+      <div>
+        <a href="{{footer_columns.url_11}}">{{ footer_columns.text_18 }}</a
+        ><a href="{{footer_columns.url_12}}">{{ footer_columns.text_19 }}</a>
+      </div>
+    </div>
+  </div>
+</footer>

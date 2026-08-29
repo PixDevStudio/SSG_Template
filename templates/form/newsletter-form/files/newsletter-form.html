@@ -1,0 +1,47 @@
+<section class="newsletter" aria-labelledby="newsletter-title">
+  <div class="issue" aria-hidden="true">
+    <span>{{ newsletter_form.text_01 }}</span>
+    <strong>{{ newsletter_form.text_02 }}</strong>
+  </div>
+
+  <div class="newsletter__content">
+    <p class="eyebrow">{{ newsletter_form.text_03 }}</p>
+    <h1 id="newsletter-title">
+      {{ newsletter_form.text_04 }}<br />{{ newsletter_form.text_05 }}
+    </h1>
+    <p>{{ newsletter_form.text_06 }}</p>
+
+    <form
+      class="newsletter-form"
+      action="{{newsletter_form.action_01}}"
+      method="post"
+    >
+      <div class="email-field">
+        <label for="newsletter-email">{{ newsletter_form.text_07 }}</label>
+        <input
+          id="newsletter-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          inputmode="email"
+          placeholder="{{newsletter_form.placeholder_01}}"
+          required
+        />
+      </div>
+      <button type="submit">
+        {{ newsletter_form.text_08 }}
+        <span aria-hidden="true">{{ newsletter_form.text_09 }}</span>
+      </button>
+      <small>{{ newsletter_form.text_10 }}</small>
+    </form>
+  </div>
+
+  <aside class="newsletter__topics" aria-label="{{newsletter_form.label_01}}">
+    <span>{{ newsletter_form.text_11 }}</span>
+    <ul>
+      <li>{{ newsletter_form.text_12 }}</li>
+      <li>{{ newsletter_form.text_13 }}</li>
+      <li>{{ newsletter_form.text_14 }}</li>
+    </ul>
+  </aside>
+</section>

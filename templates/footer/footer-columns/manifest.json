@@ -1,0 +1,19 @@
+{
+  "id": "footer/footer-columns",
+  "category": "footer",
+  "name": "Footer en colonnes",
+  "description": "Version installable du template Footer en colonnes, configurable par données JSON.",
+  "include": "{{ partial:footer-columns }}",
+  "usage": {
+    "target": "src/layouts/default.html",
+    "position": "Dans <body>, juste après {{{ content }}} et avant </body> : {{ partial:footer-columns }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/footer-columns.css\">",
+    "data": "src/data/footer_columns.json"
+  },
+  "files": {
+    "files/footer-columns.html": "src/partials/footer-columns.html",
+    "files/footer-columns.css": "src/styles/templates/footer-columns.css",
+    "files/footer_columns.json": "src/data/footer_columns.json",
+    "README.md": "src/template-docs/footer/footer-columns/README.md"
+  }
+}

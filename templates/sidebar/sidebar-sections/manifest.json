@@ -1,0 +1,19 @@
+{
+  "id": "sidebar/sidebar-sections",
+  "category": "sidebar",
+  "name": "Sidebar à sections",
+  "description": "Version installable du template Sidebar à sections, configurable par données JSON.",
+  "include": "{{ partial:sidebar-sections }}",
+  "usage": {
+    "target": "src/layouts/default.html",
+    "position": "Dans le conteneur de mise en page, avant le bloc qui contient {{{ content }}} : {{ partial:sidebar-sections }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/sidebar-sections.css\">",
+    "data": "src/data/sidebar_sections.json"
+  },
+  "files": {
+    "files/sidebar-sections.html": "src/partials/sidebar-sections.html",
+    "files/sidebar-sections.css": "src/styles/templates/sidebar-sections.css",
+    "files/sidebar_sections.json": "src/data/sidebar_sections.json",
+    "README.md": "src/template-docs/sidebar/sidebar-sections/README.md"
+  }
+}

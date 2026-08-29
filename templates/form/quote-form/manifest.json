@@ -1,0 +1,19 @@
+{
+  "id": "form/quote-form",
+  "category": "form",
+  "name": "Formulaire de devis",
+  "description": "Version installable du template Formulaire de devis, configurable par données JSON.",
+  "include": "{{ component:quote-form }}",
+  "usage": {
+    "target": "src/pages/<nom-de-page>.html",
+    "position": "Dans <main>, à l’endroit où le composant doit apparaître : {{ component:quote-form }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/quote-form.css\">",
+    "data": "src/data/quote_form.json"
+  },
+  "files": {
+    "files/quote-form.html": "src/components/quote-form.html",
+    "files/quote-form.css": "src/styles/templates/quote-form.css",
+    "files/quote_form.json": "src/data/quote_form.json",
+    "README.md": "src/template-docs/form/quote-form/README.md"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "form/signup-form",
+  "category": "form",
+  "name": "Formulaire d’inscription",
+  "description": "Version installable du template Formulaire d’inscription, configurable par données JSON.",
+  "include": "{{ component:signup-form }}",
+  "usage": {
+    "target": "src/pages/<nom-de-page>.html",
+    "position": "Dans <main>, à l’endroit où le composant doit apparaître : {{ component:signup-form }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/signup-form.css\">",
+    "data": "src/data/signup_form.json"
+  },
+  "files": {
+    "files/signup-form.html": "src/components/signup-form.html",
+    "files/signup-form.css": "src/styles/templates/signup-form.css",
+    "files/signup_form.json": "src/data/signup_form.json",
+    "README.md": "src/template-docs/form/signup-form/README.md"
+  }
+}

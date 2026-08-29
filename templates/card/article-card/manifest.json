@@ -1,0 +1,19 @@
+{
+  "id": "card/article-card",
+  "category": "card",
+  "name": "Cartes article",
+  "description": "Version installable du template Cartes article, configurable par données JSON.",
+  "include": "{{ component:article-card }}",
+  "usage": {
+    "target": "src/pages/<nom-de-page>.html",
+    "position": "Dans <main>, à l’endroit où le composant doit apparaître : {{ component:article-card }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/article-card.css\">",
+    "data": "src/data/article_card.json"
+  },
+  "files": {
+    "files/article-card.html": "src/components/article-card.html",
+    "files/article-card.css": "src/styles/templates/article-card.css",
+    "files/article_card.json": "src/data/article_card.json",
+    "README.md": "src/template-docs/card/article-card/README.md"
+  }
+}

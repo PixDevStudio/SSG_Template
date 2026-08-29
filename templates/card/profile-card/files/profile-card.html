@@ -1,0 +1,58 @@
+<section class="page">
+  <header>
+    <p>{{ profile_card.text_01 }}</p>
+    <h1>{{ profile_card.text_02 }}</h1>
+  </header>
+  <section class="profile-grid" aria-label="{{profile_card.label_01}}">
+    <article class="profile-card">
+      <img src="{{profile_card.image_01}}" alt="{{profile_card.alt_01}}" />
+      <div class="profile-card__body">
+        <span class="availability">{{ profile_card.text_03 }}</span>
+        <h2>{{ profile_card.text_04 }}</h2>
+        <p>{{ profile_card.text_05 }}</p>
+        <ul aria-label="{{profile_card.label_02}}">
+          <li>{{ profile_card.text_06 }}</li>
+          <li>{{ profile_card.text_07 }}</li>
+        </ul>
+        <a href="{{profile_card.url_01}}"
+          >{{ profile_card.text_08 }}
+          <span aria-hidden="true">{{ profile_card.text_09 }}</span></a
+        >
+      </div>
+    </article>
+    <article class="profile-card">
+      <img src="{{profile_card.image_02}}" alt="{{profile_card.alt_02}}" />
+      <div class="profile-card__body">
+        <span class="availability availability--busy"
+          >{{ profile_card.text_10 }}</span
+        >
+        <h2>{{ profile_card.text_11 }}</h2>
+        <p>{{ profile_card.text_12 }}</p>
+        <ul aria-label="{{profile_card.label_03}}">
+          <li>{{ profile_card.text_13 }}</li>
+          <li>{{ profile_card.text_14 }}</li>
+        </ul>
+        <a href="{{profile_card.url_02}}"
+          >{{ profile_card.text_15 }}
+          <span aria-hidden="true">{{ profile_card.text_16 }}</span></a
+        >
+      </div>
+    </article>
+    <article class="profile-card">
+      <img src="{{profile_card.image_03}}" alt="{{profile_card.alt_03}}" />
+      <div class="profile-card__body">
+        <span class="availability">{{ profile_card.text_17 }}</span>
+        <h2>{{ profile_card.text_18 }}</h2>
+        <p>{{ profile_card.text_19 }}</p>
+        <ul aria-label="{{profile_card.label_04}}">
+          <li>{{ profile_card.text_20 }}</li>
+          <li>{{ profile_card.text_21 }}</li>
+        </ul>
+        <a href="{{profile_card.url_03}}"
+          >{{ profile_card.text_22 }}
+          <span aria-hidden="true">{{ profile_card.text_23 }}</span></a
+        >
+      </div>
+    </article>
+  </section>
+</section>

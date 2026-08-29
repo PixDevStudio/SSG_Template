@@ -1,0 +1,55 @@
+<header class="app-header">
+  <div class="header-inner">
+    <a
+      class="brand"
+      href="{{header_dashboard.url_01}}"
+      aria-label="{{header_dashboard.label_01}}"
+      ><span>{{ header_dashboard.text_01 }}</span>{{ header_dashboard.text_02
+      }}</a
+    >
+    <form
+      class="search"
+      action="{{header_dashboard.action_01}}"
+      method="get"
+      role="search"
+      autocomplete="off"
+    >
+      <label for="search">{{ header_dashboard.text_03 }}</label
+      ><input
+        id="search"
+        name="project-search"
+        type="search"
+        placeholder="{{header_dashboard.placeholder_01}}"
+        autocomplete="off"
+        autocapitalize="none"
+        spellcheck="false"
+      /><button type="submit" aria-label="{{header_dashboard.label_02}}">
+        {{ header_dashboard.text_04 }}
+      </button>
+    </form>
+    <div class="header-actions">
+      <a
+        class="icon-button"
+        href="{{header_dashboard.url_02}}"
+        aria-label="{{header_dashboard.label_03}}"
+        >{{ header_dashboard.text_05 }}</a
+      >
+      <a
+        class="icon-button notification"
+        href="{{header_dashboard.url_03}}"
+        aria-label="{{header_dashboard.label_04}}"
+        >{{ header_dashboard.text_06 }}<span
+          >{{ header_dashboard.text_07 }}</span
+        ></a
+      >
+      <a class="profile" href="{{header_dashboard.url_04}}"
+        ><span class="avatar" aria-hidden="true"
+          >{{ header_dashboard.text_08 }}</span
+        ><span
+          ><strong>{{ header_dashboard.text_09 }}</strong
+          ><small>{{ header_dashboard.text_10 }}</small></span
+        ></a
+      >
+    </div>
+  </div>
+</header>

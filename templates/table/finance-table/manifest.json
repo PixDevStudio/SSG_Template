@@ -1,0 +1,19 @@
+{
+  "id": "table/finance-table",
+  "category": "table",
+  "name": "Tableau financier",
+  "description": "Version installable du template Tableau financier, configurable par données JSON.",
+  "include": "{{ component:finance-table }}",
+  "usage": {
+    "target": "src/pages/<nom-de-page>.html",
+    "position": "Dans <main>, à l’endroit où le composant doit apparaître : {{ component:finance-table }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/finance-table.css\">",
+    "data": "src/data/finance_table.json"
+  },
+  "files": {
+    "files/finance-table.html": "src/components/finance-table.html",
+    "files/finance-table.css": "src/styles/templates/finance-table.css",
+    "files/finance_table.json": "src/data/finance_table.json",
+    "README.md": "src/template-docs/table/finance-table/README.md"
+  }
+}

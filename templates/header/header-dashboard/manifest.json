@@ -1,0 +1,19 @@
+{
+  "id": "header/header-dashboard",
+  "category": "header",
+  "name": "Header dashboard",
+  "description": "Version installable du template Header dashboard, configurable par données JSON.",
+  "include": "{{ partial:header-dashboard }}",
+  "usage": {
+    "target": "src/layouts/default.html",
+    "position": "Dans <body>, juste avant {{{ content }}} : {{ partial:header-dashboard }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/header-dashboard.css\">",
+    "data": "src/data/header_dashboard.json"
+  },
+  "files": {
+    "files/header-dashboard.html": "src/partials/header-dashboard.html",
+    "files/header-dashboard.css": "src/styles/templates/header-dashboard.css",
+    "files/header_dashboard.json": "src/data/header_dashboard.json",
+    "README.md": "src/template-docs/header/header-dashboard/README.md"
+  }
+}

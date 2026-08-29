@@ -1,0 +1,112 @@
+<section class="quote-page">
+  <header class="quote-intro">
+    <a class="brand" href="{{quote_form.url_01}}">{{ quote_form.text_01 }}</a>
+    <p>{{ quote_form.text_02 }}</p>
+    <h1 id="quote-title">{{ quote_form.text_03 }}</h1>
+    <span>{{ quote_form.text_04 }}</span>
+  </header>
+
+  <form
+    class="quote-form"
+    action="{{quote_form.action_01}}"
+    method="post"
+    aria-labelledby="quote-title"
+  >
+    <fieldset>
+      <legend>
+        <span>{{ quote_form.text_05 }}</span> {{ quote_form.text_06 }}
+      </legend>
+      <div class="fields-grid">
+        <div class="field">
+          <label for="name">{{ quote_form.text_07 }}</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autocomplete="name"
+            required
+          />
+        </div>
+        <div class="field">
+          <label for="email">{{ quote_form.text_08 }}</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            inputmode="email"
+            required
+          />
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <span>{{ quote_form.text_09 }}</span> {{ quote_form.text_10 }}
+      </legend>
+      <div class="choice-grid">
+        <label
+          ><input type="checkbox" name="services[]" value="strategy" /><span
+            >{{ quote_form.text_11 }}</span
+          ></label
+        >
+        <label
+          ><input type="checkbox" name="services[]" value="design" /><span
+            >{{ quote_form.text_12 }}</span
+          ></label
+        >
+        <label
+          ><input type="checkbox" name="services[]" value="development" /><span
+            >{{ quote_form.text_13 }}</span
+          ></label
+        >
+        <label
+          ><input type="checkbox" name="services[]" value="branding" /><span
+            >{{ quote_form.text_14 }}</span
+          ></label
+        >
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <span>{{ quote_form.text_15 }}</span> {{ quote_form.text_16 }}
+      </legend>
+      <div class="fields-grid">
+        <div class="field">
+          <label for="budget">{{ quote_form.text_17 }}</label>
+          <select id="budget" name="budget" required>
+            <option value="" selected disabled>{{ quote_form.text_18 }}</option>
+            <option value="5-10">{{ quote_form.text_19 }}</option>
+            <option value="10-25">{{ quote_form.text_20 }}</option>
+            <option value="25-plus">{{ quote_form.text_21 }}</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="deadline">{{ quote_form.text_22 }}</label>
+          <input id="deadline" name="deadline" type="date" />
+        </div>
+        <div class="field field--full">
+          <label for="details">{{ quote_form.text_23 }}</label>
+          <textarea
+            id="details"
+            name="details"
+            rows="6"
+            minlength="20"
+            placeholder="{{quote_form.placeholder_01}}"
+            required
+          ></textarea>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-footer">
+      <small>{{ quote_form.text_24 }}</small>
+      <button type="submit">
+        {{ quote_form.text_25 }}
+        <span aria-hidden="true">{{ quote_form.text_26 }}</span>
+      </button>
+    </div>
+  </form>
+</section>

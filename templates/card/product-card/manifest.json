@@ -4,6 +4,12 @@
   "name": "Product Card",
   "description": "Carte produit responsive configurable par données JSON.",
   "include": "{{ component:product-card }}",
+  "usage": {
+    "target": "src/pages/<nom-de-page>.html",
+    "position": "Dans <main>, à l’endroit où la carte doit apparaître.",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/product-card.css\">",
+    "data": "src/data/product_card.json"
+  },
   "files": {
     "files/product-card.html": "src/components/product-card.html",
     "files/product-card.css": "src/styles/templates/product-card.css",

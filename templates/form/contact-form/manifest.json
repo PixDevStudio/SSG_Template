@@ -4,6 +4,12 @@
   "name": "Contact Form",
   "description": "Formulaire de contact accessible avec textes et destination configurables.",
   "include": "{{ component:contact-form }}",
+  "usage": {
+    "target": "src/pages/contact.html",
+    "position": "Dans <main id=\"main-content\">, à l’endroit du formulaire.",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/contact-form.css\">",
+    "data": "src/data/contact_form.json"
+  },
   "files": {
     "files/contact-form.html": "src/components/contact-form.html",
     "files/contact-form.css": "src/styles/templates/contact-form.css",

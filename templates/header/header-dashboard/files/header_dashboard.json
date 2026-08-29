@@ -1,0 +1,22 @@
+{
+  "url_01": "/",
+  "label_01": "Noyau, accueil",
+  "text_01": "N",
+  "text_02": "Noyau",
+  "action_01": "/recherche",
+  "text_03": "Rechercher",
+  "placeholder_01": "Rechercher un projet…",
+  "label_02": "Lancer la recherche",
+  "text_04": "⌕",
+  "url_02": "/aide",
+  "label_03": "Centre d’aide",
+  "text_05": "?",
+  "url_03": "/notifications",
+  "label_04": "Notifications, 3 nouvelles",
+  "text_06": "♢",
+  "text_07": "3",
+  "url_04": "/profil",
+  "text_08": "MC",
+  "text_09": "Marie Côté",
+  "text_10": "Produit"
+}

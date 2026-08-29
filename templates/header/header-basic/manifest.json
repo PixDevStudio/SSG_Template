@@ -4,6 +4,12 @@
   "name": "Header Basic",
   "description": "Header responsive avec navigation de bureau, menu mobile natif et lien d’évitement.",
   "include": "{{ partial:header-basic }}",
+  "usage": {
+    "target": "src/layouts/default.html",
+    "position": "Dans <body>, juste avant {{{ content }}}.",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/header-basic.css\">",
+    "data": "src/data/header_basic.json"
+  },
   "files": {
     "files/header-basic.html": "src/partials/header-basic.html",
     "files/header-basic.css": "src/styles/templates/header-basic.css",

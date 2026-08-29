@@ -1,0 +1,97 @@
+<section class="signup-page">
+  <a
+    class="brand"
+    href="{{signup_form.url_01}}"
+    aria-label="{{signup_form.label_01}}"
+    >{{ signup_form.text_01 }}<span>{{ signup_form.text_02 }}</span></a
+  >
+
+  <section class="signup" aria-labelledby="signup-title">
+    <header class="signup__header">
+      <p>{{ signup_form.text_03 }}</p>
+      <h1 id="signup-title">{{ signup_form.text_04 }}</h1>
+      <span
+        >{{ signup_form.text_05 }}
+        <a href="{{signup_form.url_02}}">{{ signup_form.text_06 }}</a></span
+      >
+    </header>
+
+    <form class="signup-form" action="{{signup_form.action_01}}" method="post">
+      <div class="field">
+        <label for="first-name">{{ signup_form.text_07 }}</label>
+        <input
+          id="first-name"
+          name="first-name"
+          type="text"
+          autocomplete="given-name"
+          required
+        />
+      </div>
+
+      <div class="field">
+        <label for="last-name">{{ signup_form.text_08 }}</label>
+        <input
+          id="last-name"
+          name="last-name"
+          type="text"
+          autocomplete="family-name"
+          required
+        />
+      </div>
+
+      <div class="field field--full">
+        <label for="email">{{ signup_form.text_09 }}</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          inputmode="email"
+          required
+        />
+      </div>
+
+      <div class="field">
+        <label for="password">{{ signup_form.text_10 }}</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="new-password"
+          minlength="8"
+          aria-describedby="password-hint"
+          required
+        />
+        <small id="password-hint">{{ signup_form.text_11 }}</small>
+      </div>
+
+      <div class="field">
+        <label for="password-confirmation">{{ signup_form.text_12 }}</label>
+        <input
+          id="password-confirmation"
+          name="password-confirmation"
+          type="password"
+          autocomplete="new-password"
+          minlength="8"
+          required
+        />
+      </div>
+
+      <label class="agreement field--full">
+        <input name="terms" type="checkbox" required />
+        <span
+          >{{ signup_form.text_13 }}
+          <a href="{{signup_form.url_03}}">{{ signup_form.text_14 }}</a> {{
+          signup_form.text_15 }}
+          <a href="{{signup_form.url_04}}">{{ signup_form.text_16 }}</a>{{
+          signup_form.text_17 }}</span
+        >
+      </label>
+
+      <button class="button field--full" type="submit">
+        {{ signup_form.text_18 }}
+        <span aria-hidden="true">{{ signup_form.text_19 }}</span>
+      </button>
+    </form>
+  </section>
+</section>

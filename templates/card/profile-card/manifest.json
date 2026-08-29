@@ -1,0 +1,19 @@
+{
+  "id": "card/profile-card",
+  "category": "card",
+  "name": "Cartes profil",
+  "description": "Version installable du template Cartes profil, configurable par données JSON.",
+  "include": "{{ component:profile-card }}",
+  "usage": {
+    "target": "src/pages/<nom-de-page>.html",
+    "position": "Dans <main>, à l’endroit où le composant doit apparaître : {{ component:profile-card }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/profile-card.css\">",
+    "data": "src/data/profile_card.json"
+  },
+  "files": {
+    "files/profile-card.html": "src/components/profile-card.html",
+    "files/profile-card.css": "src/styles/templates/profile-card.css",
+    "files/profile_card.json": "src/data/profile_card.json",
+    "README.md": "src/template-docs/card/profile-card/README.md"
+  }
+}

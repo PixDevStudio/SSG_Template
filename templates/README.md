@@ -2,6 +2,8 @@
 
 Chaque template occupe `templates/<catégorie>/<nom>/` et contient un manifeste, un README et les fichiers à installer.
 
+Le catalogue livré contient 23 modèles répartis dans les catégories `header`, `footer`, `sidebar`, `card`, `form` et `table`.
+
 ```text
 templates/card/product-card/
 ├── manifest.json

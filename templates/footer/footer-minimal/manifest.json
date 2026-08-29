@@ -4,6 +4,12 @@
   "name": "Footer Minimal",
   "description": "Pied de page compact avec marque, mentions légales et liens essentiels.",
   "include": "{{ partial:footer-minimal }}",
+  "usage": {
+    "target": "src/layouts/default.html",
+    "position": "Dans <body>, juste après {{{ content }}} et avant </body>.",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/footer-minimal.css\">",
+    "data": "src/data/footer_minimal.json"
+  },
   "files": {
     "files/footer-minimal.html": "src/partials/footer-minimal.html",
     "files/footer-minimal.css": "src/styles/templates/footer-minimal.css",

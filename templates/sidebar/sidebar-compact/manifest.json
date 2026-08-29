@@ -1,0 +1,19 @@
+{
+  "id": "sidebar/sidebar-compact",
+  "category": "sidebar",
+  "name": "Sidebar compacte",
+  "description": "Version installable du template Sidebar compacte, configurable par données JSON.",
+  "include": "{{ partial:sidebar-compact }}",
+  "usage": {
+    "target": "src/layouts/default.html",
+    "position": "Dans le conteneur de mise en page, avant le bloc qui contient {{{ content }}} : {{ partial:sidebar-compact }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/sidebar-compact.css\">",
+    "data": "src/data/sidebar_compact.json"
+  },
+  "files": {
+    "files/sidebar-compact.html": "src/partials/sidebar-compact.html",
+    "files/sidebar-compact.css": "src/styles/templates/sidebar-compact.css",
+    "files/sidebar_compact.json": "src/data/sidebar_compact.json",
+    "README.md": "src/template-docs/sidebar/sidebar-compact/README.md"
+  }
+}

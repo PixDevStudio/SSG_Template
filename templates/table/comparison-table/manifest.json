@@ -1,0 +1,19 @@
+{
+  "id": "table/comparison-table",
+  "category": "table",
+  "name": "Tableau comparatif",
+  "description": "Version installable du template Tableau comparatif, configurable par données JSON.",
+  "include": "{{ component:comparison-table }}",
+  "usage": {
+    "target": "src/pages/<nom-de-page>.html",
+    "position": "Dans <main>, à l’endroit où le composant doit apparaître : {{ component:comparison-table }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/comparison-table.css\">",
+    "data": "src/data/comparison_table.json"
+  },
+  "files": {
+    "files/comparison-table.html": "src/components/comparison-table.html",
+    "files/comparison-table.css": "src/styles/templates/comparison-table.css",
+    "files/comparison_table.json": "src/data/comparison_table.json",
+    "README.md": "src/template-docs/table/comparison-table/README.md"
+  }
+}

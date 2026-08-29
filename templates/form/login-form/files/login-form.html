@@ -1,0 +1,68 @@
+<section class="auth-layout">
+  <section class="auth-intro" aria-labelledby="intro-title">
+    <a
+      class="brand"
+      href="{{login_form.url_01}}"
+      aria-label="{{login_form.label_01}}"
+      >{{ login_form.text_01 }} <span>{{ login_form.text_02 }}</span></a
+    >
+    <div>
+      <p class="eyebrow">{{ login_form.text_03 }}</p>
+      <h1 id="intro-title">{{ login_form.text_04 }}</h1>
+      <p>{{ login_form.text_05 }}</p>
+    </div>
+    <small>{{ login_form.text_06 }}</small>
+  </section>
+
+  <section class="auth-panel" aria-labelledby="login-title">
+    <form class="login-form" action="{{login_form.action_01}}" method="post">
+      <div class="form-heading">
+        <p class="eyebrow">{{ login_form.text_07 }}</p>
+        <h2 id="login-title">{{ login_form.text_08 }}</h2>
+        <p>{{ login_form.text_09 }}</p>
+      </div>
+
+      <div class="field">
+        <label for="email">{{ login_form.text_10 }}</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          inputmode="email"
+          required
+        />
+      </div>
+
+      <div class="field">
+        <div class="label-row">
+          <label for="password">{{ login_form.text_11 }}</label>
+          <a href="{{login_form.url_02}}">{{ login_form.text_12 }}</a>
+        </div>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          autocomplete="current-password"
+          minlength="8"
+          required
+        />
+      </div>
+
+      <label class="remember">
+        <input name="remember" type="checkbox" />
+        <span>{{ login_form.text_13 }}</span>
+      </label>
+
+      <button class="button" type="submit">
+        {{ login_form.text_14 }}
+        <span aria-hidden="true">{{ login_form.text_15 }}</span>
+      </button>
+
+      <p class="signup">
+        {{ login_form.text_16 }}
+        <a href="{{login_form.url_03}}">{{ login_form.text_17 }}</a>
+      </p>
+    </form>
+  </section>
+</section>

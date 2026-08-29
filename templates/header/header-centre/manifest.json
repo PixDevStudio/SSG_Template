@@ -1,0 +1,19 @@
+{
+  "id": "header/header-centre",
+  "category": "header",
+  "name": "Header centré",
+  "description": "Version installable du template Header centré, configurable par données JSON.",
+  "include": "{{ partial:header-centre }}",
+  "usage": {
+    "target": "src/layouts/default.html",
+    "position": "Dans <body>, juste avant {{{ content }}} : {{ partial:header-centre }}",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/header-centre.css\">",
+    "data": "src/data/header_centre.json"
+  },
+  "files": {
+    "files/header-centre.html": "src/partials/header-centre.html",
+    "files/header-centre.css": "src/styles/templates/header-centre.css",
+    "files/header_centre.json": "src/data/header_centre.json",
+    "README.md": "src/template-docs/header/header-centre/README.md"
+  }
+}

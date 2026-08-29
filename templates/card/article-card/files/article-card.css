@@ -1,0 +1,151 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  --paper: #faf9f5;
+  --ink: #22221f;
+  --muted: #70716a;
+  --accent: #235aa6;
+  --line: #d9d9d2;
+}
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+.page {
+  width: min(100% - 2rem, 78rem);
+  min-height: 100vh;
+  margin-inline: auto;
+  padding-block: clamp(3rem, 8vw, 7rem);
+}
+.page > header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.page > header p {
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.page > header h1 {
+  margin: 0;
+  font:
+    500 clamp(2.3rem, 5vw, 4.3rem)/1 Georgia,
+    serif;
+  letter-spacing: 0;
+}
+.page > header > a {
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-underline-offset: 0.25rem;
+}
+.article-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.article-card {
+  min-width: 0;
+  display: grid;
+  border-top: 2px solid var(--ink);
+  padding-top: 1rem;
+}
+.article-card__image {
+  aspect-ratio: 16/10;
+  display: block;
+  overflow: hidden;
+}
+.article-card__image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: saturate(0.8);
+  transition: transform 0.35s;
+}
+.article-card:hover img {
+  transform: scale(1.02);
+}
+.article-card__body {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-block: 1rem;
+}
+.meta {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+.meta span {
+  color: var(--accent);
+  font-weight: 900;
+}
+.article-card h2 {
+  margin: 0.8rem 0;
+  font:
+    500 clamp(1.4rem, 3vw, 2rem)/1.1 Georgia,
+    serif;
+}
+.article-card h2 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.article-card__body > p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.read-more {
+  margin-top: auto;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-underline-offset: 0.2rem;
+}
+.article-card a:focus-visible,
+.page > header > a:focus-visible {
+  outline: 3px solid rgba(35, 90, 166, 0.2);
+  outline-offset: 3px;
+}
+@media (min-width: 48rem) {
+  .article-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .article-card--featured {
+    grid-column: 1/-1;
+    grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
+    gap: 2rem;
+  }
+  .article-card--featured .article-card__image {
+    aspect-ratio: 16/9;
+  }
+  .article-card--featured h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+  }
+}
+@media (max-width: 34rem) {
+  .page > header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .article-card__image img {
+    transition: none;
+  }
+}

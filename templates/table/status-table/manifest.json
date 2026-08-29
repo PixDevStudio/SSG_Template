@@ -4,6 +4,12 @@
   "name": "Status Table",
   "description": "Tableau compact et responsive pour présenter le statut d’un élément.",
   "include": "{{ component:status-table }}",
+  "usage": {
+    "target": "src/pages/<nom-de-page>.html",
+    "position": "Dans <main>, à l’endroit où le tableau doit apparaître.",
+    "stylesheet": "<link rel=\"stylesheet\" href=\"/assets/css/templates/status-table.css\">",
+    "data": "src/data/status_table.json"
+  },
   "files": {
     "files/status-table.html": "src/components/status-table.html",
     "files/status-table.css": "src/styles/templates/status-table.css",

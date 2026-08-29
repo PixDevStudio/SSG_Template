@@ -1,0 +1,184 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f5f1ea;
+  --surface: #fffefa;
+  --ink: #25211d;
+  --muted: #726a62;
+  --accent: #b53b2d;
+  --line: #d9d0c5;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background-color: var(--bg);
+  background-image: radial-gradient(#d3c8bb 0.8px, transparent 0.8px);
+  background-size: 1.2rem 1.2rem;
+}
+
+.signup-page {
+  width: min(100% - 2rem, 68rem);
+  min-height: 100vh;
+  margin-inline: auto;
+  display: grid;
+  align-content: center;
+  gap: 2rem;
+  padding-block: 2rem;
+}
+
+.brand {
+  width: fit-content;
+  color: var(--ink);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.signup {
+  display: grid;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.signup__header {
+  padding: clamp(2rem, 5vw, 4rem);
+  color: #ffffff;
+  background: #292521;
+}
+
+.signup__header > p {
+  margin: 0 0 1rem;
+  color: #ef9b8f;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.signup__header h1 {
+  max-width: 12ch;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.signup__header > span {
+  display: block;
+  margin-top: 2rem;
+  color: #cfc7c0;
+  font-size: 0.85rem;
+}
+
+.signup__header a {
+  color: #ffffff;
+  text-underline-offset: 0.2rem;
+}
+
+.signup-form {
+  display: grid;
+  align-content: center;
+  gap: 1.15rem;
+  padding: clamp(2rem, 5vw, 4rem);
+}
+
+.field {
+  min-width: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field label {
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.field input {
+  width: 100%;
+  min-height: 3rem;
+  padding-inline: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  color: var(--ink);
+  background: #ffffff;
+  font: inherit;
+}
+
+.field small {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.field input:focus-visible,
+.agreement input:focus-visible,
+.button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(181, 59, 45, 0.2);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+.agreement {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.agreement input {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 1rem;
+  margin: 0.15rem 0 0;
+  accent-color: var(--accent);
+}
+
+.agreement a {
+  color: var(--ink);
+}
+
+.button {
+  min-height: 3.1rem;
+  border: 0;
+  border-radius: 0.25rem;
+  color: #ffffff;
+  background: var(--accent);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #8f2e23;
+}
+
+@media (min-width: 52rem) {
+  .signup {
+    grid-template-columns: minmax(20rem, 0.85fr) minmax(28rem, 1.15fr);
+  }
+
+  .signup-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .field--full {
+    grid-column: 1 / -1;
+  }
+}
