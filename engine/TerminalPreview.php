@@ -21,7 +21,7 @@ final readonly class TerminalPreview
 
         $path = $this->previewPath((string) $template['id'], 'desktop');
         if (is_file($path)) {
-            echo $this->render($path, 24, 7);
+            echo $this->render($path, 24, 9);
         }
     }
 
@@ -31,14 +31,19 @@ final readonly class TerminalPreview
         $id = (string) $template['id'];
         echo "Aperçus :\n";
 
-        foreach (['desktop' => 'Desktop', 'tablette' => 'Tablette', 'mobile' => 'Mobile'] as $mode => $label) {
+        $previews = [
+            'desktop' => ['label' => 'Desktop', 'columns' => 64, 'rows' => 24],
+            'tablette' => ['label' => 'Tablette', 'columns' => 48, 'rows' => 32],
+            'mobile' => ['label' => 'Mobile', 'columns' => 32, 'rows' => 36],
+        ];
+
+        foreach ($previews as $mode => $preview) {
             $relative = "templates/{$id}/previews/{$mode}.png";
             $path = $this->paths->root . '/' . $relative;
-            echo "  {$label} : {$relative}\n";
+            echo "  {$preview['label']} : {$relative}\n";
 
             if ($this->supportsAnsiImages() && is_file($path)) {
-                $columns = $mode === 'mobile' ? 32 : 64;
-                echo $this->render($path, $columns, 16);
+                echo $this->render($path, $preview['columns'], $preview['rows']);
             }
         }
 
