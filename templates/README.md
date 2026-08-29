@@ -23,6 +23,12 @@ templates/card/product-card/
   "name": "Product Card",
   "description": "Carte produit configurable.",
   "include": "{{ component:product-card }}",
+  "usage": {
+    "target": "src/pages/index.html",
+    "position": "Dans le contenu principal de la page.",
+    "stylesheet": "/assets/css/templates/product-card.css",
+    "data": "src/data/product_card.json"
+  },
   "files": {
     "files/product-card.html": "src/components/product-card.html",
     "files/product-card.css": "src/styles/templates/product-card.css",

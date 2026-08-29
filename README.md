@@ -2,6 +2,8 @@
 
 Générateur de site statique léger construit en PHP 8.3+. Les sources restent dans `src/` et `public/`; seul le contenu de `dist/` est reconstruit.
 
+La documentation complète se trouve dans [`docs/README.md`](docs/README.md) : démarrage, architecture, dossiers, commandes, outils, API interne et dépannage.
+
 ## Installation
 
 ```bash
